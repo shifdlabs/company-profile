@@ -10,44 +10,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check SSH Connection
-      - name: Test SSH Connection
-        run: |
-          echo "${{ secrets.SSH_KEY }}" > key.pem
-          chmod 600 key.pem
-          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo CONNECTED"
-
-      # Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # Build project
       - name: Build project
         run: npm run build
 
-      # Upload dist ke folder temporary dulu
+      # Bersihkan temp folder dulu sebelum upload
+      - name: Clean temp folder on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            rm -rf /home/${{ secrets.SSH_USER }}/deploy_temp
+            mkdir -p /home/${{ secrets.SSH_USER }}/deploy_temp
+
       - name: Upload build to temp folder
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          source: "dist/*"
+          source: "dist/"
           target: "/home/${{ secrets.SSH_USER }}/deploy_temp"
           strip_components: 1
 
-      # Replace web root secara atomic
       - name: Replace web root safely
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -55,8 +53,19 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            # Verifikasi isi temp folder sebelum deploy
+            echo "=== Isi deploy_temp ==="
+            ls -la /home/${{ secrets.SSH_USER }}/deploy_temp/
+
             sudo rm -rf /var/www/html/*
-            sudo mv /home/${{ secrets.SSH_USER }}/deploy_temp/* /var/www/html/
+            sudo cp -r /home/${{ secrets.SSH_USER }}/deploy_temp/. /var/www/html/
             sudo chown -R www-data:www-data /var/www/html
             sudo chmod -R 755 /var/www/html
-            sudo systemctl restart nginx
+            sudo systemctl reload nginx
+
+            # Verifikasi hasil deploy
+            echo "=== Isi /var/www/html ==="
+            ls -la /var/www/html/
+
+            # Bersihkan temp
+            rm -rf /home/${{ secrets.SSH_USER }}/deploy_temp
