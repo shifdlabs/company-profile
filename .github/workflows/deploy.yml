@@ -10,26 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout source code
+      # Check SSH Connection
+      - name: Test SSH Connection
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > key.pem
+          chmod 600 key.pem
+          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo CONNECTED"
+
+      # Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # 3️⃣ Install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build project
+      # Build project
       - name: Build project
         run: npm run build
 
-      # 5️⃣ Upload dist ke folder temporary dulu
+      # Upload dist ke folder temporary dulu
       - name: Upload build to temp folder
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -40,7 +47,7 @@ jobs:
           target: "/home/${{ secrets.SSH_USER }}/deploy_temp"
           strip_components: 1
 
-      # 6️⃣ Replace web root secara atomic
+      # Replace web root secara atomic
       - name: Replace web root safely
         uses: appleboy/ssh-action@v1.0.3
         with:
