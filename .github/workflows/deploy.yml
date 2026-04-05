@@ -25,6 +25,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify dist
+        run: |
+          echo "=== Hash file terbaru ==="
+          ls dist/assets/
+
       - name: Clean temp folder on server
         uses: appleboy/ssh-action@v1.0.3
         with:
