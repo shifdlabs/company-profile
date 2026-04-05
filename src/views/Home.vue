@@ -14,7 +14,7 @@
       <div class="relative px-6 pt-20 lg:pt-50 lg:px-40 xl:px-80 animate-fade-up ">
         <div class="max-auto max-w-4xl py-32 sm:py-48 lg:py-36 text-start">
           <h1 class="text-6xl tracking-tight text-white sm:text-5xl lg:text-7xl font-inter">
-           <span class="text-blue-500">{{ $t('hero.title.part1') }} Reza Fadli</span> {{ ' ' + $t('hero.title.part2') + ' ' }} <span class=" text-blue-500">{{ $t('hero.title.part3') }}</span> {{ ' ' + $t('hero.title.part4') + ' ' }} <span class=" text-blue-500">{{ $t('hero.title.part5') }}</span>
+           <span class="text-blue-500">{{ $t('hero.title.part1') }}</span> {{ ' ' + $t('hero.title.part2') + ' ' }} <span class=" text-blue-500">{{ $t('hero.title.part3') }}</span> {{ ' ' + $t('hero.title.part4') + ' ' }} <span class=" text-blue-500">{{ $t('hero.title.part5') }}</span>
           </h1>
 
           <p class="mt-8 text-lg text-white/90 sm:text-2xl font-inter">
