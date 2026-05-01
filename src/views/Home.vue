@@ -35,7 +35,7 @@
                 md:w-[220px]
               "
             >
-              {{ $t('hero.whyButton') }} Reza
+              {{ $t('hero.whyButton') }}
             </a>
 
             <a
