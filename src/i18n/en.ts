@@ -2,7 +2,7 @@ export default {
   hero: {
     title: {
       part1: "Shifd",
-      part2: "make a positive",
+      part2: "makes a positive",
       part3: "impact",
       part4: "on your",
       part5: "business ecosystem."
