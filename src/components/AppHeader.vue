@@ -29,7 +29,7 @@ const handleNavClick = (e: Event, item: any) => {
   }
 }
 
-const props = withDefaults(
+withDefaults(
   defineProps<{ isTransparentBackground?: boolean }>(),
   { isTransparentBackground: true }
 )
