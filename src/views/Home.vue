@@ -156,176 +156,100 @@
     </div>
     <!-- END HERO SECTION -->
 
-    <!-- ============================================================
-         ALL SECTIONS BELOW ARE UNCHANGED FROM THE ORIGINAL
-    ============================================================ -->
-
-    <div class="relative isolate overflow-hidden animate-fade-up mb-20" id="products-services">
-      <div class="relative px-6 pt-10">
-        <div class="max-auto text-center">
-          <p class="text-[35px] md:text-[38px] lg:text-[43px] text-center font-light tracking-tight text-gray-600">
-            {{ $t('productIntroduction.title') }}
-          </p>
-
-          <p
-            class="mt-4
-                  max-w-6xl
-                  mx-auto
-                  font-extralight
-                  text-center
-                  text-xl lg:text-xl
-                  text-gray-600"
-          >
-            {{ $t('productIntroduction.caption') }}
-          </p>
-        </div>
-      </div>
-    </div>
+    <!-- SECTION 2 APPROVAL STARTS -->
+    <div
+      class="relative isolate overflow-hidden bg-gray-50 animate-fade-up"
+      id="products-services"
+    >
+      <!-- Smooth gradient top — transisi dari Hero (#f8f9fb) ke bg-gray-50 -->
+      <div class="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#f8f9fb] to-transparent pointer-events-none z-10" />
     
-    <div class="relative isolate min-h-screen overflow-hidden animate-fade-up mb-20" id="products-services">
-      <div
-        class="
-          inline-flex items-center gap-3 sm:gap-4
-          border-1 border-gray-300
-          rounded-[200px]
-          px-4 py-3 sm:px-5 sm:py-3 md:px-6 md:py-4
-          ml-4 sm:ml-4 md:ml-6 lg:ml-15
-        "
-      >
-        <img
-          src="/src/assets/shifd-approval-icon.svg"
-          alt="Shifd Approval Icon"
-          class="
-            w-10 h-10
-            sm:w-12 sm:h-12
-            md:w-20 md:h-20
-            lg:w-25 lg:h-25
-          "
-        />
-
-        <div class="leading-tight">
-          <p class="text-xs sm:text-sm md:text-[20px] text-gray-400">
-            shifd
-          </p>
-          <p class="text-lg sm:text-xl md:text-[35px] text-gray-600 font-extrabold">
-            Approval
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="flex flex-col gap-6 px-6 mt-4 md:mt-10 lg:flex-row lg:items-center lg:px-15"
-      >
-        <!-- LEFT TEXT -->
-        <span
-          class="text-[32px] md:text-[40px] lg:text-[50px] text-gray-600 font-bold max-w-[700px] text-left"
-        >
-          {{ $t('approval.title1') }}
-          <span class="text-[#7367F0]">{{ $t('approval.title2') }}</span>
-          {{ $t('approval.title3') }}
-        </span>
-
-        <!-- RIGHT TEXT -->
-        <span
-          class="
-            text-[16px]
-            md:text-[18px]
-            lg:text-[20px]
-            font-light
-            max-w-[700px]
-
-            text-left
-            lg:text-right
-            lg:ml-auto
-          "
-        >
-          {{ $t('approval.caption') }}
-        </span>
-      </div>
-
+      <!-- Smooth gradient bottom — transisi ke section berikutnya -->
+      <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
+    
       <ApprovalFeatures />
     </div>
+    <!-- SECTION 2 APPROVAL END -->
 
+    <div class="w-full h-20 bg-gradient-to-b from-gray-50 to-[#F8FAFC] pointer-events-none"></div>
 
-    <div class="w-full h-[100px] bg-linear-to-b from-white to-gray-600"></div>
-
-    <div class="relative isolate min-h-screen overflow-hidden z-10 bg-white rounded-t-[40px] pb-24 -mt-20" id="shifd-services-section">
-      <div class="relative px-6 pt-20">
-        <div class="max-auto text-start">
-          <p class="text-[25px] text-center tracking-tight font-inter text-gray-600">
-            {{ $t('services.smallTitle') }}
-          </p>
-
-          <p class="text-[50px] font-bold mt-10 text-center text-l">
-            <span class="text-gray-600">{{ $t('services.cta1') }}</span>
-
-            <span
-              class="
-                bg-blue-500 text-white px-8 py-4 rounded-2xl shadow-lg inline-flex items-center ml-2
-                sm:px-8 sm:py-5
-                md:px-10 md:py-6
-                lg:px-8 lg:py-4
-              "
-            >
-              <span class="typing-text inline-block overflow-hidden">
-                {{ $t('services.cta2') }}
-              </span>
-            </span>
-          </p>
-
-          <p class="text-[35px] text-center font-extralight mt-5 text-gray-600">
-            {{ $t('services.bridgingText') }}
-          </p>
-
-          <p
-            class="
-              text-[23px] font-normal mt-3 text-gray-600 text-center
-              px-6
-              sm:px-8
-              md:px-20
-              lg:pl-[130px] lg:pr-[130px]
-              xl:pl-[130px] xl:pr-[130px]
-              max-w-[1600px] mx-auto
-            "
-          >
-            {{ $t('services.caption') }}
-          </p>
+    <!-- ============================
+     SECTION 3 SERVICE START
+    ============================= -->
+    <div
+      class="relative isolate overflow-hidden z-10 rounded-t-[40px] pb-24 -mt-20"
+      id="shifd-services-section"
+      style="
+        background-color: #F8FAFC;
+        background-image:
+          radial-gradient(at 0% 0%,   hsla(213, 100%, 73%, 0.18) 0px, transparent 50%),
+          radial-gradient(at 100% 0%,  hsla(160, 100%, 76%, 0.18) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(258, 100%, 76%, 0.15) 0px, transparent 50%),
+          radial-gradient(at 0% 100%,  hsla(213, 100%, 73%, 0.15) 0px, transparent 50%);
+      "
+    >
+      <!-- Header -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-6 text-center animate-fade-up">
+    
+        <!-- Small label -->
+        <p class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 sm:mb-5">
+          {{ $t('services.smallTitle') }}
+        </p>
+    
+        <!-- Main headline -->
+        <h2 class="text-[32px] sm:text-[40px] md:text-[48px] font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-4 sm:mb-5">
+          {{ $t('services.cta1') }}
+          <span class="inline-block bg-[#1363DF] text-white px-4 py-2 rounded-xl shadow-lg ml-1 sm:ml-2 mt-2 sm:mt-0">
+            {{ $t('services.cta2') }}
+          </span>
+        </h2>
+    
+        <!-- Bridging text -->
+        <p class="text-lg sm:text-xl font-light text-gray-500 mb-4">
+          {{ $t('services.bridgingText') }}
+        </p>
+    
+        <!-- Caption -->
+        <p class="text-base sm:text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          {{ $t('services.caption') }}
+        </p>
+      </section>
+    
+      <!-- Service Cards Grid -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+    
+          <ServiceCard
+            icon="fa-solid fa-mobile-screen-button"
+            title="Mobile Development"
+            :description="$t('services.mobileDevDesc')"
+            :tags="['Native', 'Hybrid']"
+            :deliverables="serviceDeliverables.mobile"
+            color="blue"
+          />
+    
+          <ServiceCard
+            icon="fa-solid fa-display"
+            title="Web Development"
+            :description="$t('services.webDevDesc')"
+            :tags="['Open Source']"
+            :deliverables="serviceDeliverables.web"
+            color="green"
+          />
+    
+          <ServiceCard
+            icon="fa-regular fa-comments"
+            title="Solution Consultation"
+            :description="$t('services.consultationDesc')"
+            :tags="['Free Consultation']"
+            :deliverables="serviceDeliverables.consultation"
+            color="violet"
+          />
+    
         </div>
       </div>
-
-      <div
-        class="grid gap-12 mt-20 justify-center
-              grid-cols-1
-              md:grid-cols-1
-              lg:grid-cols-3
-              xl:grid-cols-3
-              max-w-[400px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[1200px] xl:max-w-[1200px]
-              mx-auto
-          "
-      >
-        <ServiceCard
-          icon="fa-solid fa-mobile-screen-button text-6xl text-gray-700"
-          title="Mobile Development"
-          :description="$t('services.mobileDevDesc')"
-          :tags="['Native', 'Hybrid']"
-          :deliverables="serviceDeliverables.mobile"
-        />
-        <ServiceCard
-          icon="fa-solid fa-display text-6xl text-gray-700"
-          title="Web Development"
-          :description="$t('services.webDevDesc')"
-          :tags="['Open Source']"
-          :deliverables="serviceDeliverables.web"
-        />
-        <ServiceCard
-          icon="fa-regular fa-comments text-6xl text-gray-700"
-          title="Solution Consultation"
-          :description="$t('services.consultationDesc')"
-          :tags="['Free Consultation']"
-          :deliverables="serviceDeliverables.consultation"
-        />
-      </div>
     </div>
+    <!-- SECTION 3 SERVICE END -->
 
     <div class="relative isolate min-h-screen overflow-hidden bg-[#2E5B9F]" id="why-shifd-section">
       <div class="relative px-6 pt-20">
@@ -478,67 +402,70 @@
       </div>
     </div>
 
+    <!-- SECTION 5 CTA START -->
     <div class="relative z-10 bg-white rounded-t-[40px] -mt-20" id="contact-section">
-      <div class="relative px-6 pt-20 pb-20">
-        <div class="max-auto text-start">
-          <p
-            class="
-              text-[80px] leading-[1.1] text-center tracking-tight font-bold text-gray-800 mb-10
-              max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] xl:max-w-[1200px]
-              mx-auto
-            "
-          >
-            {{ $t('callToAction.title1') }} 
-            <span class="text-blue-500">{{ $t('callToAction.title2') }}</span>
-          </p>
-
-          <p class="text-[30px] px-4 md:px-40 text-center font-light text-gray-600 max-w-6xl mx-auto mb-10">
-            {{ $t('callToAction.caption') }}
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+ 
+      <!-- Full-width CTA section -->
+      <section class="relative w-full overflow-hidden cta-mesh-bg">
+ 
+        <!-- Decorative background elements -->
+        <div aria-hidden="true" class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none">
+          <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
+          <div class="absolute -bottom-24 -left-24 w-72 h-72 border border-blue-200 rounded-full opacity-50"></div>
+          <div class="absolute -top-12 -right-12 w-48 h-48 border border-cyan-200 rounded-full opacity-50"></div>
+        </div>
+ 
+        <!-- Content -->
+        <div class="relative z-10 px-6 py-20 sm:py-24 md:py-32 lg:px-16 text-center">
+ 
+          <!-- Heading group -->
+          <div class="max-w-3xl mx-auto space-y-5 sm:space-y-6">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
+              {{ $t('callToAction.title1') }}
+              <span class="cta-text-gradient inline-block">{{ $t('callToAction.title2') }}</span>
+            </h2>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">
+              {{ $t('callToAction.caption') }}
+            </p>
+          </div>
+ 
+          <!-- Buttons -->
+          <div class="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+ 
             <!-- WhatsApp Button -->
             <a
               href="https://wa.me/6281234567890"
               target="_blank"
               rel="noopener noreferrer"
-              class="
-                flex items-center justify-center gap-2
-                bg-[#1363DF] hover:bg-[#337dec] text-white
-                rounded-xl shadow-lg transition
-
-                w-full sm:w-[220px] md:w-auto
-                px-4 py-3 sm:px-6 sm:py-4
-                text-sm sm:text-base md:text-lg
-                font-semibold
-                whitespace-nowrap
-              "
+              aria-label="WhatsApp Us"
+              class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#1363DF] hover:bg-[#0f55c4] rounded-2xl hover:shadow-lg hover:shadow-[#1363DF]/30 transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
             >
-              <i class="fa-brands fa-whatsapp text-lg sm:text-xl md:text-2xl"></i>
-              <span>{{ $t('callToAction.whatsAppUs') }}</span>
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5 mr-2.5 transition-transform duration-200 group-hover:scale-110"
+                fill="currentColor"
+                viewBox="0 0 32 32"
+              >
+                <path d="M16 0C7.164 0 0 7.163 0 16c0 2.822.736 5.49 2.138 7.837L0 32l8.374-2.195A15.916 15.916 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm8.046 22.3c-.332.933-1.953 1.786-2.686 1.898-.687.104-1.552.148-2.503-.158-.577-.187-1.317-.435-2.261-.853-3.979-1.718-6.579-5.72-6.778-5.986-.198-.265-1.618-2.15-1.618-4.102 0-1.952 1.024-2.913 1.387-3.311.364-.397.794-.497 1.059-.497.265 0 .53.003.762.014.244.012.572-.093.895.683.332.794 1.127 2.746 1.226 2.944.099.199.165.43.033.694-.133.265-.199.43-.397.662-.199.232-.418.519-.596.697-.199.198-.406.413-.175.81.232.397 1.03 1.7 2.212 2.754 1.52 1.355 2.8 1.775 3.197 1.974.397.198.629.165.861-.1.232-.264.993-1.158 1.258-1.555.265-.397.53-.332.894-.199.364.133 2.313 1.09 2.71 1.288.397.199.662.298.761.464.1.165.1.96-.232 1.88z"/>
+              </svg>
+              {{ $t('callToAction.whatsAppUs') }}
             </a>
-
-            <!-- Outline Button -->
+ 
+            <!-- Contact Us Button -->
             <router-link
               to="/contact-us"
-              class="
-                flex items-center justify-center
-                rounded-xl border border-blue-500
-                text-blue-500 font-medium
-                hover:bg-blue-50 transition
-
-                w-full sm:w-[220px] md:w-auto
-                px-4 py-3 sm:px-12 sm:py-4
-                text-sm sm:text-base md:text-lg
-                whitespace-nowrap
-              "
+              aria-label="Contact Us"
+              class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold bg-white border-2 border-[#1363DF] text-[#1363DF] hover:bg-[#1363DF]/5 hover:border-[#0f55c4] rounded-2xl transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
             >
               {{ $t('callToAction.contactUs') }}
             </router-link>
+ 
           </div>
         </div>
-      </div>
+      </section>
+ 
     </div>
+    <!-- SECTION 5 CTA END -->
 
     <Footer />
   </div>
@@ -634,4 +561,21 @@ import { serviceDeliverables } from '@/constants/services'
   -webkit-text-stroke: 2px white;
   color: transparent;
 }
+
+.cta-mesh-bg {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 0% 0%,   hsla(210, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%,  hsla(190, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(220, 100%, 95%, 1) 0px, transparent 50%);
+}
+ 
+.cta-text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #3b82f6, #06b6d4);
+}
+
+
 </style>
