@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark pt-40">
+  <div class="bg-white scheme-light pt-40">
     <AppHeader :is-transparent-background="false"/>
 
     <section class="max-w-5xl mx-auto  px-6 text-center">

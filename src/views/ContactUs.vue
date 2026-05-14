@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f0f4f8] dark:bg-gray-950 scheme-light dark:scheme-dark min-h-screen">
+  <div class="bg-[#f0f4f8] scheme-light min-h-screen">
     <AppHeader :is-transparent-background="false"/>
 
     <!-- Main Content -->

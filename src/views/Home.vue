@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f8f9fb] dark:bg-gray-950 scheme-light dark:scheme-dark">
+  <div class="bg-[#f8f9fb] scheme-light">
     <AppHeader />
 
     <!-- ============================
