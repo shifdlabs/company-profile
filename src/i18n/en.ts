@@ -126,7 +126,7 @@ export default {
       fullName: "Full Name",
       fullNamePlaceholder: "John Doe",
       email: "Email",
-      emailPlaceholder: "john@enterprise.com",
+      emailPlaceholder: "john{'@'}enterprise.com",
       phoneNumber: "Phone Number",
       phonePlaceholder: "+1 (555) 000-0000",
       briefDescription: "Brief Description",

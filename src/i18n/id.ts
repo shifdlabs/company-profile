@@ -126,7 +126,7 @@ export default {
       fullName: "Nama Lengkap",
       fullNamePlaceholder: "John Doe",
       email: "Email",
-      emailPlaceholder: "john@perusahaan.com",
+      emailPlaceholder: "john{'@'}perusahaan.com",
       phoneNumber: "Nomor Telepon",
       phonePlaceholder: "+62 812 3456 7890",
       briefDescription: "Deskripsi Singkat",
