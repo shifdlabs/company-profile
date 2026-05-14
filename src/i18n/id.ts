@@ -113,14 +113,37 @@ export default {
     contactUs: "Hubungi Kami",
   },
   contactUs: {
+    badge: "Keunggulan Terverifikasi",
+    heading: "Jadwalkan konsultasi gratis Anda",
+    subtitle: "Kembangkan infrastruktur perusahaan Anda dengan presisi arsitektural. Konsultasikan bersama kami untuk menyusun roadmap yang disesuaikan dengan evolusi digital perusahaan Anda.",
+    features: {
+      scalableTitle: "Infrastruktur yang Skalabel",
+      scalableDesc: "Solusi berbasis cloud yang dirancang untuk berkembang bersama kebutuhan bisnis Anda.",
+      expertTitle: "Konsultasi Ahli",
+      expertDesc: "Akses langsung kepada kami untuk strategi teknis dan perencanaan implementasi.",
+    },
     form: {
-      title: "Jadwalkan konsultasi gratis dengan tim kami dan mulai hari ini",
       fullName: "Nama Lengkap",
+      fullNamePlaceholder: "John Doe",
       email: "Email",
+      emailPlaceholder: "john@perusahaan.com",
       phoneNumber: "Nomor Telepon",
+      phonePlaceholder: "+62 812 3456 7890",
       briefDescription: "Deskripsi Singkat",
-      briefDescriptionPlaceholder: "Saya ingin mendiskusikan proyek ERP",
+      briefDescriptionPlaceholder: "Ceritakan kebutuhan proyek Anda...",
       submitButton: "Kirim Permintaan"
+    },
+    preferDirect: "Lebih suka kontak langsung?",
+    whatsapp: "WhatsApp",
+    whatsappLabel: "Chat Instan",
+    emailSupport: "Email Support",
+    emailLabel: "Respons 24/7",
+    loading: "Mengirim permintaan Anda...",
+    success: {
+      title: "Permintaan Berhasil Dikirim",
+      message: "Terima kasih telah menghubungi kami. Tim kami akan meninjau kebutuhan Anda dan segera menghubungi Anda.",
+      returnHome: "Kembali ke Beranda",
+      close: "Tutup"
     },
     companyValues: {
       caption1: "Memberdayakan bisnis melalui solusi digital yang aman dan mudah dikembangkan, dengan pendekatan yang berfokus pada kebutuhan pelanggan.",

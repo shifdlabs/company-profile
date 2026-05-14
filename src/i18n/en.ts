@@ -113,14 +113,37 @@ export default {
     contactUs: "Contact Us",
   },
   contactUs: {
+    badge: "Verified Excellence",
+    heading: "Book your free consultation",
+    subtitle: "Scale your enterprise infrastructure with architectural precision. Consult with us to develop a tailored roadmap for your enterprise digital evolution.",
+    features: {
+      scalableTitle: "Scalable Infrastructure",
+      scalableDesc: "Cloud-native solutions designed to grow with your business requirements.",
+      expertTitle: "Expert Consultation",
+      expertDesc: "Direct access to us for technical strategy and implementation planning.",
+    },
     form: {
-      title: "Book your free consultation with our team and get started today",
       fullName: "Full Name",
+      fullNamePlaceholder: "John Doe",
       email: "Email",
+      emailPlaceholder: "john@enterprise.com",
       phoneNumber: "Phone Number",
+      phonePlaceholder: "+1 (555) 000-0000",
       briefDescription: "Brief Description",
-      briefDescriptionPlaceholder: "I want to discuss about an ERP project",
-      submitButton: "Send Request"
+      briefDescriptionPlaceholder: "Tell us about your project requirements...",
+      submitButton: "Submit Request"
+    },
+    preferDirect: "Prefer direct contact?",
+    whatsapp: "WhatsApp",
+    whatsappLabel: "Instant Chat",
+    emailSupport: "Email Support",
+    emailLabel: "24/7 Response",
+    loading: "Sending your request...",
+    success: {
+      title: "Request Sent Successfully",
+      message: "Thank you for reaching out. Our team will review your requirements and get back to you shortly.",
+      returnHome: "Return to Home",
+      close: "Close"
     },
     companyValues: {
       caption1: "Empowering businesses through secure, scalable digital solutions, guided by a customer centric mindset.",

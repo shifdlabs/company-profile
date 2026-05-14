@@ -158,7 +158,7 @@
 
     <!-- SECTION 2 APPROVAL STARTS -->
     <div
-      class="relative isolate overflow-hidden bg-gray-50 animate-fade-up"
+      class="relative isolate overflow-hidden bg-gray-50 reveal opacity-0"
       id="products-services"
     >
       <!-- Smooth gradient top — transisi dari Hero (#f8f9fb) ke bg-gray-50 -->
@@ -189,7 +189,7 @@
       "
     >
       <!-- Header -->
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-6 text-center animate-fade-up">
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-6 text-center reveal opacity-0">
     
         <!-- Small label -->
         <p class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 sm:mb-5">
@@ -216,7 +216,7 @@
       </section>
     
       <!-- Service Cards Grid -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 reveal opacity-0">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
     
           <ServiceCard
@@ -251,10 +251,10 @@
     </div>
     <!-- SECTION 3 SERVICE END -->
 
-    <div class="relative isolate min-h-screen overflow-hidden bg-[#2E5B9F]" id="why-shifd-section">
+    <div class="relative isolate min-h-screen overflow-hidden bg-[#2E5B9F] reveal opacity-0" id="why-shifd-section">
       <div class="relative px-6 pt-20">
         <div class="mx-auto text-start"> 
-          <p class="text-[30px] text-center tracking-tight font-light text-white">
+          <p class="text-[30px] text-center tracking-tight font-light text-white reveal opacity-0">
             {{ $t('companyValues.why') }}
           </p>
 
@@ -403,7 +403,7 @@
     </div>
 
     <!-- SECTION 5 CTA START -->
-    <div class="relative z-10 bg-white rounded-t-[40px] -mt-20" id="contact-section">
+    <div class="relative z-10 bg-white rounded-t-[40px] -mt-20 reveal opacity-0" id="contact-section">
  
       <!-- Full-width CTA section -->
       <section class="relative w-full overflow-hidden cta-mesh-bg">
@@ -472,6 +472,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import ServiceCard from '../components/Services.vue'
 
 import cloudBasedIcon from '@/assets/company-values/cloud-based.svg'
@@ -483,9 +484,34 @@ import AppHeader from '../components/AppHeader.vue'
 import Footer from '../components/Footer.vue'
 import ApprovalFeatures from '@/components/ApprovalFeatures.vue'
 import { serviceDeliverables } from '@/constants/services'
+
+onMounted(() => {
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-up')
+        entry.target.classList.remove('opacity-0')
+        observer.unobserve(entry.target)
+      }
+    })
+  }, observerOptions)
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el)
+  })
+})
 </script>
 
 <style scoped>
+.reveal {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
 /* ─── Hero: subtle grid background ─── */
 .hero-grid {
   background-image:
