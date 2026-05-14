@@ -16,15 +16,35 @@ export default {
     caption: "Everything you need to simplify operations, boost productivity, and move your business forward.",
   },
   approval: {
-    title1:"Approve",
-    title2:"Documents",
-    title3:"Anytime, Anywhere Instantly.",
-    caption:"Our digital letter approval system streamlines the flow of documents, reduces delays, and ensures your business operations run efficiently, while keeping approvals transparent, secure, and easy to track in real time.",
+    // Legacy keys (kept for compatibility if used elsewhere)
+    title1: "Approve",
+    title2: "Documents",
+    title3: "Anytime, Anywhere Instantly.",
+
+    // Section 2 headline
+    headlinePrefix: "Shifd Labs' Core Offerings:",
+    headlineHighlight: "Powering Growth",
+    caption: "Explore the tools that streamline operations, boost productivity, and ensure compliance with precision and clarity.",
+    ctaButton: "Start Your Free Trial",
+
     features: {
-        description1: "A centralized view of all document activity in real time. Easily track statuses, pending approvals, and completed letters in one clean, organized interface.",
-        description2: "Automate document routing to the right approvers. Speed up decisions, improve accountability, and keep a complete, traceable approval history.",
-        description3: "Sign documents securely from anywhere. Remove printing and scanning while maintaining legal validity and document integrity.",
-        description4: "Create document numbers that match your internal standards. Organize, track, and archive files more efficiently across departments.",
+      title1: "Seamless Dashboard",
+      description1: "A centralized view of all activity. Track statuses, pending items, and completed tasks in real time with intuitive visualizations.",
+
+      title2: "Electronic Workflow",
+      description2: "Automate routing, speed up decisions, and maintain a complete, traceable history for every business process.",
+
+      title3: "Multi Layer Approval",
+      description3: "Design and execute complex, multi-stage approval hierarchies with ease. Ensure every critical decision follows your exact organizational protocol.",
+
+      title4: "Paperless with PDF Output",
+      description4: "Transition to a fully secure digital environment. Generate professional PDF reports and authenticated documentation with a single click.",
+
+      title5: "E-Signature",
+      description5: "Sign documents securely from anywhere in the world. Eliminate the need for physical printing and scanning.",
+
+      title6: "Custom Doc Numbering",
+      description6: "Create flexible numbering formats that match your internal standards. Organize and track files efficiently across different departments.",
     }
   },
   services: {
@@ -93,14 +113,37 @@ export default {
     contactUs: "Contact Us",
   },
   contactUs: {
+    badge: "Verified Excellence",
+    heading: "Book your free consultation",
+    subtitle: "Scale your enterprise infrastructure with architectural precision. Consult with us to develop a tailored roadmap for your enterprise digital evolution.",
+    features: {
+      scalableTitle: "Scalable Infrastructure",
+      scalableDesc: "Cloud-native solutions designed to grow with your business requirements.",
+      expertTitle: "Expert Consultation",
+      expertDesc: "Direct access to us for technical strategy and implementation planning.",
+    },
     form: {
-      title: "Book your free consultation with our team and get started today",
       fullName: "Full Name",
+      fullNamePlaceholder: "John Doe",
       email: "Email",
+      emailPlaceholder: "john@enterprise.com",
       phoneNumber: "Phone Number",
+      phonePlaceholder: "+1 (555) 000-0000",
       briefDescription: "Brief Description",
-      briefDescriptionPlaceholder: "I want to discuss about an ERP project",
-      submitButton: "Send Request"
+      briefDescriptionPlaceholder: "Tell us about your project requirements...",
+      submitButton: "Submit Request"
+    },
+    preferDirect: "Prefer direct contact?",
+    whatsapp: "WhatsApp",
+    whatsappLabel: "Instant Chat",
+    emailSupport: "Email Support",
+    emailLabel: "24/7 Response",
+    loading: "Sending your request...",
+    success: {
+      title: "Request Sent Successfully",
+      message: "Thank you for reaching out. Our team will review your requirements and get back to you shortly.",
+      returnHome: "Return to Home",
+      close: "Close"
     },
     companyValues: {
       caption1: "Empowering businesses through secure, scalable digital solutions, guided by a customer centric mindset.",

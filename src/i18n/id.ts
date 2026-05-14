@@ -16,15 +16,35 @@ export default {
     caption: "Semua yang Anda butuhkan untuk menyederhanakan operasional, meningkatkan produktivitas, dan membawa bisnis Anda melangkah lebih maju.",
   },
   approval: {
+    // Legacy keys (kept for compatibility if used elsewhere)
     title1: "Setujui",
     title2: "Dokumen",
     title3: "Kapan Saja, Di Mana Saja, Secara Instan.",
-    caption: "Sistem persetujuan surat digital kami mempermudah alur dokumen, mengurangi keterlambatan, dan memastikan operasional bisnis Anda berjalan efisien, sambil menjaga proses persetujuan tetap transparan, aman, dan mudah dipantau secara real-time.",
+
+    // Section 2 headline
+    headlinePrefix: "Produk Unggulan Shifd Labs:",
+    headlineHighlight: "Mendorong Pertumbuhan",
+    caption: "Temukan berbagai fitur yang menyederhanakan operasional, meningkatkan produktivitas, dan memastikan kepatuhan bisnis Anda dengan presisi dan kejelasan.",
+    ctaButton: "Mulai Uji Coba Gratis",
+
     features: {
-        description1: "Tampilan terpusat untuk memantau seluruh aktivitas dokumen secara real time. Lacak status, persetujuan tertunda, dan surat yang selesai dalam satu antarmuka yang rapi dan terorganisir.",
-        description2: "Otomatiskan alur dokumen ke pihak yang tepat. Percepat pengambilan keputusan, tingkatkan akuntabilitas, dan simpan riwayat persetujuan yang lengkap serta mudah ditelusuri.",
-        description3: "Tandatangani dokumen secara aman dari mana saja. Hilangkan proses cetak dan pindai tanpa mengurangi keabsahan hukum dan integritas dokumen.",
-        description4: "Buat nomor dokumen sesuai standar internal Anda. Kelola, lacak, dan arsipkan dokumen dengan lebih efisien di seluruh departemen.",
+      title1: "Dasbor Terpadu",
+      description1: "Tampilan terpusat untuk memantau seluruh aktivitas secara real time. Lacak status, item tertunda, dan tugas yang selesai dengan visualisasi yang intuitif.",
+
+      title2: "Alur Kerja Elektronik",
+      description2: "Otomatiskan alur dokumen ke pihak yang tepat, percepat pengambilan keputusan, dan simpan riwayat lengkap yang mudah ditelusuri untuk setiap proses bisnis.",
+
+      title3: "Persetujuan Berlapis",
+      description3: "Rancang dan jalankan hierarki persetujuan multi-tahap yang kompleks dengan mudah. Pastikan setiap keputusan penting mengikuti protokol organisasi Anda.",
+
+      title4: "Tanpa Kertas dengan Output PDF",
+      description4: "Beralih ke lingkungan digital yang sepenuhnya aman. Hasilkan laporan PDF profesional dan dokumentasi terautentikasi hanya dengan satu klik.",
+
+      title5: "Tanda Tangan Elektronik",
+      description5: "Tandatangani dokumen secara aman dari mana saja di seluruh dunia. Hilangkan kebutuhan untuk mencetak dan memindai dokumen fisik.",
+
+      title6: "Format Penomoran Dokumen",
+      description6: "Buat format penomoran yang fleksibel sesuai standar internal Anda. Kelola dan lacak file dengan efisien di seluruh departemen.",
     }
   },
   services: {
@@ -93,14 +113,37 @@ export default {
     contactUs: "Hubungi Kami",
   },
   contactUs: {
+    badge: "Keunggulan Terverifikasi",
+    heading: "Jadwalkan konsultasi gratis Anda",
+    subtitle: "Kembangkan infrastruktur perusahaan Anda dengan presisi arsitektural. Konsultasikan bersama kami untuk menyusun roadmap yang disesuaikan dengan evolusi digital perusahaan Anda.",
+    features: {
+      scalableTitle: "Infrastruktur yang Skalabel",
+      scalableDesc: "Solusi berbasis cloud yang dirancang untuk berkembang bersama kebutuhan bisnis Anda.",
+      expertTitle: "Konsultasi Ahli",
+      expertDesc: "Akses langsung kepada kami untuk strategi teknis dan perencanaan implementasi.",
+    },
     form: {
-      title: "Jadwalkan konsultasi gratis dengan tim kami dan mulai hari ini",
       fullName: "Nama Lengkap",
+      fullNamePlaceholder: "John Doe",
       email: "Email",
+      emailPlaceholder: "john@perusahaan.com",
       phoneNumber: "Nomor Telepon",
+      phonePlaceholder: "+62 812 3456 7890",
       briefDescription: "Deskripsi Singkat",
-      briefDescriptionPlaceholder: "Saya ingin mendiskusikan proyek ERP",
+      briefDescriptionPlaceholder: "Ceritakan kebutuhan proyek Anda...",
       submitButton: "Kirim Permintaan"
+    },
+    preferDirect: "Lebih suka kontak langsung?",
+    whatsapp: "WhatsApp",
+    whatsappLabel: "Chat Instan",
+    emailSupport: "Email Support",
+    emailLabel: "Respons 24/7",
+    loading: "Mengirim permintaan Anda...",
+    success: {
+      title: "Permintaan Berhasil Dikirim",
+      message: "Terima kasih telah menghubungi kami. Tim kami akan meninjau kebutuhan Anda dan segera menghubungi Anda.",
+      returnHome: "Kembali ke Beranda",
+      close: "Tutup"
     },
     companyValues: {
       caption1: "Memberdayakan bisnis melalui solusi digital yang aman dan mudah dikembangkan, dengan pendekatan yang berfokus pada kebutuhan pelanggan.",
