@@ -9,7 +9,7 @@ export default {
     },
     caption: "We deliver advanced and innovative solutions designed to empower your business with the tools and strategies needed for sustainable growth, ensuring you stay ahead in an ever evolving technological landscape.",
     whyButton: "Why Shifd?",
-    learnServicesButton: "Learn Shifd Solution →"  
+    learnServicesButton: "Learn Shifd Solution →"
   },
   productIntroduction: {
     title: "Discover the Tools Powering Smarter, Faster Business Growth",
@@ -157,10 +157,24 @@ export default {
     }
   },
   aboutUs: {
-    mainDescription: "Shifd is an IT consulting and services company specializing in the development of enterprise-level software solutions for administration, warehousing, and corporate company profile platforms.",
-    missionTitle: "We empower businesses through secure, scalable digital solutions, driven by a customer centric mindset. Our flagship strengths include reliable after sales service, cloud based systems, dedicated support, technical excellence, and a strong commitment to security and reliability. Giving you the confidence to take your next step forward.",
+    badge: "Enterprise Excellence",
+    heroHeadline: "Precision IT Solutions for",
+    heroHeadlineHighlight: "Modern Business",
+    mainDescription: "Shifd is an IT consulting and services company specializing in the development of software solutions for administration, warehousing, small and medium-sized enterprises (SMEs), and company profile platforms.",
+    featureScalable: "Scalable Architecture",
+    featureSecure: "Secure Infrastructure",
+    missionSectionTitle: "Empowering Your Digital Evolution",
+    missionSectionCaption: "We bridge the gap between complex technical requirements and intuitive user experiences through a customer-centric mindset.",
+    missionCardTitle: "Our Mission",
+    missionTitle: "We empower businesses through secure, scalable digital solutions, driven by a customer-centric mindset. Our flagship strengths include reliable after-sales service, cloud-based systems, dedicated support, technical excellence, and a strong commitment to security and reliability giving you the confidence to take your next step forward.",
+    technicalMasteryTitle: "Technical Mastery",
+    technicalMasteryDesc: "Deep expertise in modern tech stacks and high-performance applications tailored for your growth.",
+    cloudReadyTitle: "Cloud Ready",
+    cloudReadyDesc: "Seamless migration and management of cloud-based ecosystems.",
     callToActionQuestion: "Are you ready to grow your potential?",
     callToActionCaption: "Get a free consultation with our team, Shifd is here to help you boost business efficiency and team productivity!",
     whatsAppUs: "WhatsApp Us",
+    preferDirect: "Got questions?",
+    preferDirectDesc: "We're on WhatsApp and ready to help.",
   }
 }
