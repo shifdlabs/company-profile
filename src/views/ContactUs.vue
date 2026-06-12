@@ -136,8 +136,13 @@
               ></textarea>
             </div>
 
+            <!-- Validation error -->
+            <p v-if="formError" class="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-2.5">
+              {{ formError }}
+            </p>
+
             <!-- Submit Button -->
-            <button 
+            <button
               type="submit"
               class="w-full flex items-center justify-center gap-2 bg-[#2f80ed] hover:bg-[#1a6fd4] active:bg-[#1560c0] text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-200/50"
               style="font-family: 'Inter', sans-serif;"
@@ -274,17 +279,50 @@ const form = reactive({
 
 const loading = ref(false)
 const showSuccessDialog = ref(false)
+const formError = ref('')
 const router = useRouter()
 
+const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,255}\.[^\s@]{2,}$/
+const PHONE_RE = /^\d{7,15}$/
+
+function validateForm(): boolean {
+  const name = form.name.trim()
+  const email = form.email.trim()
+  const phone = form.phone.trim()
+  const desc = form.description.trim()
+
+  if (!name || name.length > 100) {
+    formError.value = 'Nama harus diisi dan tidak boleh lebih dari 100 karakter.'
+    return false
+  }
+  if (!EMAIL_RE.test(email)) {
+    formError.value = 'Format email tidak valid.'
+    return false
+  }
+  if (phone && !PHONE_RE.test(phone)) {
+    formError.value = 'Nomor telepon harus terdiri dari 7–15 digit angka.'
+    return false
+  }
+  if (!desc || desc.length > 2000) {
+    formError.value = 'Deskripsi harus diisi dan tidak boleh lebih dari 2000 karakter.'
+    return false
+  }
+
+  formError.value = ''
+  return true
+}
+
 async function handleSubmit() {
+  if (!validateForm()) return
+
   loading.value = true
 
   try {
     const params = new URLSearchParams()
-    params.append('name', form.name)
-    params.append('email', form.email)
-    params.append('phone', form.phone)
-    params.append('description', form.description || '')
+    params.append('name', form.name.trim().slice(0, 100))
+    params.append('email', form.email.trim().slice(0, 254))
+    params.append('phone', form.phone.trim().slice(0, 15))
+    params.append('description', form.description.trim().slice(0, 2000))
 
     await fetch(
       'https://script.google.com/macros/s/AKfycbwtV52U3FeSpKlRTsNYKD93UTgBE9NTtg9i1PXMgj1hNVKDx7X8d2UmzCGddDM8sj0HVQ/exec',
@@ -295,12 +333,11 @@ async function handleSubmit() {
       }
     )
 
-    // karena no-cors, kita tidak bisa baca response
     showSuccessDialog.value = true
 
   } catch (err) {
     console.error(err)
-    alert('Submit failed')
+    formError.value = 'Pengiriman gagal. Silakan coba lagi.'
   } finally {
     loading.value = false
   }

@@ -10,6 +10,7 @@ import { XMarkIcon } from '@heroicons/vue/24/outline'
 import { onClickOutside } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
+import { getDefaultLang } from '@/i18n'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
@@ -36,8 +37,14 @@ withDefaults(
 
 const { t } = useI18n()
 
+interface NavItem {
+  name: string
+  to?: string
+  href?: string
+}
+
 // Reordered to match reference: Products & Services, About Us, Contact Us
-const navigation = computed(() => [
+const navigation = computed<NavItem[]>(() => [
   { name: t('header.aboutUs'), to: '/about-us' },
   { name: t('header.contactUs'), to: '/contact-us' },
 ])
@@ -46,7 +53,7 @@ const { locale } = useI18n()
 const langOpen = ref(false)
 const langMenu = ref<HTMLElement | null>(null)
 const mobileMenuOpen = ref(false)
-const currentLang = ref<Lang>((localStorage.getItem('lang') as Lang) || 'ENG')
+const currentLang = ref<Lang>(getDefaultLang())
 const productsOpen = ref(false)
 const productsMenu = ref<HTMLElement | null>(null)
 
@@ -64,10 +71,9 @@ onClickOutside(langMenu, () => { langOpen.value = false })
 onClickOutside(productsMenu, () => { productsOpen.value = false })
 
 onMounted(() => {
-  const savedLang = (localStorage.getItem('lang') as Lang) || 'ENG'
-  currentLang.value = savedLang
-  const i18nLang = savedLang === 'ID' ? 'id' : 'en'
-  locale.value = i18nLang
+  const lang = getDefaultLang()
+  currentLang.value = lang
+  locale.value = lang === 'ID' ? 'id' : 'en'
 })
 </script>
 
@@ -229,7 +235,7 @@ onMounted(() => {
           <a
             href="https://wa.me/6285111210462"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-[#2f57c9] hover:bg-[#2448a8] active:bg-[#1e3d93] text-white px-4 py-2 rounded-lg font-medium text-sm shadow-sm transition-all duration-200"
           >
             <i class="fa-brands fa-whatsapp text-base"></i>
@@ -361,7 +367,7 @@ onMounted(() => {
               <a
                 href="https://wa.me/6285111210462"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 class="flex w-full items-center justify-center gap-2.5 bg-[#2f57c9] hover:bg-[#2448a8] text-white py-3.5 rounded-xl font-semibold text-sm transition-all shadow-sm"
               >
                 <i class="fa-brands fa-whatsapp text-lg"></i>

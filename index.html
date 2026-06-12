@@ -16,7 +16,9 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
     <script nomodule>
-      document.body.innerHTML = '<p>Browser kamu tidak support. Silakan update.</p>'
+      var p = document.createElement('p');
+      p.textContent = 'Browser kamu tidak support. Silakan update.';
+      document.body.appendChild(p);
     </script>
   </body>
 </html>
