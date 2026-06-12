@@ -157,10 +157,24 @@ export default {
     }
   },
   aboutUs: {
-    mainDescription: "Shifd adalah perusahaan konsultan dan layanan IT yang berfokus pada pengembangan solusi perangkat lunak tingkat enterprise untuk sistem administrasi, manajemen pergudangan, dan platform company profile korporat.",
+    badge: "Keunggulan Enterprise",
+    heroHeadline: "Solusi IT Presisi untuk",
+    heroHeadlineHighlight: "Bisnis Modern",
+    mainDescription: "Shifd adalah perusahaan konsultan dan layanan IT yang berfokus pada pengembangan solusi perangkat lunak untuk administrasi, pergudangan, usaha kecil dan menengah (UKM), serta platform company profile.",
+    featureScalable: "Arsitektur Skalabel",
+    featureSecure: "Infrastruktur Aman",
+    missionSectionTitle: "Mendorong Evolusi Digital Anda",
+    missionSectionCaption: "Kami menjembatani kesenjangan antara kebutuhan teknis yang kompleks dan pengalaman pengguna yang intuitif melalui pendekatan yang berfokus pada pelanggan.",
+    missionCardTitle: "Misi Kami",
     missionTitle: "Kami memberdayakan bisnis melalui solusi digital yang aman dan mudah dikembangkan, didorong oleh pendekatan yang berfokus pada pelanggan. Kekuatan utama kami mencakup layanan purna jual yang andal, sistem berbasis cloud, dukungan khusus, keunggulan teknis, serta komitmen kuat terhadap keamanan dan keandalan memberikan Anda kepercayaan diri untuk melangkah maju.",
+    technicalMasteryTitle: "Penguasaan Teknis",
+    technicalMasteryDesc: "Keahlian mendalam dalam teknologi modern dan aplikasi berkinerja tinggi yang disesuaikan untuk pertumbuhan Anda.",
+    cloudReadyTitle: "Siap Cloud",
+    cloudReadyDesc: "Migrasi dan pengelolaan ekosistem berbasis cloud yang mulus.",
     callToActionQuestion: "Siap mengembangkan potensi Anda?",
     callToActionCaption: "Dapatkan konsultasi gratis bersama tim kami. Shifd siap membantu meningkatkan efisiensi bisnis dan produktivitas tim Anda!",
-    whatsAppUs: "WhatsApp Kami"
+    whatsAppUs: "WhatsApp Kami",
+    preferDirect: "Punya pertanyaan?",
+    preferDirectDesc: "Kami siap membantu di WhatsApp.",
   }
 }
