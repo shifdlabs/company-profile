@@ -6,14 +6,14 @@
     ===================== -->
     <div class="text-center mb-16">
 
-      <!-- Logo Badge (UI dari Stitch, logo file dari aset lama) -->
+      <!-- Logo Badge -->
       <div class="flex justify-center mb-8">
-        <div class="inline-flex items-center px-6 py-3 bg-white rounded-full shadow-sm border border-gray-100">
-          <img
-            src="/src/assets/shifd-approval-icon.svg"
-            alt="Shifd Approval"
-            class="w-10 h-10 rounded-xl mr-3 shadow-md flex-shrink-0"
-          />
+        <div class="inline-flex items-center px-5 py-2.5 bg-white rounded-full shadow-sm border border-gray-100">
+          <svg class="w-9 h-9 mr-3 flex-shrink-0" viewBox="0 0 24 24">
+            <rect x="4" y="7" width="12.5" height="12.5" rx="3.2" fill="#2f57c9" opacity="0.24"/>
+            <rect x="7.5" y="3.5" width="12.5" height="12.5" rx="3.2" fill="#2f57c9"/>
+            <path d="m10.6 9.7 2 2 3.4-3.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <div class="text-left">
             <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold leading-none">shifd</p>
             <p class="text-xl font-extrabold text-slate-800 leading-tight">Approval</p>
@@ -24,7 +24,7 @@
       <!-- Title -->
       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
         {{ $t('approval.headlinePrefix') }}
-        <span class="text-indigo-600">{{ $t('approval.headlineHighlight') }}</span>
+        <span class="text-[#2f57c9]">{{ $t('approval.headlineHighlight') }}</span>
       </h2>
 
       <!-- Subtitle -->
@@ -40,12 +40,12 @@
 
       <!-- ── HERO CARD: Seamless Dashboard ── -->
       <div
-        class="md:col-span-2 lg:col-span-2 feature-card bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-8 text-white relative overflow-hidden flex flex-col min-h-[340px] items-start"
+        class="md:col-span-2 lg:col-span-2 feature-card bg-gradient-to-br from-[#2f57c9] to-[#2448a8] rounded-3xl p-8 text-white relative overflow-hidden flex flex-col min-h-[340px] items-start"
       >
         <!-- Text content -->
         <div class="relative z-10">
           <h3 class="text-3xl font-bold mb-4">{{ $t('approval.features.title1') }}</h3>
-          <p class="text-indigo-100 text-lg max-w-sm leading-relaxed">
+          <p class="text-blue-100 text-lg max-w-sm leading-relaxed">
             {{ $t('approval.features.description1') }}
           </p>
           <div class="flex flex-wrap gap-2 mt-6">
@@ -114,7 +114,7 @@
 
       <!-- ── Electronic Workflow ── -->
       <div class="feature-card bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-start min-h-[340px]">
-        <div class="w-12 h-12 icon-box-indigo rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+        <div class="w-12 h-12 icon-box-blue-primary rounded-2xl flex items-center justify-center mb-6 shadow-sm">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 002-2h2a2 2 0 002 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           </svg>
@@ -125,11 +125,11 @@
         <!-- Draft → Review → Approve progress -->
         <div class="mt-auto w-full pt-4">
           <div class="flex items-center justify-between px-2">
-            <div class="w-8 h-8 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 text-[10px] font-bold">1</div>
-            <div class="flex-1 h-px bg-indigo-100 mx-2"></div>
-            <div class="w-8 h-8 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 text-[10px] font-bold">2</div>
-            <div class="flex-1 h-px bg-indigo-100 mx-2"></div>
-            <div class="w-8 h-8 rounded-full bg-indigo-600 shadow-sm flex items-center justify-center">
+            <div class="w-8 h-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2f57c9] text-[10px] font-bold">1</div>
+            <div class="flex-1 h-px bg-blue-100 mx-2"></div>
+            <div class="w-8 h-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2f57c9] text-[10px] font-bold">2</div>
+            <div class="flex-1 h-px bg-blue-100 mx-2"></div>
+            <div class="w-8 h-8 rounded-full bg-[#2f57c9] shadow-sm flex items-center justify-center">
               <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
               </svg>
@@ -145,7 +145,7 @@
 
       <!-- ── Multi Layer Approval ── -->
       <div class="feature-card bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-start min-h-[340px]">
-        <div class="w-12 h-12 icon-box-purple rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+        <div class="w-12 h-12 icon-box-blue-primary rounded-2xl flex items-center justify-center mb-6 shadow-sm">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           </svg>
@@ -157,16 +157,16 @@
         <div class="mt-auto w-full pt-4">
           <div class="flex flex-col space-y-3">
             <div class="flex items-center space-x-3">
-              <div class="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">L1</div>
-              <div class="h-1.5 flex-1 bg-indigo-100 rounded-full">
-                <div class="h-full w-full bg-indigo-500 rounded-full"></div>
+              <div class="w-6 h-6 rounded bg-[#2f57c9] flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">L1</div>
+              <div class="h-1.5 flex-1 bg-blue-100 rounded-full">
+                <div class="h-full w-full bg-[#2f57c9] rounded-full"></div>
               </div>
-              <span class="text-[10px] font-bold text-indigo-600 uppercase flex-shrink-0">Done</span>
+              <span class="text-[10px] font-bold text-[#2f57c9] uppercase flex-shrink-0">Done</span>
             </div>
             <div class="flex items-center space-x-3">
-              <div class="w-6 h-6 rounded bg-white border border-indigo-200 flex items-center justify-center text-[10px] text-indigo-400 font-bold flex-shrink-0">L2</div>
-              <div class="h-1.5 flex-1 bg-indigo-50 rounded-full">
-                <div class="h-full w-1/2 bg-indigo-400 rounded-full"></div>
+              <div class="w-6 h-6 rounded bg-white border border-blue-200 flex items-center justify-center text-[10px] text-[#60a5fa] font-bold flex-shrink-0">L2</div>
+              <div class="h-1.5 flex-1 bg-blue-50 rounded-full">
+                <div class="h-full w-1/2 bg-[#60a5fa] rounded-full"></div>
               </div>
               <span class="text-[10px] font-bold text-gray-400 uppercase flex-shrink-0">Pending</span>
             </div>
@@ -199,7 +199,7 @@
                 <p class="text-[8px] text-gray-400">2.4 MB • Encrypted</p>
               </div>
             </div>
-            <svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 text-[#2f57c9] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
             </svg>
           </div>
@@ -270,7 +270,7 @@
               <label class="text-[10px] font-bold text-gray-400 uppercase tracking-tight block">Generated Sequence</label>
               <div class="bg-white rounded-lg border border-gray-100 divide-y divide-gray-50">
                 <div class="px-3 py-2 flex justify-between items-center">
-                  <span class="text-[11px] font-mono text-indigo-600">INV-2024-001</span>
+                  <span class="text-[11px] font-mono text-[#2f57c9]">INV-2024-001</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 </div>
                 <div class="px-3 py-2 flex justify-between items-center">
@@ -304,8 +304,8 @@
     ===================== -->
     <div class="mt-16 text-center">
       <router-link
-        to="/contact-us"
-        class="cta-link group inline-flex items-center font-semibold px-10 py-3.5 rounded-xl transition-all duration-300 border border-[#6366f1]/50 text-[#6366f1] hover:border-[#6366f1] hover:bg-[#6366f1]/5 bg-transparent"
+        to="/approval"
+        class="cta-link group inline-flex items-center font-semibold px-6 py-2.5 rounded-xl transition-all duration-300 border border-[#2f57c9]/50 text-[#2f57c9] hover:border-[#2f57c9] hover:bg-[#2f57c9]/5 bg-transparent text-sm"
       >
         {{ $t('approval.ctaButton') }}
         <svg
@@ -345,9 +345,8 @@
 }
 
 /* Icon gradient boxes */
-.icon-box-indigo  { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); }
-.icon-box-purple  { background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); }
-.icon-box-blue    { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+.icon-box-blue-primary { background: linear-gradient(135deg, #2f57c9 0%, #2448a8 100%); }
+.icon-box-blue    { background: linear-gradient(135deg, #4068d4 0%, #2f57c9 100%); }
 .icon-box-emerald { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
 .icon-box-orange  { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
 </style>

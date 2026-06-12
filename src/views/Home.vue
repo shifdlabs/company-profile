@@ -17,7 +17,7 @@
 
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 border border-gray-300 bg-white/70 rounded-full px-4 py-1.5 mb-8 shadow-xs">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#2f80ed] flex-shrink-0"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#2f57c9] flex-shrink-0"></span>
               <span class="text-[11px] font-semibold tracking-widest text-[#5c5e61] uppercase">
                 Enterprise-Grade Digital Evolution
               </span>
@@ -27,7 +27,7 @@
             <h1 class="text-5xl sm:text-6xl lg:text-[68px] xl:text-7xl font-black leading-[1.04] tracking-tight text-[#1a1c1e] mb-6">
               <span>{{ $t('hero.title.part1') }}</span>
               {{ ' ' + $t('hero.title.part2') + ' ' }}
-              <em class="hero-italic text-[#2f80ed]">{{ $t('hero.title.part3') }}</em>
+              <em class="hero-italic text-[#2f57c9]">{{ $t('hero.title.part3') }}</em>
               {{ ' ' + $t('hero.title.part4') + ' ' }}
               <span>{{ $t('hero.title.part5') }}</span>
             </h1>
@@ -48,7 +48,7 @@
 
               <a
                 href="#shifd-services-section"
-                class="inline-flex items-center gap-2 text-[#1a1c1e] hover:text-[#2f80ed] font-bold text-sm transition-colors duration-200 whitespace-nowrap"
+                class="inline-flex items-center gap-2 text-[#1a1c1e] hover:text-[#2f57c9] font-bold text-sm transition-colors duration-200 whitespace-nowrap"
               >
                 Explore Solutions
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -65,9 +65,9 @@
               <!-- STATUS card: floating top-right -->
               <div class="absolute -top-6 -right-2 sm:-top-8 sm:right-0 lg:-top-6 lg:-right-6 z-20 hero-float-fast">
                 <div class="flex items-center gap-3 bg-[#1a1c1e] text-white rounded-2xl px-4 py-3 shadow-2xl">
-                  <div class="w-9 h-9 rounded-xl bg-[#2f80ed]/25 flex items-center justify-center flex-shrink-0">
+                  <div class="w-9 h-9 rounded-xl bg-[#2f57c9]/25 flex items-center justify-center flex-shrink-0">
                     <!-- Shield check icon -->
-                    <svg class="w-5 h-5 text-[#2f80ed]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-[#2f57c9]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
                     </svg>
                   </div>
@@ -87,9 +87,9 @@
 
                   <!-- Card header: icon + placeholder text + LIVE badge -->
                   <div class="flex items-center gap-3 mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-[#f0f6ff] border border-[#2f80ed]/15 flex items-center justify-center flex-shrink-0">
+                    <div class="w-10 h-10 rounded-xl bg-[#e9f0ff] border border-[#2f57c9]/15 flex items-center justify-center flex-shrink-0">
                       <!-- Analytics icon -->
-                      <svg class="w-5 h-5 text-[#2f80ed]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                      <svg class="w-5 h-5 text-[#2f57c9]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
                       </svg>
                     </div>
@@ -97,7 +97,7 @@
                       <div class="h-2.5 bg-gray-200 rounded-full w-32 mb-2"></div>
                       <div class="h-2 bg-gray-100 rounded-full w-20"></div>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest text-[#2f80ed] bg-[#f0f6ff] border border-[#2f80ed]/20 px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">
+                    <span class="text-[10px] font-bold tracking-widest text-[#2f57c9] bg-[#e9f0ff] border border-[#2f57c9]/20 px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">
                       LIVE
                     </span>
                   </div>
@@ -106,9 +106,9 @@
                   <div class="space-y-2.5 mb-5">
                     <!-- Active row -->
                     <div class="flex items-center gap-3 bg-[#f8f9fb] rounded-xl px-4 py-3">
-                      <span class="w-2 h-2 rounded-full bg-[#2f80ed] flex-shrink-0 hero-pulse-dot"></span>
+                      <span class="w-2 h-2 rounded-full bg-[#2f57c9] flex-shrink-0 hero-pulse-dot"></span>
                       <div class="h-2 bg-gray-300 rounded-full flex-1"></div>
-                      <div class="h-2 bg-[#2f80ed]/30 rounded-full w-14 flex-shrink-0 ml-auto"></div>
+                      <div class="h-2 bg-[#2f57c9]/30 rounded-full w-14 flex-shrink-0 ml-auto"></div>
                     </div>
                     <!-- Inactive row -->
                     <div class="flex items-center gap-3 bg-[#f8f9fb] rounded-xl px-4 py-3">
@@ -124,7 +124,7 @@
                       <p class="text-[42px] font-black text-[#1a1c1e] tracking-tight leading-none">99.98%</p>
                       <p class="text-xs text-[#5c5e61] mt-1 font-medium tracking-wide">Uptime SLA</p>
                     </div>
-                    <div class="w-9 h-9 rounded-full bg-[#2f80ed] flex items-center justify-center shadow-md flex-shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-[#2f57c9] flex items-center justify-center shadow-md flex-shrink-0">
                       <span class="text-[10px] font-bold text-white">AI</span>
                     </div>
                   </div>
@@ -136,12 +136,12 @@
               <div class="absolute -bottom-6 left-0 sm:-bottom-8 sm:left-4 lg:-bottom-6 lg:left-6 z-20 hero-float-slow">
                 <div class="bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3 flex items-center gap-4">
                   <div class="min-w-0">
-                    <p class="text-sm font-bold text-[#2f80ed] whitespace-nowrap">+32% Conversion</p>
+                    <p class="text-sm font-bold text-[#2f57c9] whitespace-nowrap">+32% Conversion</p>
                     <p class="text-[9px] uppercase tracking-widest text-[#5c5e61] font-medium whitespace-nowrap">Infrastructure Optimization</p>
                   </div>
-                  <div class="w-9 h-9 rounded-xl bg-[#f0f6ff] flex items-center justify-center flex-shrink-0">
+                  <div class="w-9 h-9 rounded-xl bg-[#e9f0ff] flex items-center justify-center flex-shrink-0">
                     <!-- Trend up icon -->
-                    <svg class="w-4.5 h-4.5 text-[#2f80ed]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="w-4.5 h-4.5 text-[#2f57c9]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
                     </svg>
                   </div>
@@ -199,7 +199,7 @@
         <!-- Main headline -->
         <h2 class="text-[32px] sm:text-[40px] md:text-[48px] font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-4 sm:mb-5">
           {{ $t('services.cta1') }}
-          <span class="inline-block bg-[#1363DF] text-white px-4 py-2 rounded-xl shadow-lg ml-1 sm:ml-2 mt-2 sm:mt-0">
+          <span class="inline-block bg-[#2f57c9] text-white px-4 py-2 rounded-xl shadow-lg ml-1 sm:ml-2 mt-2 sm:mt-0">
             {{ $t('services.cta2') }}
           </span>
         </h2>
@@ -438,7 +438,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp Us"
-              class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#1363DF] hover:bg-[#0f55c4] rounded-2xl hover:shadow-lg hover:shadow-[#1363DF]/30 transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
+              class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#2f57c9] hover:bg-[#2448a8] rounded-2xl hover:shadow-lg hover:shadow-[#2f57c9]/30 transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
             >
               <svg
                 aria-hidden="true"
@@ -455,7 +455,7 @@
             <router-link
               to="/contact-us"
               aria-label="Contact Us"
-              class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold bg-white border-2 border-[#1363DF] text-[#1363DF] hover:bg-[#1363DF]/5 hover:border-[#0f55c4] rounded-2xl transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
+              class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold bg-white border-2 border-[#2f57c9] text-[#2f57c9] hover:bg-[#2f57c9]/5 hover:border-[#2448a8] rounded-2xl transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
             >
               {{ $t('callToAction.contactUs') }}
             </router-link>
@@ -557,7 +557,7 @@ onMounted(() => {
   100% { transform: translateX(300%); }
 }
 .hero-scan-bar {
-  background: linear-gradient(90deg, transparent 0%, #2f80ed 40%, #7ab5f7 60%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #2f57c9 40%, #7b92e0 60%, transparent 100%);
   animation: heroScanBar 2.8s ease-in-out infinite;
 }
 

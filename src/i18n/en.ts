@@ -25,7 +25,7 @@ export default {
     headlinePrefix: "Shifd Labs' Core Offerings:",
     headlineHighlight: "Powering Growth",
     caption: "Explore the tools that streamline operations, boost productivity, and ensure compliance with precision and clarity.",
-    ctaButton: "Start Your Free Trial",
+    ctaButton: "Learn the Benefits",
 
     features: {
       title1: "Seamless Dashboard",

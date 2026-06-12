@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
           <div class="flex items-center gap-4 mb-[24px]">
             <!-- Shifd Logo -->
             <img src="/src/assets/app-logo.svg" alt="Shifd Logo" class="h-16 w-auto">
-            <span class="text-[42px] font-['DM_Serif_Text'] leading-none text-[#2f80ed]">Shifd</span>
+            <span class="text-[42px] font-['DM_Serif_Text'] leading-none text-[#2f57c9]">Shifd</span>
           </div>
           <p class="text-base text-[#565e74] leading-relaxed">
             Empowering your digital transformation with innovative solutions.

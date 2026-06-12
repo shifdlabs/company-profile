@@ -5,11 +5,13 @@ import { analytics, logEvent } from '@/firebase'  // ✅ tambah ini
 import Home from '@/views/Home.vue'
 import ContactUs from '@/views/ContactUs.vue'
 import AboutUs from '@/views/AboutUs.vue'
+import Approval from '@/views/Approval.vue'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'Home', component: Home },
   { path: '/contact-us', name: 'ContactUs', component: ContactUs },
   { path: '/about-us', name: 'AboutUs', component: AboutUs },
+  { path: '/approval', name: 'Approval', component: Approval },
 ]
 
 const router = createRouter({
@@ -24,7 +26,14 @@ const router = createRouter({
   }
 })
 
-// ✅ tambah ini
+// Force full browser reload on every navigation (except initial load)
+router.beforeEach((to, from) => {
+  if (from.name !== undefined) {
+    window.location.href = to.fullPath
+    return false
+  }
+})
+
 router.afterEach((to) => {
   logEvent(analytics, 'page_view', {
     page_title: String(to.name ?? to.path),

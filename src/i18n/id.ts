@@ -25,7 +25,7 @@ export default {
     headlinePrefix: "Produk Unggulan Shifd Labs:",
     headlineHighlight: "Mendorong Pertumbuhan",
     caption: "Temukan berbagai fitur yang menyederhanakan operasional, meningkatkan produktivitas, dan memastikan kepatuhan bisnis Anda dengan presisi dan kejelasan.",
-    ctaButton: "Mulai Uji Coba Gratis",
+    ctaButton: "Pelajari Manfaatnya",
 
     features: {
       title1: "Dasbor Terpadu",
