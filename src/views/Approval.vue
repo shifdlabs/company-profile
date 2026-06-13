@@ -659,6 +659,65 @@
                   </div>
                 </template>
 
+                <!-- 6: Email Notification -->
+                <template v-else-if="activeFeature === 6">
+                  <h3 class="text-[26px] font-black tracking-[-0.02em] text-white">{{ $t('approvalPage.showcase.f6.title') }}</h3>
+                  <p class="text-[15px] text-[#aab6cf] leading-relaxed mt-2.5 max-w-[520px]">{{ $t('approvalPage.showcase.f6.desc') }}</p>
+                  <div class="mt-6 bg-white rounded-[20px] overflow-hidden" style="box-shadow: 0 40px 80px -40px rgba(0,0,0,.7)">
+                    <!-- Email client chrome -->
+                    <div class="bg-[#f7f9fd] border-b border-[#eef1f7] px-5 py-3 flex items-center gap-2.5">
+                      <div class="flex gap-1.5">
+                        <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+                      </div>
+                      <div class="flex-1 mx-3 bg-white border border-[#e3e9f2] rounded-lg px-3 py-1 text-[11px] text-[#9aa6bd] font-mono truncate">
+                        {{ $t('approvalPage.showcase.f6.from') }}
+                      </div>
+                    </div>
+                    <!-- Email meta -->
+                    <div class="px-5 pt-4 pb-3 border-b border-[#f2f5fa]">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                          <div class="w-9 h-9 rounded-full bg-[#e9f0ff] flex items-center justify-center shrink-0 text-[13px] font-black text-[#2f57c9]">A</div>
+                          <div>
+                            <p class="text-[13px] font-bold text-[#16233f]">{{ $t('approvalPage.showcase.f6.from') }}</p>
+                            <p class="text-[11px] text-[#9aa6bd]">{{ $t('approvalPage.showcase.f6.to') }}</p>
+                          </div>
+                        </div>
+                        <span class="text-[11px] text-[#9aa6bd] shrink-0 pt-0.5">09:15</span>
+                      </div>
+                      <p class="font-black text-[15px] text-[#16233f] mt-3">{{ $t('approvalPage.showcase.f6.subject') }}</p>
+                    </div>
+                    <!-- Email body -->
+                    <div class="px-5 py-4">
+                      <div class="flex flex-col gap-3">
+                        <div class="bg-[#f7f9fd] border border-[#eef1f7] rounded-[13px] px-4 py-3 flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-[9px] bg-[#e9f0ff] flex items-center justify-center shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="#2f57c9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>
+                            </svg>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <p class="text-[11px] font-bold text-[#9aa6bd] uppercase tracking-wide">{{ $t('approvalPage.showcase.f6.docLabel') }}</p>
+                            <p class="text-[13px] font-bold text-[#16233f] truncate">{{ $t('approvalPage.showcase.f6.docName') }}</p>
+                          </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-[#fef3f2] border border-[#fecaca] rounded-[11px] px-4 py-2.5">
+                          <svg class="w-4 h-4 shrink-0" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2"/>
+                          </svg>
+                          <p class="text-[13px] text-[#dc2626]"><span class="font-bold">{{ $t('approvalPage.showcase.f6.deadlineLabel') }}:</span> {{ $t('approvalPage.showcase.f6.deadlineVal') }}</p>
+                        </div>
+                        <button class="w-full rounded-[11px] py-3 text-[13px] font-black text-white text-center" style="background: linear-gradient(135deg,#3a63e0,#2f6be8)">
+                          {{ $t('approvalPage.showcase.f6.ctaBtn') }}
+                        </button>
+                      </div>
+                      <p class="text-center text-[10px] text-[#9aa6bd] mt-3">{{ $t('approvalPage.showcase.f6.sentNote') }}</p>
+                    </div>
+                  </div>
+                </template>
+
                 <!-- 5: Template -->
                 <template v-else-if="activeFeature === 5">
                   <h3 class="text-[26px] font-black tracking-[-0.02em] text-white">{{ $t('approvalPage.showcase.f5.title') }}</h3>
@@ -851,6 +910,7 @@ const featureIcons: string[] = [
   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M5 3 2.5 5.5"/><path d="M19 3l2.5 2.5"/></svg>`,
   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M3.51 9a9 9 0 1 0 2.13-3.36L3 8"/></svg>`,
   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="9" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></svg>`,
+  `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
 ]
 
 onMounted(() => {
@@ -858,7 +918,7 @@ onMounted(() => {
     stage.value = (stage.value + 1) % 4
   }, 1600)
   featTimer = setInterval(() => {
-    if (autoFeat.value) activeFeature.value = (activeFeature.value + 1) % 6
+    if (autoFeat.value) activeFeature.value = (activeFeature.value + 1) % 7
   }, 4200)
 })
 

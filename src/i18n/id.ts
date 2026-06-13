@@ -240,6 +240,7 @@ export default {
         { sub: "Ketepatan waktu", label: "SLA & Eskalasi Otomatis", num: "04" },
         { sub: "Kontrol", label: "Recall Surat", num: "05" },
         { sub: "Kecepatan", label: "Template Surat", num: "06" },
+        { sub: "Notifikasi", label: "Notifikasi Eksternal (Email)", num: "07" },
       ],
       f0: {
         title: "Setiap aksi tercatat, permanen",
@@ -318,6 +319,19 @@ export default {
         chainLabel: "Approval chain",
         chainValue: "L1 Manajer → L2 Direktur",
         autoLabel: "TER-SET OTOMATIS",
+      },
+      f6: {
+        title: "Notifikasi yang sampai ke inbox, bukan hanya ke sistem",
+        desc: "Setiap surat yang masuk ke antrian approver memicu email otomatis berisi nama dokumen dan tenggat persetujuan. Email dilengkapi tombol yang langsung mengarahkan approver ke halaman persetujuan di aplikasi, tanpa perlu mencari surat secara manual.",
+        from: "approval-system@shifd.id",
+        to: "manager@perusahaan.com",
+        subject: "Ada surat menunggu persetujuan Anda",
+        docLabel: "Surat",
+        docName: "Pengajuan Anggaran Operasional Q3",
+        deadlineLabel: "Deadline",
+        deadlineVal: "20 Jun 2025",
+        ctaBtn: "Buka & Setujui Sekarang",
+        sentNote: "Dikirim otomatis · 09:15",
       },
     },
     why: {

@@ -240,6 +240,7 @@ export default {
         { sub: "Timeliness", label: "SLA & Auto Escalation", num: "04" },
         { sub: "Control", label: "Letter Recall", num: "05" },
         { sub: "Speed", label: "Letter Templates", num: "06" },
+        { sub: "Notification", label: "External Notification (Email)", num: "07" },
       ],
       f0: {
         title: "Every action recorded, permanently",
@@ -318,6 +319,19 @@ export default {
         chainLabel: "Approval chain",
         chainValue: "L1 Manager → L2 Director",
         autoLabel: "AUTO-SET",
+      },
+      f6: {
+        title: "Notifications that reach the inbox, not just the system",
+        desc: "Every document entering an approver's queue triggers an automated email containing the document name and approval deadline. The email includes a button that redirects the approver directly to the approval page in the app, without having to search for the document manually.",
+        from: "approval-system@shifd.id",
+        to: "manager@company.com",
+        subject: "A document is awaiting your approval",
+        docLabel: "Letter",
+        docName: "Q3 Operational Budget Proposal",
+        deadlineLabel: "Deadline",
+        deadlineVal: "Jun 20, 2025",
+        ctaBtn: "Open & Approve Now",
+        sentNote: "Sent automatically · 09:15",
       },
     },
     why: {
