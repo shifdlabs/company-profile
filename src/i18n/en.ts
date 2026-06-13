@@ -323,8 +323,6 @@ export default {
       f6: {
         title: "Notifications that reach the inbox, not just the system",
         desc: "Every document entering an approver's queue triggers an automated email containing the document name and approval deadline. The email includes a button that redirects the approver directly to the approval page in the app, without having to search for the document manually.",
-        from: "approval-system@shifd.id",
-        to: "manager@company.com",
         subject: "A document is awaiting your approval",
         docLabel: "Letter",
         docName: "Q3 Operational Budget Proposal",

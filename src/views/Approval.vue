@@ -672,7 +672,7 @@
                         <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
                       </div>
                       <div class="flex-1 mx-3 bg-white border border-[#e3e9f2] rounded-lg px-3 py-1 text-[11px] text-[#9aa6bd] font-mono truncate">
-                        {{ $t('approvalPage.showcase.f6.from') }}
+                        approval-system@shifd.id
                       </div>
                     </div>
                     <!-- Email meta -->
@@ -681,8 +681,8 @@
                         <div class="flex items-center gap-3">
                           <div class="w-9 h-9 rounded-full bg-[#e9f0ff] flex items-center justify-center shrink-0 text-[13px] font-black text-[#2f57c9]">A</div>
                           <div>
-                            <p class="text-[13px] font-bold text-[#16233f]">{{ $t('approvalPage.showcase.f6.from') }}</p>
-                            <p class="text-[11px] text-[#9aa6bd]">{{ $t('approvalPage.showcase.f6.to') }}</p>
+                            <p class="text-[13px] font-bold text-[#16233f]">approval-system@shifd.id</p>
+                            <p class="text-[11px] text-[#9aa6bd]">manager@perusahaan.com</p>
                           </div>
                         </div>
                         <span class="text-[11px] text-[#9aa6bd] shrink-0 pt-0.5">09:15</span>

@@ -323,8 +323,6 @@ export default {
       f6: {
         title: "Notifikasi yang sampai ke inbox, bukan hanya ke sistem",
         desc: "Setiap surat yang masuk ke antrian approver memicu email otomatis berisi nama dokumen dan tenggat persetujuan. Email dilengkapi tombol yang langsung mengarahkan approver ke halaman persetujuan di aplikasi, tanpa perlu mencari surat secara manual.",
-        from: "approval-system@shifd.id",
-        to: "manager@perusahaan.com",
         subject: "Ada surat menunggu persetujuan Anda",
         docLabel: "Surat",
         docName: "Pengajuan Anggaran Operasional Q3",
