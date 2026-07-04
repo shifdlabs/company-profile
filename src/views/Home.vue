@@ -158,16 +158,89 @@
 
     <!-- SECTION 2 APPROVAL STARTS -->
     <div
-      class="relative isolate overflow-hidden bg-gray-50 reveal opacity-0"
+      class="relative isolate overflow-hidden bg-gray-50 reveal opacity-0 min-h-screen flex items-center"
       id="products-services"
     >
       <!-- Smooth gradient top — transisi dari Hero (#f8f9fb) ke bg-gray-50 -->
       <div class="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#f8f9fb] to-transparent pointer-events-none z-10" />
-    
+
       <!-- Smooth gradient bottom — transisi ke section berikutnya -->
       <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
-    
-      <ApprovalFeatures />
+
+      <section class="w-full max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="text-xs font-extrabold uppercase tracking-widest text-[#2f57c9] mb-4">{{ $t('whatWeDo.label') }}</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            {{ $t('whatWeDo.title1') }} <span class="text-[#2f57c9]">{{ $t('whatWeDo.title2') }}</span>
+          </h2>
+          <p class="text-lg text-slate-600 max-w-xl mx-auto">{{ $t('whatWeDo.subtitle') }}</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Pillar 01: Products -->
+          <div class="feature-card bg-white border border-gray-100 rounded-3xl p-8 lg:p-10 flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <div class="icon-box-blue-primary rounded-2xl flex items-center justify-center shadow-sm" style="width:52px;height:52px;">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15 2 2 4-4"/></svg>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">{{ $t('whatWeDo.pillar1') }}</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">{{ $t('whatWeDo.products.title') }}</h3>
+            <p class="text-slate-500 text-[15px] leading-relaxed mb-5">{{ $t('whatWeDo.products.description') }}</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="inline-flex items-center gap-2 bg-[#e9f0ff] border border-[#d3e1ff] text-[#2f57c9] text-[13px] font-bold px-3 py-1.5 rounded-full">
+                <svg class="w-[15px] h-[15px]" viewBox="0 0 24 24"><rect x="4" y="7" width="12.5" height="12.5" rx="3.2" fill="#2f57c9" opacity="0.24"/><rect x="7.5" y="3.5" width="12.5" height="12.5" rx="3.2" fill="#2f57c9"/><path d="m10.6 9.7 2 2 3.4-3.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                {{ $t('whatWeDo.products.tag') }}
+              </span>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full bg-[#e9f0ff] flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="#2f57c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="text-sm font-medium text-slate-700">{{ $t('whatWeDo.products.point1') }}</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full bg-[#e9f0ff] flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="#2f57c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="text-sm font-medium text-slate-700">{{ $t('whatWeDo.products.point2') }}</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full bg-[#e9f0ff] flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="#2f57c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="text-sm font-medium text-slate-700">{{ $t('whatWeDo.products.point3') }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 02: Services -->
+          <div class="feature-card bg-white border border-gray-100 rounded-3xl p-8 lg:p-10 flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <div class="rounded-2xl bg-[#1a1c1e] flex items-center justify-center shadow-sm" style="width:52px;height:52px;">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2 2 7l10 5 10-5-10-5z"/><path stroke-linecap="round" stroke-linejoin="round" d="m2 17 10 5 10-5"/><path stroke-linecap="round" stroke-linejoin="round" d="m2 12 10 5 10-5"/></svg>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">{{ $t('whatWeDo.pillar2') }}</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">{{ $t('whatWeDo.services.title') }}</h3>
+            <p class="text-slate-500 text-[15px] leading-relaxed mb-5">{{ $t('whatWeDo.services.description') }}</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-slate-100 border border-slate-200 text-slate-700 text-[13px] font-bold px-3 py-1.5 rounded-full">{{ $t('whatWeDo.services.tag1') }}</span>
+              <span class="bg-slate-100 border border-slate-200 text-slate-700 text-[13px] font-bold px-3 py-1.5 rounded-full">{{ $t('whatWeDo.services.tag2') }}</span>
+              <span class="bg-slate-100 border border-slate-200 text-slate-700 text-[13px] font-bold px-3 py-1.5 rounded-full">{{ $t('whatWeDo.services.tag3') }}</span>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="#1a1c1e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="text-sm font-medium text-slate-700">{{ $t('whatWeDo.services.point1') }}</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="#1a1c1e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="text-sm font-medium text-slate-700">{{ $t('whatWeDo.services.point2') }}</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="#1a1c1e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="text-sm font-medium text-slate-700">{{ $t('whatWeDo.services.point3') }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- SECTION 2 APPROVAL END -->
 
@@ -272,62 +345,62 @@
         </div>
       </div>
 
-      <div class="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-20 text-white text-center px-6">
-        <div class="flex flex-col items-center gap-1">
-          <div class="h-20 w-18 flex items-center justify-center mb-4">
-            <img :src="cloudBasedIcon" class="max-h-full max-w-full invert brightness-0" />
+      <div class="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14 mt-20 text-white text-center px-6">
+        <div class="flex flex-col items-center">
+          <div class="h-12 flex items-center justify-center mb-6">
+            <img :src="cloudBasedIcon" class="h-12 w-auto invert brightness-0" alt="Cloud Based" />
           </div>
-          <p class="text-[25px] font-semibold h-10 flex items-center justify-center mb-3">Cloud Based</p>
-          <p class="text-white/80 text-[20px] leading-[1.7] max-w-xs min-h-[140px]">
+          <p class="text-[25px] font-semibold leading-snug mb-3">Cloud Based</p>
+          <p class="text-white/80 text-[18px] leading-[1.7] max-w-xs">
             {{ $t('companyValues.value1') }}
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-1">
-          <div class="h-16 w-16 flex items-center justify-center mb-8">
-            <img :src="dedicatedSupportIcon" class="max-h-full max-w-full invert brightness-0" />
+        <div class="flex flex-col items-center">
+          <div class="h-12 flex items-center justify-center mb-6">
+            <img :src="dedicatedSupportIcon" class="h-12 w-auto invert brightness-0" alt="Dedicated Support" />
           </div>
-          <p class="text-[25px] font-semibold h-10 flex items-center justify-center mb-3">Dedicated Support</p>
-          <p class="text-white/80 text-[20px] leading-[1.7] max-w-xs min-h-[140px]">
+          <p class="text-[25px] font-semibold leading-snug mb-3">Dedicated Support</p>
+          <p class="text-white/80 text-[18px] leading-[1.7] max-w-xs">
             {{ $t('companyValues.value2') }}
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-1">
-          <div class="h-18 w-18 flex items-center justify-center mb-6">
-            <img :src="technicalExcellenceIcon" class="max-h-full max-w-full invert brightness-0" />
+        <div class="flex flex-col items-center">
+          <div class="h-12 flex items-center justify-center mb-6">
+            <img :src="technicalExcellenceIcon" class="h-12 w-auto invert brightness-0" alt="Technical Excellence" />
           </div>
-          <p class="text-[25px] font-semibold h-10 flex items-center justify-center mb-3">Technical Excellence</p>
-          <p class="text-white/80 text-[20px] leading-[1.7] max-w-xs min-h-[140px]">
+          <p class="text-[25px] font-semibold leading-snug mb-3">Technical Excellence</p>
+          <p class="text-white/80 text-[18px] leading-[1.7] max-w-xs">
             {{ $t('companyValues.value3') }}
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-5">
-          <div class="h-18 w-18 flex items-center justify-center mb-2">
-            <img :src="securityRealibilityIcon" class="max-h-full max-w-full invert brightness-0" />
+        <div class="flex flex-col items-center">
+          <div class="h-12 flex items-center justify-center mb-6">
+            <img :src="securityRealibilityIcon" class="h-12 w-auto invert brightness-0" alt="Security & Reliability" />
           </div>
-          <p class="text-[25px] font-semibold h-10 flex items-center justify-center">Security & Reliability</p>
-          <p class="text-white/80 text-[20px] leading-[1.7] max-w-xs min-h-[140px]">
+          <p class="text-[25px] font-semibold leading-snug mb-3">Security & Reliability</p>
+          <p class="text-white/80 text-[18px] leading-[1.7] max-w-xs">
             {{ $t('companyValues.value4') }}
           </p>
         </div>
-      </div> 
+      </div>
 
       <div class="relative mt-20 flex flex-col gap-4 py-10 w-full overflow-hidden uppercase font-sans mb-50">
         <div class="relative flex overflow-hidden">
           <div class="flex w-max animate-marquee-reverse whitespace-nowrap">
             <div class="flex items-center">
-              <span class="text-[9rem] leading-none leading-none mx-8 font-black font-[poppins] text-white">Fully customizable</span>
-              <span class="text-[9rem] leading-none leading-none mx-8 font-bold text-transparent font-[poppins]" style="-webkit-text-stroke: 2px white;">Fully customizable</span>
+              <span class="text-[9rem] leading-none mx-8 font-black font-[poppins] text-white">Fully customizable</span>
+              <span class="text-[9rem] leading-none mx-8 font-bold text-transparent font-[poppins]" style="-webkit-text-stroke: 2px white;">Fully customizable</span>
             </div>
             <div class="flex items-center">
-              <span class="text-[9rem] leading-none leading-none mx-8 font-black text-white font-[poppins]">Fully customizable</span>
-              <span class="text-[9rem] leading-none leading-none mx-8 font-bold text-transparent font-[poppins]" style="-webkit-text-stroke: 2px white;">Fully customizable</span>
+              <span class="text-[9rem] leading-none mx-8 font-black text-white font-[poppins]">Fully customizable</span>
+              <span class="text-[9rem] leading-none mx-8 font-bold text-transparent font-[poppins]" style="-webkit-text-stroke: 2px white;">Fully customizable</span>
             </div>
             <div class="flex items-center">
-              <span class="text-[9rem] leading-none leading-nonemx-8 font-black text-white font-[poppins]">Fully customizable</span>
-              <span class="text-[9rem] leading-none leading-none mx-8 font-bold text-transparent font-[poppins]" style="-webkit-text-stroke: 2px white;">Fully customizable</span>
+              <span class="text-[9rem] leading-none mx-8 font-black text-white font-[poppins]">Fully customizable</span>
+              <span class="text-[9rem] leading-none mx-8 font-bold text-transparent font-[poppins]" style="-webkit-text-stroke: 2px white;">Fully customizable</span>
             </div>
           </div>
         </div>
@@ -482,7 +555,6 @@ import securityRealibilityIcon from '@/assets/company-values/security-realibilit
 
 import AppHeader from '../components/AppHeader.vue'
 import Footer from '../components/Footer.vue'
-import ApprovalFeatures from '@/components/ApprovalFeatures.vue'
 import { serviceDeliverables } from '@/constants/services'
 
 onMounted(() => {
@@ -508,8 +580,22 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.reveal {
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* .reveal hanya penanda untuk IntersectionObserver; animasi masuknya
+   ditangani penuh oleh .animate-fade-up (style.css) — jangan tambah
+   transition di sini agar tidak bersaing dengan animation. */
+
+/* ─── Section 2: What We Do cards ─── */
+.feature-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+@media (hover: hover) {
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+.icon-box-blue-primary {
+  background: linear-gradient(135deg, #2f57c9 0%, #2448a8 100%);
 }
 
 /* ─── Hero: subtle grid background ─── */
@@ -542,13 +628,16 @@ onMounted(() => {
 
 .hero-float-main {
   animation: heroFloatMain 7s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-float-fast {
   animation: heroFloatFast 5s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-float-slow {
   animation: heroFloatSlow 8s ease-in-out infinite;
   animation-delay: -3s;
+  will-change: transform;
 }
 
 /* ─── Scan bar at top of dashboard card ─── */
@@ -559,6 +648,7 @@ onMounted(() => {
 .hero-scan-bar {
   background: linear-gradient(90deg, transparent 0%, #2f57c9 40%, #7b92e0 60%, transparent 100%);
   animation: heroScanBar 2.8s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* ─── Pulsing live dot ─── */

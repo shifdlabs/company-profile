@@ -9,7 +9,7 @@
         <!-- Left Column: Text & Features -->
         <div class="space-y-8">
           <!-- Badge -->
-          <div class="inline-flex items-center gap-2 bg-[#2f80ed] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-md shadow-blue-200/50">
+          <div class="inline-flex items-center gap-2 bg-[#2f57c9] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-md shadow-[#2f57c9]/25">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
               <path d="m9 12 2 2 4-4"/>
@@ -31,8 +31,8 @@
           <div class="space-y-6 pt-4">
             <!-- Scalable Infrastructure -->
             <div class="flex items-start gap-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-[#e8f0fe] rounded-xl flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#2f80ed]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="flex-shrink-0 w-12 h-12 bg-[#e9f0ff] rounded-xl flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#2f57c9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                   <path d="M2 17l10 5 10-5"/>
                   <path d="M2 12l10 5 10-5"/>
@@ -50,8 +50,8 @@
 
             <!-- Expert Consultation -->
             <div class="flex items-start gap-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-[#e8f0fe] rounded-xl flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#2f80ed]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="flex-shrink-0 w-12 h-12 bg-[#e9f0ff] rounded-xl flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#2f57c9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                   <circle cx="9" cy="7" r="4"/>
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
@@ -82,7 +82,7 @@
                 v-model="form.name"
                 type="text" 
                 :placeholder="$t('contactUs.form.fullNamePlaceholder')"
-                class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f80ed] focus:border-transparent focus:outline-none transition"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition"
                 style="font-family: 'Inter', sans-serif;"
                 required
               />
@@ -98,7 +98,7 @@
                   v-model="form.email"
                   type="email" 
                   :placeholder="$t('contactUs.form.emailPlaceholder')"
-                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f80ed] focus:border-transparent focus:outline-none transition"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition"
                   style="font-family: 'Inter', sans-serif;"
                   required
                 />
@@ -115,7 +115,7 @@
                   pattern="[0-9]*"
                   :placeholder="$t('contactUs.form.phonePlaceholder')"
                   @input="form.phone = form.phone.replace(/\D/g, '')"
-                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f80ed] focus:border-transparent focus:outline-none transition"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition"
                   style="font-family: 'Inter', sans-serif;"
                   required
                 />
@@ -131,7 +131,7 @@
                 v-model="form.description"
                 rows="4"
                 :placeholder="$t('contactUs.form.briefDescriptionPlaceholder')"
-                class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f80ed] focus:border-transparent focus:outline-none transition resize-none"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition resize-none"
                 style="font-family: 'Inter', sans-serif;"
               ></textarea>
             </div>
@@ -144,7 +144,7 @@
             <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full flex items-center justify-center gap-2 bg-[#2f80ed] hover:bg-[#1a6fd4] active:bg-[#1560c0] text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-200/50"
+              class="w-full flex items-center justify-center gap-2 bg-[#2f57c9] hover:bg-[#2448a8] active:bg-[#1e3c8c] text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#2f57c9]/25"
               style="font-family: 'Inter', sans-serif;"
             >
               {{ $t('contactUs.form.submitButton') }}
@@ -168,7 +168,7 @@
                     href="https://wa.me/6285111210462"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-white border-2 border-[#2f80ed] text-[#2f80ed] hover:bg-[#e8f0fe] px-5 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-200"
+                    class="inline-flex items-center gap-2 bg-white border-2 border-[#2f57c9] text-[#2f57c9] hover:bg-[#e9f0ff] px-5 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-200"
                     style="font-family: 'Inter', sans-serif;"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -185,7 +185,7 @@
                 <div class="flex flex-col items-center">
                   <a
                     href="mailto:sales@shifdlabs.com"
-                    class="inline-flex items-center gap-2 bg-white border-2 border-[#2f80ed] text-[#2f80ed] hover:bg-[#e8f0fe] px-5 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-200"
+                    class="inline-flex items-center gap-2 bg-white border-2 border-[#2f57c9] text-[#2f57c9] hover:bg-[#e9f0ff] px-5 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-200"
                     style="font-family: 'Inter', sans-serif;"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -211,7 +211,7 @@
   <!-- Loading Overlay -->
   <div v-if="loading" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
     <div class="bg-white rounded-2xl p-8 flex flex-col items-center gap-4 shadow-2xl">
-      <svg class="animate-spin h-10 w-10 text-[#2f80ed]" viewBox="0 0 24 24">
+      <svg class="animate-spin h-10 w-10 text-[#2f57c9]" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"/>
         <path fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" opacity="0.75"/>
       </svg>
@@ -230,8 +230,8 @@
     <div class="relative bg-white rounded-2xl shadow-2xl w-[90%] max-w-md p-10 text-center animate-fade-in">
       <!-- Success Icon -->
       <div class="flex justify-center mb-6">
-        <div class="w-20 h-20 bg-[#e8f0fe] rounded-full flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#2f80ed]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <div class="w-20 h-20 bg-[#e9f0ff] rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#2f57c9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
             <path d="m9 12 2 2 4-4"/>
           </svg>
@@ -247,7 +247,7 @@
 
       <button
         @click="goToNextPage"
-        class="w-full bg-[#2f80ed] hover:bg-[#1a6fd4] text-white font-semibold px-6 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-200/50 mb-3"
+        class="w-full bg-[#2f57c9] hover:bg-[#2448a8] text-white font-semibold px-6 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#2f57c9]/25 mb-3"
         style="font-family: 'Inter', sans-serif;"
       >
         {{ $t('contactUs.success.returnHome') }}

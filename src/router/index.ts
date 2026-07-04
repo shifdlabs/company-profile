@@ -29,7 +29,12 @@ const router = createRouter({
 // Force full browser reload on every navigation (except initial load)
 router.beforeEach((to, from) => {
   if (from.name !== undefined) {
-    window.location.href = to.fullPath
+    // Hanya izinkan path internal ("/..."), tolak "//host" (protocol-relative)
+    // agar assignment ke location.href tidak bisa dipakai sebagai open redirect
+    const path = to.fullPath
+    if (path.startsWith('/') && !path.startsWith('//')) {
+      window.location.href = path
+    }
     return false
   }
 })
