@@ -154,10 +154,11 @@ export default {
       email: "Email",
       emailPlaceholder: "john{'@'}perusahaan.com",
       phoneNumber: "Nomor Telepon",
-      phonePlaceholder: "+62 812 3456 7890",
+      phonePlaceholder: "812 3456 7890",
       briefDescription: "Deskripsi Singkat",
       briefDescriptionPlaceholder: "Ceritakan kebutuhan proyek Anda...",
-      submitButton: "Kirim Permintaan"
+      submitButton: "Kirim Permintaan",
+      planMessage: "Halo, saya tertarik dengan paket {plan} Shifd Approval. Mohon informasi lebih lanjut."
     },
     preferDirect: "Lebih suka kontak langsung?",
     whatsapp: "WhatsApp",
@@ -165,11 +166,19 @@ export default {
     emailSupport: "Email Support",
     emailLabel: "Respons 24/7",
     loading: "Mengirim permintaan Anda...",
+    errors: {
+      name: "Nama harus diisi dan tidak boleh lebih dari 100 karakter.",
+      email: "Format email tidak valid.",
+      phone: "Nomor telepon harus terdiri dari 7–15 digit angka.",
+      description: "Deskripsi harus diisi dan tidak boleh lebih dari 2000 karakter.",
+      cooldown: "Anda baru saja mengirim permintaan. Mohon tunggu sebentar sebelum mengirim lagi.",
+      captcha: "Mohon selesaikan verifikasi keamanan terlebih dahulu.",
+      failed: "Pengiriman gagal. Silakan coba lagi."
+    },
     success: {
       title: "Permintaan Berhasil Dikirim",
       message: "Terima kasih telah menghubungi kami. Tim kami akan meninjau kebutuhan Anda dan segera menghubungi Anda.",
-      returnHome: "Kembali ke Beranda",
-      close: "Tutup"
+      returnHome: "Kembali ke Beranda"
     },
     companyValues: {
       caption1: "Memberdayakan bisnis melalui solusi digital yang aman dan mudah dikembangkan, dengan pendekatan yang berfokus pada kebutuhan pelanggan.",
@@ -386,6 +395,45 @@ export default {
         { q: 'Bagaimana pihak eksternal memverifikasi keaslian surat?', a: 'Setiap surat yang disetujui dan dicetak/diekspor ke PDF memuat QR code unik. Saat dipindai, QR membuka halaman verifikasi publik berisi organisasi penerbit, nomor surat, tanggal, dan nama penyetuju, tanpa perlu login ke sistem.' },
         { q: 'Bagaimana cara mulai menggunakan Approval?', a: 'Hubungi tim sales kami melalui WhatsApp untuk demo dan penyesuaian kebutuhan organisasi Anda.' },
       ],
+    },
+    pricing: {
+      label: "Harga",
+      title: "Semua fitur di setiap paket,",
+      titleHighlight: "harga transparan.",
+      desc: "Uji coba gratis tanpa kartu kredit. Lanjutkan bulanan, hemat dengan paket tahunan, atau susun paket khusus untuk tim Anda.",
+      bestValue: "Paling hemat",
+      note: "Semua harga dalam {currency}, belum termasuk pajak.",
+      helpText: "Butuh bantuan memilih?",
+      helpLink: "Bicara dengan tim kami",
+      trial: {
+        name: "Free Trial",
+        tagline: "Coba semuanya sebelum berkomitmen.",
+        priceNote: "3 hari, akses penuh",
+        features: ["Semua fitur terbuka", "Tanpa kartu kredit", "Onboarding terpandu"],
+        btn: "Mulai trial gratis",
+      },
+      monthly: {
+        name: "Bulanan",
+        tagline: "Fleksibel, berhenti kapan saja.",
+        priceNote: "per bulan, tagihan bulanan",
+        features: ["Akses penuh platform", "Berhenti kapan saja", "Dukungan standar"],
+        btn: "Langganan bulanan",
+      },
+      yearly: {
+        name: "Tahunan",
+        tagline: "Efektif gratis dua bulan.",
+        priceNote: "per bulan, tagihan tahunan",
+        features: ["Semua fitur paket Bulanan", "Dukungan prioritas", "Harga terkunci 12 bulan"],
+        btn: "Langganan tahunan",
+      },
+      custom: {
+        name: "Custom",
+        tagline: "Disesuaikan dengan cara kerja tim Anda.",
+        price: "Mari diskusi",
+        priceNote: "cakupan & harga custom",
+        features: ["Alur kerja & fitur custom", "Integrasi dengan sistem Anda", "Tim implementasi khusus"],
+        btn: "Hubungi kami",
+      },
     },
     cta: {
       title: "Siap mempercepat persetujuan di organisasi Anda?",

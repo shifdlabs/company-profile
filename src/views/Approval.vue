@@ -787,6 +787,72 @@
       </div>
     </section>
 
+    <!-- ── PRICING ── -->
+    <section id="pricing" class="bg-white border-t border-[#eef1f7] py-24 px-8 reveal opacity-0">
+      <div class="max-w-[1180px] mx-auto">
+        <div class="text-center">
+          <p class="text-xs font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.pricing.label') }}</p>
+          <h2 class="text-[clamp(28px,3.6vw,40px)] font-black tracking-[-0.02em] mt-3.5">
+            {{ $t('approvalPage.pricing.title') }} <span class="text-[#2f57c9]">{{ $t('approvalPage.pricing.titleHighlight') }}</span>
+          </h2>
+          <p class="text-[17px] text-[#5b6b86] mt-4 max-w-[560px] mx-auto">{{ $t('approvalPage.pricing.desc') }}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mt-14">
+          <div
+            v-for="plan in pricingPlans"
+            :key="plan.key"
+            class="pricing-card relative rounded-3xl p-8 grid grid-rows-subgrid row-span-6 gap-y-0"
+            :class="plan.dark
+              ? 'bg-[#1a1c1e]'
+              : plan.highlight
+                ? 'bg-white border-2 border-[#2f57c9] shadow-lg shadow-[#2f57c9]/10'
+                : 'bg-white border border-[#d3e1ff]'"
+          >
+            <span
+              v-if="plan.highlight"
+              class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2f57c9] text-white text-[11px] font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap"
+            >{{ $t('approvalPage.pricing.bestValue') }}</span>
+
+            <h3 class="text-lg font-extrabold mb-1 flex items-center gap-2" :class="plan.dark ? 'text-white' : 'text-slate-900'">
+              {{ plan.name }}
+              <span v-if="plan.discount" class="bg-[#e9f0ff] text-[#2f57c9] text-[11px] font-extrabold px-2 py-0.5 rounded-full whitespace-nowrap">{{ plan.discount }}</span>
+            </h3>
+            <p class="text-[13px] mb-6" :class="plan.dark ? 'text-slate-400' : 'text-slate-500'">{{ plan.tagline }}</p>
+            <div class="mb-1">
+              <span class="text-4xl font-extrabold tracking-tight whitespace-nowrap" :class="plan.dark ? 'text-white' : 'text-slate-900'">{{ plan.price }}</span>
+            </div>
+            <p class="text-[13px] font-medium mb-8" :class="plan.dark ? 'text-slate-400' : 'text-slate-500'">{{ plan.priceNote }}</p>
+
+            <ul class="space-y-3 mb-8">
+              <li v-for="feature in plan.features" :key="feature" class="flex items-center gap-3">
+                <span class="w-[18px] h-[18px] rounded-full flex items-center justify-center shrink-0" :class="plan.dark ? 'bg-white/10' : 'bg-[#e9f0ff]'">
+                  <svg class="w-2.5 h-2.5" fill="none" :stroke="plan.dark ? '#ffffff' : '#2f57c9'" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span class="text-sm font-medium" :class="plan.dark ? 'text-slate-300' : 'text-slate-700'">{{ feature }}</span>
+              </li>
+            </ul>
+
+            <router-link
+              :to="{ path: '/contact-us', query: { plan: plan.key } }"
+              class="mt-auto inline-flex items-center justify-center w-full py-3 rounded-xl font-bold text-sm transition-colors"
+              :class="plan.dark
+                ? 'bg-white text-[#1a1c1e] hover:bg-slate-200'
+                : plan.highlight
+                  ? 'bg-[#2f57c9] hover:bg-[#2448a8] text-white shadow-md shadow-[#2f57c9]/25'
+                  : 'border border-slate-200 text-slate-900 hover:border-[#2f57c9] hover:text-[#2f57c9]'"
+            >{{ plan.btn }}</router-link>
+          </div>
+        </div>
+
+        <p class="text-center text-[13px] text-slate-500 mt-10">
+          {{ $t('approvalPage.pricing.note', { currency }) }}
+          {{ $t('approvalPage.pricing.helpText') }}
+          <router-link to="/contact-us" class="font-bold text-[#2f57c9] hover:underline">{{ $t('approvalPage.pricing.helpLink') }}</router-link>.
+        </p>
+      </div>
+    </section>
+
     <!-- ── FAQ ── -->
     <section class="bg-white border-t border-[#eef1f7] py-24 px-8">
       <div class="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start">
@@ -877,8 +943,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppHeader from '@/components/AppHeader.vue'
 import Footer from '@/components/Footer.vue'
+import { isFromIndonesia } from '@/i18n'
 
-const { tm } = useI18n()
+const { t, tm } = useI18n()
 
 const stage = ref(0)
 const openFaq = ref(-1)
@@ -903,6 +970,25 @@ const dashboardPoints = computed(() => tm('approvalPage.features.dashboardPoints
 const showcaseTabs = computed(() => tm('approvalPage.showcase.tabs') as Array<{ sub: string; label: string; num: string }>)
 const showcaseChips = computed(() => tm('approvalPage.showcase.f5.chips') as string[])
 
+// ponytail: fixed-rate USD prices (1 USD ≈ Rp 16.000), update manually when pricing changes
+const currency = isFromIndonesia ? 'IDR' : 'USD'
+const pricingPlans = computed(() => {
+  const base: Array<{ key: string; price: string; discount?: string; highlight?: boolean; dark?: boolean }> = [
+    { key: 'trial', price: isFromIndonesia ? 'Rp 0' : '$0' },
+    { key: 'monthly', price: isFromIndonesia ? 'Rp 120.000' : '$7.50' },
+    { key: 'yearly', price: isFromIndonesia ? 'Rp 100.000' : '$6.25', discount: '-17%', highlight: true },
+    { key: 'custom', price: t('approvalPage.pricing.custom.price'), dark: true },
+  ]
+  return base.map((p) => ({
+    ...p,
+    name: t(`approvalPage.pricing.${p.key}.name`),
+    tagline: t(`approvalPage.pricing.${p.key}.tagline`),
+    priceNote: t(`approvalPage.pricing.${p.key}.priceNote`),
+    features: tm(`approvalPage.pricing.${p.key}.features`) as string[],
+    btn: t(`approvalPage.pricing.${p.key}.btn`),
+  }))
+})
+
 const featureIcons: string[] = [
   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>`,
   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
@@ -920,6 +1006,17 @@ onMounted(() => {
   featTimer = setInterval(() => {
     if (autoFeat.value) activeFeature.value = (activeFeature.value + 1) % 7
   }, 4200)
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-up')
+        entry.target.classList.remove('opacity-0')
+        observer.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' })
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
 })
 
 onUnmounted(() => {
@@ -1002,6 +1099,17 @@ onUnmounted(() => {
 @keyframes drawRing {
   from { stroke-dashoffset: 283; }
   to   { stroke-dashoffset: 64; }
+}
+
+/* Pricing cards — lift on hover */
+.pricing-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+@media (hover: hover) {
+  .pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
 }
 
 /* Recall slide-back animation */

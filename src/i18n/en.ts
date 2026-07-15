@@ -154,10 +154,11 @@ export default {
       email: "Email",
       emailPlaceholder: "john{'@'}enterprise.com",
       phoneNumber: "Phone Number",
-      phonePlaceholder: "+1 (555) 000-0000",
+      phonePlaceholder: "812 3456 7890",
       briefDescription: "Brief Description",
       briefDescriptionPlaceholder: "Tell us about your project requirements...",
-      submitButton: "Submit Request"
+      submitButton: "Submit Request",
+      planMessage: "Hi, I'm interested in the {plan} plan for Shifd Approval. Please send me more details."
     },
     preferDirect: "Prefer direct contact?",
     whatsapp: "WhatsApp",
@@ -165,11 +166,19 @@ export default {
     emailSupport: "Email Support",
     emailLabel: "24/7 Response",
     loading: "Sending your request...",
+    errors: {
+      name: "Please enter your name (max 100 characters).",
+      email: "Invalid email format.",
+      phone: "Phone number must be 7–15 digits.",
+      description: "Please enter a description (max 2000 characters).",
+      cooldown: "You just sent a request. Please wait a moment before sending again.",
+      captcha: "Please complete the security verification first.",
+      failed: "Submission failed. Please try again."
+    },
     success: {
       title: "Request Sent Successfully",
       message: "Thank you for reaching out. Our team will review your requirements and get back to you shortly.",
-      returnHome: "Return to Home",
-      close: "Close"
+      returnHome: "Return to Home"
     },
     companyValues: {
       caption1: "Empowering businesses through secure, scalable digital solutions, guided by a customer centric mindset.",
@@ -386,6 +395,45 @@ export default {
         { q: 'How can external parties verify the authenticity of a letter?', a: 'Every approved and printed/exported letter contains a unique QR code. When scanned, the QR opens a public verification page showing the issuing organization, letter number, date, and approver name — no system login required.' },
         { q: 'How do I get started with Approval?', a: 'Contact our sales team via WhatsApp for a demo and customization for your organization\'s needs.' },
       ],
+    },
+    pricing: {
+      label: "Pricing",
+      title: "Every feature in every plan,",
+      titleHighlight: "transparent pricing.",
+      desc: "Try it free with no credit card. Continue monthly, save with yearly, or build a custom plan for your team.",
+      bestValue: "Best value",
+      note: "All prices in {currency}, exclude tax.",
+      helpText: "Need help choosing?",
+      helpLink: "Talk to our team",
+      trial: {
+        name: "Free Trial",
+        tagline: "Try everything before you commit.",
+        priceNote: "3 days, full access",
+        features: ["All features unlocked", "No credit card required", "Guided onboarding"],
+        btn: "Start free trial",
+      },
+      monthly: {
+        name: "Monthly",
+        tagline: "Flexible, cancel anytime.",
+        priceNote: "per month, billed monthly",
+        features: ["Full platform access", "Cancel anytime", "Standard support"],
+        btn: "Subscribe monthly",
+      },
+      yearly: {
+        name: "Yearly",
+        tagline: "Two months free, effectively.",
+        priceNote: "per month, billed yearly",
+        features: ["Everything in Monthly", "Priority support", "Locked-in price for 12 months"],
+        btn: "Subscribe yearly",
+      },
+      custom: {
+        name: "Custom",
+        tagline: "Tailored to how your team works.",
+        price: "Let's talk",
+        priceNote: "custom scope & pricing",
+        features: ["Custom workflows & features", "Integrations with your systems", "Dedicated implementation team"],
+        btn: "Contact us",
+      },
     },
     cta: {
       title: "Ready to accelerate approvals in your organization?",

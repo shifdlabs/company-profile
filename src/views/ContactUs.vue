@@ -73,6 +73,17 @@
         <!-- Right Column: Form Card -->
         <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10">
           <form @submit.prevent="handleSubmit" class="space-y-6">
+            <!-- Honeypot: hidden from humans, bots fill every field -->
+            <input
+              v-model="honeypot"
+              type="text"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+              class="absolute -left-[9999px] opacity-0 pointer-events-none"
+              aria-hidden="true"
+            />
+
             <!-- Full Name -->
             <div>
               <label class="block text-sm font-semibold text-[#191c1e] mb-2" style="font-family: 'Inter', sans-serif;">
@@ -88,8 +99,8 @@
               />
             </div>
 
-            <!-- Email & Phone Row -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Email & Phone -->
+            <div class="space-y-6">
               <div>
                 <label class="block text-sm font-semibold text-[#191c1e] mb-2" style="font-family: 'Inter', sans-serif;">
                   {{ $t('contactUs.form.email') }}
@@ -107,18 +118,42 @@
                 <label class="block text-sm font-semibold text-[#191c1e] mb-2" style="font-family: 'Inter', sans-serif;">
                   {{ $t('contactUs.form.phoneNumber') }}
                 </label>
-                <input 
-                  v-model="form.phone"
-                  type="text"
-                  inputmode="numeric"
-                  maxlength="15"
-                  pattern="[0-9]*"
-                  :placeholder="$t('contactUs.form.phonePlaceholder')"
-                  @input="form.phone = form.phone.replace(/\D/g, '')"
-                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition"
-                  style="font-family: 'Inter', sans-serif;"
-                  required
-                />
+                <div class="flex gap-2">
+                  <select
+                    v-model="form.countryCode"
+                    aria-label="Country code"
+                    class="flex-shrink-0 px-2 py-3 border border-gray-200 rounded-xl text-[#191c1e] bg-white focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition"
+                    style="font-family: 'Inter', sans-serif;"
+                  >
+                    <option value="+62">🇮🇩 +62</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+60">🇲🇾 +60</option>
+                    <option value="+66">🇹🇭 +66</option>
+                    <option value="+84">🇻🇳 +84</option>
+                    <option value="+63">🇵🇭 +63</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+81">🇯🇵 +81</option>
+                    <option value="+82">🇰🇷 +82</option>
+                    <option value="+86">🇨🇳 +86</option>
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+966">🇸🇦 +966</option>
+                    <option value="+971">🇦🇪 +971</option>
+                  </select>
+                  <input
+                    v-model="form.phone"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="15"
+                    pattern="[0-9]*"
+                    :placeholder="$t('contactUs.form.phonePlaceholder')"
+                    @input="form.phone = form.phone.replace(/\D/g, '')"
+                    class="w-full min-w-0 px-4 py-3 border border-gray-200 rounded-xl text-[#191c1e] placeholder-gray-400 focus:ring-2 focus:ring-[#2f57c9] focus:border-transparent focus:outline-none transition"
+                    style="font-family: 'Inter', sans-serif;"
+                    required
+                  />
+                </div>
               </div>
             </div>
 
@@ -127,7 +162,7 @@
               <label class="block text-sm font-semibold text-[#191c1e] mb-2" style="font-family: 'Inter', sans-serif;">
                 {{ $t('contactUs.form.briefDescription') }}
               </label>
-              <textarea 
+              <textarea
                 v-model="form.description"
                 rows="4"
                 :placeholder="$t('contactUs.form.briefDescriptionPlaceholder')"
@@ -135,6 +170,9 @@
                 style="font-family: 'Inter', sans-serif;"
               ></textarea>
             </div>
+
+            <!-- Turnstile captcha -->
+            <div ref="turnstileEl" class="flex justify-center"></div>
 
             <!-- Validation error -->
             <p v-if="formError" class="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-2.5">
@@ -144,7 +182,8 @@
             <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full flex items-center justify-center gap-2 bg-[#2f57c9] hover:bg-[#2448a8] active:bg-[#1e3c8c] text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#2f57c9]/25"
+              :disabled="loading"
+              class="w-full flex items-center justify-center gap-2 bg-[#2f57c9] hover:bg-[#2448a8] active:bg-[#1e3c8c] text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#2f57c9]/25 disabled:opacity-60 disabled:cursor-not-allowed"
               style="font-family: 'Inter', sans-serif;"
             >
               {{ $t('contactUs.form.submitButton') }}
@@ -247,18 +286,10 @@
 
       <button
         @click="goToNextPage"
-        class="w-full bg-[#2f57c9] hover:bg-[#2448a8] text-white font-semibold px-6 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#2f57c9]/25 mb-3"
+        class="w-full bg-[#2f57c9] hover:bg-[#2448a8] text-white font-semibold px-6 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#2f57c9]/25"
         style="font-family: 'Inter', sans-serif;"
       >
         {{ $t('contactUs.success.returnHome') }}
-      </button>
-
-      <button
-        @click="closeDialog"
-        class="w-full bg-white border-2 border-gray-200 hover:border-gray-300 text-[#565e74] font-semibold px-6 py-4 rounded-xl transition-all duration-200"
-        style="font-family: 'Inter', sans-serif;"
-      >
-        {{ $t('contactUs.success.close') }}
       </button>
     </div>
   </div>
@@ -266,13 +297,15 @@
 
 <script setup lang="ts">
 import AppHeader from '../components/AppHeader.vue';
-import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { onMounted, reactive, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import Footer from '../components/Footer.vue';
 
 const form = reactive({
   name: '',
   email: '',
+  countryCode: '+62',
   phone: '',
   description: ''
 })
@@ -280,10 +313,47 @@ const form = reactive({
 const loading = ref(false)
 const showSuccessDialog = ref(false)
 const formError = ref('')
+const honeypot = ref('')
+
+const TURNSTILE_SITE_KEY = '0x4AAAAAAD2m6Gd90BuCFE-j'
+const turnstileToken = ref('')
+const turnstileEl = ref<HTMLElement | null>(null)
+let turnstileWidgetId: string | undefined
+
+onMounted(() => {
+  const w = window as any
+  const renderWidget = () => {
+    turnstileWidgetId = w.turnstile.render(turnstileEl.value, {
+      sitekey: TURNSTILE_SITE_KEY,
+      theme: 'light',
+      language: locale.value === 'id' ? 'id' : 'en',
+      callback: (token: string) => { turnstileToken.value = token },
+      'expired-callback': () => { turnstileToken.value = '' },
+    })
+  }
+  if (w.turnstile) {
+    renderWidget()
+  } else {
+    const script = document.createElement('script')
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+    script.async = true
+    script.onload = renderWidget
+    document.head.appendChild(script)
+  }
+})
 const router = useRouter()
+const route = useRoute()
+const { t, locale } = useI18n()
+
+// Prefill description when arriving from a pricing plan button (?plan=monthly etc.)
+const plan = String(route.query.plan ?? '')
+if (['trial', 'monthly', 'yearly', 'custom'].includes(plan)) {
+  form.description = t('contactUs.form.planMessage', { plan: t(`approvalPage.pricing.${plan}.name`) })
+}
 
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,255}\.[^\s@]{2,}$/
 const PHONE_RE = /^\d{7,15}$/
+const SUBMIT_COOLDOWN_MS = 60_000 // ponytail: client-side only, bypassable — real rate limit belongs in the Apps Script backend
 
 function validateForm(): boolean {
   const name = form.name.trim()
@@ -292,19 +362,19 @@ function validateForm(): boolean {
   const desc = form.description.trim()
 
   if (!name || name.length > 100) {
-    formError.value = 'Nama harus diisi dan tidak boleh lebih dari 100 karakter.'
+    formError.value = t('contactUs.errors.name')
     return false
   }
   if (!EMAIL_RE.test(email)) {
-    formError.value = 'Format email tidak valid.'
+    formError.value = t('contactUs.errors.email')
     return false
   }
   if (phone && !PHONE_RE.test(phone)) {
-    formError.value = 'Nomor telepon harus terdiri dari 7–15 digit angka.'
+    formError.value = t('contactUs.errors.phone')
     return false
   }
   if (!desc || desc.length > 2000) {
-    formError.value = 'Deskripsi harus diisi dan tidak boleh lebih dari 2000 karakter.'
+    formError.value = t('contactUs.errors.description')
     return false
   }
 
@@ -313,7 +383,26 @@ function validateForm(): boolean {
 }
 
 async function handleSubmit() {
+  if (loading.value) return
+
+  // Silently "succeed" on bots without ever hitting the API
+  if (honeypot.value) {
+    showSuccessDialog.value = true
+    return
+  }
+
+  const lastSubmit = Number(localStorage.getItem('lastContactSubmit') ?? 0)
+  if (Date.now() - lastSubmit < SUBMIT_COOLDOWN_MS) {
+    formError.value = t('contactUs.errors.cooldown')
+    return
+  }
+
   if (!validateForm()) return
+
+  if (!turnstileToken.value) {
+    formError.value = t('contactUs.errors.captcha')
+    return
+  }
 
   loading.value = true
 
@@ -321,8 +410,10 @@ async function handleSubmit() {
     const params = new URLSearchParams()
     params.append('name', form.name.trim().slice(0, 100))
     params.append('email', form.email.trim().slice(0, 254))
-    params.append('phone', form.phone.trim().slice(0, 15))
+    const phoneDigits = form.phone.trim().replace(/^0+/, '').slice(0, 15)
+    params.append('phone', phoneDigits ? form.countryCode + phoneDigits : '')
     params.append('description', form.description.trim().slice(0, 2000))
+    params.append('cf-turnstile-response', turnstileToken.value)
 
     await fetch(
       'https://script.google.com/macros/s/AKfycbwtV52U3FeSpKlRTsNYKD93UTgBE9NTtg9i1PXMgj1hNVKDx7X8d2UmzCGddDM8sj0HVQ/exec',
@@ -333,11 +424,17 @@ async function handleSubmit() {
       }
     )
 
+    localStorage.setItem('lastContactSubmit', String(Date.now()))
     showSuccessDialog.value = true
+
+    // Token Turnstile sekali pakai — reset untuk submit berikutnya
+    turnstileToken.value = ''
+    const w = window as any
+    w.turnstile?.reset(turnstileWidgetId)
 
   } catch (err) {
     console.error(err)
-    formError.value = 'Pengiriman gagal. Silakan coba lagi.'
+    formError.value = t('contactUs.errors.failed')
   } finally {
     loading.value = false
   }
@@ -348,9 +445,6 @@ function goToNextPage() {
   router.push('/') // ganti sesuai route kamu
 }
 
-function closeDialog() {
-  showSuccessDialog.value = false
-}
 </script>
 
 <style scoped>
