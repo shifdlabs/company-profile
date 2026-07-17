@@ -5,155 +5,128 @@
     <!-- ============================
          HERO SECTION — REDESIGNED
     ============================= -->
-    <div class="relative min-h-screen bg-[#f8f9fb] overflow-hidden">
-      <!-- Subtle grid background -->
-      <div class="absolute inset-0 hero-grid pointer-events-none" />
+    <section class="relative bg-[#f8f9fb] overflow-hidden">
+      <div class="hero-approval relative max-w-7xl mx-auto px-6 pt-24 pb-24 lg:pt-28 lg:pb-32">
+        <div class="hero-dots absolute inset-0 pointer-events-none" />
+        <svg class="hero-link absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1180 760" preserveAspectRatio="none" fill="none">
+          <path d="M240 560 C 420 730, 720 740, 890 560" stroke="#c2d2f2" stroke-width="2" stroke-dasharray="7 9" />
+        </svg>
 
-      <div class="relative max-w-7xl mx-auto px-6 xl:px-0">
-        <div class="min-h-screen flex flex-col lg:flex-row items-center gap-16 lg:gap-8 pt-20 pb-16 lg:pt-24 lg:pb-0 lg:min-h-screen">
+        <div class="relative z-10 max-w-[700px] mx-auto text-center">
+          <!-- Badge -->
+          <div class="hero-badge inline-flex items-center gap-2 border border-[#d3e1ff] bg-[#e9f0ff] rounded-full px-3.5 py-1.5 animate-fade-up">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#1f9d6b] flex-shrink-0"></span>
+            <span class="text-[12px] font-bold tracking-wide text-[#2f57c9]">Enterprise-Grade Digital Evolution</span>
+          </div>
 
-          <!-- LEFT: Text content -->
-          <div class="flex-1 lg:max-w-[54%] animate-fade-up">
+          <!-- Headline -->
+          <h1 class="mt-6 text-5xl sm:text-6xl lg:text-[58px] xl:text-[64px] font-extrabold leading-[1.08] tracking-tight text-[#16233f] animate-fade-up" style="animation-delay:.08s">
+            <span>{{ $t('hero.title.part1') }}</span>
+            {{ ' ' + $t('hero.title.part2') + ' ' }}
+            <span class="hero-accent">
+              {{ $t('hero.title.part3') }}
+              <svg viewBox="0 0 120 10" preserveAspectRatio="none" fill="none"><path d="M3 7 Q 60 1 117 6" stroke="#3a63e0" stroke-width="3.5" stroke-linecap="round" /></svg>
+            </span>
+            {{ ' ' + $t('hero.title.part4') + ' ' }}
+            <span>{{ $t('hero.title.part5') }}</span>
+          </h1>
 
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 border border-gray-300 bg-white/70 rounded-full px-4 py-1.5 mb-8 shadow-xs">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#2f57c9] flex-shrink-0"></span>
-              <span class="text-[11px] font-semibold tracking-widest text-[#5c5e61] uppercase">
-                Enterprise-Grade Digital Evolution
-              </span>
+          <!-- Subheadline -->
+          <p class="mt-6 text-base sm:text-lg leading-relaxed text-[#5b6b86] max-w-[580px] mx-auto animate-fade-up" style="animation-delay:.16s">
+            {{ $t('hero.caption') }}
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-9 flex flex-wrap items-center justify-center gap-3.5 animate-fade-up" style="animation-delay:.26s">
+            <a
+              href="#why-shifd-section"
+              class="inline-flex items-center gap-2 bg-gradient-to-br from-[#3a63e0] to-[#2f6be8] hover:brightness-110 active:scale-[0.98] text-white px-7 py-3.5 rounded-2xl font-bold text-sm shadow-[0_14px_32px_-6px_rgba(47,87,201,0.5)] transition-all duration-200 whitespace-nowrap"
+            >
+              {{ $t('hero.whyButton') }}
+            </a>
+
+            <a
+              href="#shifd-services-section"
+              class="inline-flex items-center gap-2 bg-white text-[#2f57c9] px-6 py-3.5 rounded-2xl font-bold text-sm border border-[#d3e1ff] hover:bg-[#f3f6ff] transition-colors duration-200 whitespace-nowrap"
+            >
+              Explore Solutions
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0l-6-6m6 6l6-6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Animated approval-flow illustration -->
+        <div class="hero-scene animate-fade-up" style="animation-delay:.25s">
+          <div class="hero-blob hero-blob-l"></div>
+          <div class="hero-blob hero-blob-r"></div>
+
+          <div class="hero-card hero-card-steps">
+            <div class="hero-steps-head">
+              <span class="hero-steps-title">Alur persetujuan</span>
+              <span class="hero-live"><i></i>LIVE</span>
             </div>
+            <div class="hero-steps-body">
+              <div class="hero-rail"><div class="hero-rail-fill" :style="{ height: railHeight }"></div></div>
+              <div v-for="(s, i) in flowSteps" :key="s.label" class="hero-step" :class="{ done: isDone(i), active: isActive(i) }">
+                <div class="hero-step-dot">
+                  <span class="num">{{ i + 1 }}</span>
+                  <span class="chk">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                  </span>
+                </div>
+                <div>
+                  <div class="hero-step-label">{{ s.label }}</div>
+                  <div class="hero-step-sub">{{ s.sub }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            <!-- Headline -->
-            <h1 class="text-5xl sm:text-6xl lg:text-[68px] xl:text-7xl font-black leading-[1.04] tracking-tight text-[#1a1c1e] mb-6">
-              <span>{{ $t('hero.title.part1') }}</span>
-              {{ ' ' + $t('hero.title.part2') + ' ' }}
-              <em class="hero-italic text-[#2f57c9]">{{ $t('hero.title.part3') }}</em>
-              {{ ' ' + $t('hero.title.part4') + ' ' }}
-              <span>{{ $t('hero.title.part5') }}</span>
-            </h1>
-
-            <!-- Subheadline -->
-            <p class="text-base sm:text-lg text-[#44474a] leading-relaxed max-w-[500px] mb-10">
-              {{ $t('hero.caption') }}
-            </p>
-
-            <!-- CTAs -->
-            <div class="flex flex-wrap items-center gap-6">
-              <a
-                href="#why-shifd-section"
-                class="inline-flex items-center justify-center bg-[#1a1c1e] hover:bg-[#2d3033] active:scale-[0.98] text-white px-10 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md whitespace-nowrap min-w-[200px]"
-              >
-                {{ $t('hero.whyButton') }}
-              </a>
-
-              <a
-                href="#shifd-services-section"
-                class="inline-flex items-center gap-2 text-[#1a1c1e] hover:text-[#2f57c9] font-bold text-sm transition-colors duration-200 whitespace-nowrap"
-              >
-                Explore Solutions
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0l-6-6m6 6l6-6" />
+          <div class="hero-card hero-card-doc">
+            <div class="hero-doc-head">
+              <div class="hero-doc-ico">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2f57c9" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /></svg>
+              </div>
+              <div class="min-w-0">
+                <div class="hero-doc-title">INV-2024-001</div>
+                <div class="hero-doc-sub">Pengajuan anggaran &middot; Keuangan</div>
+              </div>
+              <span class="hero-doc-chip" :class="{ ok: chipOk }">{{ chipText }}</span>
+            </div>
+            <div class="hero-doc-lines"><i style="width:100%"></i><i style="width:84%"></i><i style="width:62%"></i></div>
+            <div class="hero-doc-amount">
+              <span class="text-[10px] font-extrabold tracking-wide text-[#9aa6bd]">NILAI PENGAJUAN</span>
+              <span class="text-sm font-extrabold text-[#16233f] whitespace-nowrap">Rp 48.500.000</span>
+            </div>
+            <div class="hero-doc-sign">
+              <div class="hero-sign-label">Tanda tangan &middot; L2 Direktur</div>
+              <div class="hero-sign-area">
+                <svg width="130" height="40" viewBox="0 0 130 40" fill="none">
+                  <path class="hero-sig-path" :class="{ draw: sigDraw }" d="M8 28 C 18 6, 26 36, 38 22 S 58 8, 68 24 S 88 34, 98 16 S 116 20, 124 14" stroke="#2f57c9" stroke-width="2.4" stroke-linecap="round" />
                 </svg>
-              </a>
+              </div>
+              <div class="hero-stamp" :class="{ show: stampShow }">DISETUJUI</div>
+            </div>
+            <div class="hero-doc-id">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#b6c0d4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              ID APV-7F2K9 &middot; terenkripsi SHA-256
             </div>
           </div>
 
-          <!-- RIGHT: Animated Dashboard Mockup -->
-          <div class="flex-1 flex items-center justify-center lg:justify-end lg:pl-6 w-full">
-            <div class="relative w-full max-w-[460px] lg:max-w-[500px]">
-
-              <!-- STATUS card: floating top-right -->
-              <div class="absolute -top-6 -right-2 sm:-top-8 sm:right-0 lg:-top-6 lg:-right-6 z-20 hero-float-fast">
-                <div class="flex items-center gap-3 bg-[#1a1c1e] text-white rounded-2xl px-4 py-3 shadow-2xl">
-                  <div class="w-9 h-9 rounded-xl bg-[#2f57c9]/25 flex items-center justify-center flex-shrink-0">
-                    <!-- Shield check icon -->
-                    <svg class="w-5 h-5 text-[#2f57c9]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
-                    </svg>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="text-[10px] uppercase tracking-widest text-white/50 font-medium leading-none mb-0.5">Status</p>
-                    <p class="text-sm font-bold leading-none whitespace-nowrap">Hardened</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Main dashboard card -->
-              <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hero-float-main">
-                <!-- Animated blue scan line at top -->
-                <div class="h-[3px] hero-scan-bar"></div>
-
-                <div class="p-5 sm:p-6">
-
-                  <!-- Card header: icon + placeholder text + LIVE badge -->
-                  <div class="flex items-center gap-3 mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-[#e9f0ff] border border-[#2f57c9]/15 flex items-center justify-center flex-shrink-0">
-                      <!-- Analytics icon -->
-                      <svg class="w-5 h-5 text-[#2f57c9]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="h-2.5 bg-gray-200 rounded-full w-32 mb-2"></div>
-                      <div class="h-2 bg-gray-100 rounded-full w-20"></div>
-                    </div>
-                    <span class="text-[10px] font-bold tracking-widest text-[#2f57c9] bg-[#e9f0ff] border border-[#2f57c9]/20 px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">
-                      LIVE
-                    </span>
-                  </div>
-
-                  <!-- Data rows -->
-                  <div class="space-y-2.5 mb-5">
-                    <!-- Active row -->
-                    <div class="flex items-center gap-3 bg-[#f8f9fb] rounded-xl px-4 py-3">
-                      <span class="w-2 h-2 rounded-full bg-[#2f57c9] flex-shrink-0 hero-pulse-dot"></span>
-                      <div class="h-2 bg-gray-300 rounded-full flex-1"></div>
-                      <div class="h-2 bg-[#2f57c9]/30 rounded-full w-14 flex-shrink-0 ml-auto"></div>
-                    </div>
-                    <!-- Inactive row -->
-                    <div class="flex items-center gap-3 bg-[#f8f9fb] rounded-xl px-4 py-3">
-                      <span class="w-2 h-2 rounded-full bg-gray-300 flex-shrink-0"></span>
-                      <div class="h-2 bg-gray-200 rounded-full w-3/4"></div>
-                      <div class="h-2 bg-gray-200 rounded-full w-10 flex-shrink-0 ml-auto"></div>
-                    </div>
-                  </div>
-
-                  <!-- Stat: 99.98% -->
-                  <div class="flex items-end justify-between pt-4 border-t border-gray-100">
-                    <div>
-                      <p class="text-[42px] font-black text-[#1a1c1e] tracking-tight leading-none">99.98%</p>
-                      <p class="text-xs text-[#5c5e61] mt-1 font-medium tracking-wide">Uptime SLA</p>
-                    </div>
-                    <div class="w-9 h-9 rounded-full bg-[#2f57c9] flex items-center justify-center shadow-md flex-shrink-0">
-                      <span class="text-[10px] font-bold text-white">AI</span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- Conversion badge: floating bottom-left -->
-              <div class="absolute -bottom-6 left-0 sm:-bottom-8 sm:left-4 lg:-bottom-6 lg:left-6 z-20 hero-float-slow">
-                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3 flex items-center gap-4">
-                  <div class="min-w-0">
-                    <p class="text-sm font-bold text-[#2f57c9] whitespace-nowrap">+32% Conversion</p>
-                    <p class="text-[9px] uppercase tracking-widest text-[#5c5e61] font-medium whitespace-nowrap">Infrastructure Optimization</p>
-                  </div>
-                  <div class="w-9 h-9 rounded-xl bg-[#e9f0ff] flex items-center justify-center flex-shrink-0">
-                    <!-- Trend up icon -->
-                    <svg class="w-4.5 h-4.5 text-[#2f57c9]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
+          <div class="hero-toast" :class="{ show: toastShow }">
+            <div class="hero-toast-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+            </div>
+            <div>
+              <div class="text-xs font-extrabold leading-tight text-[#16233f]">Disetujui &amp; terarsip</div>
+              <div class="text-[10px] text-[#9aa6bd]">PDF resmi dibuat &middot; baru saja</div>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
     <!-- END HERO SECTION -->
 
     <!-- SECTION 2 APPROVAL STARTS -->
@@ -545,7 +518,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 import ServiceCard from '../components/Services.vue'
 
 import cloudBasedIcon from '@/assets/company-values/cloud-based.svg'
@@ -557,7 +530,35 @@ import AppHeader from '../components/AppHeader.vue'
 import Footer from '../components/Footer.vue'
 import { serviceDeliverables } from '@/constants/services'
 
+// Hero illustration: animated approval-flow cycle (steps → e-sign → archived)
+const flowSteps = [
+  { label: 'L1 · Manajer', sub: 'Review anggaran' },
+  { label: 'L2 · Direktur', sub: 'Persetujuan akhir' },
+  { label: 'Tanda tangan', sub: 'E-sign terverifikasi' },
+  { label: 'Terarsip', sub: 'PDF + jejak audit' },
+]
+const doneAt = [1, 2, 4, 5]
+const activeMap = [0, 1, 2, 2, 3, -1]
+const railHeights = ['0%', '34%', '67%', '67%', '100%', '100%']
+const chipLabels = ['Menunggu L1', 'Menunggu L2', 'Proses e-sign', 'Proses e-sign', 'Disetujui', 'Disetujui']
+
+const cycle = ref(0)
+const isDone = (i: number) => cycle.value >= doneAt[i]!
+const isActive = (i: number) => !isDone(i) && activeMap[cycle.value] === i
+const railHeight = computed(() => railHeights[cycle.value]!)
+const chipText = computed(() => chipLabels[cycle.value]!)
+const chipOk = computed(() => cycle.value >= 4)
+const sigDraw = computed(() => cycle.value >= 3)
+const stampShow = computed(() => cycle.value >= 4)
+const toastShow = computed(() => cycle.value >= 5)
+
+let cycleTimer: ReturnType<typeof setInterval>
+
 onMounted(() => {
+  cycleTimer = setInterval(() => {
+    cycle.value = (cycle.value + 1) % 6
+  }, 1400)
+
   const observerOptions = {
     threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
@@ -576,6 +577,10 @@ onMounted(() => {
   document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el)
   })
+})
+
+onUnmounted(() => {
+  clearInterval(cycleTimer)
 })
 </script>
 
@@ -598,66 +603,101 @@ onMounted(() => {
   background: linear-gradient(135deg, #2f57c9 0%, #2448a8 100%);
 }
 
-/* ─── Hero: subtle grid background ─── */
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.038) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.038) 1px, transparent 1px);
-  background-size: 52px 52px;
+/* ─── Hero: approval-flow illustration (ported from design-reference) ─── */
+@keyframes heroStrokeDraw { to { stroke-dashoffset: 0; } }
+@keyframes heroStampIn {
+  0%   { opacity: 0; transform: rotate(-18deg) scale(2.1); }
+  55%  { opacity: 1; transform: rotate(-7deg) scale(.93); }
+  100% { opacity: 1; transform: rotate(-7deg) scale(1); }
 }
+@keyframes heroPopCheck {
+  0%   { transform: scale(.3); opacity: 0; }
+  60%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes heroBlob {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50%       { transform: translate(16px,-14px) scale(1.05); }
+}
+@keyframes heroDashMove { to { stroke-dashoffset: -64; } }
 
-/* ─── Hero: "impact" italic style ─── */
-.hero-italic {
-  font-style: italic;
-  font-family: inherit;
+.hero-approval { min-height: 780px; }
+.hero-dots {
+  background-image: radial-gradient(#c9d8f7 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(closest-side at 50% 44%, transparent 20%, #000 58%, transparent 100%);
+  mask-image: radial-gradient(closest-side at 50% 44%, transparent 20%, #000 58%, transparent 100%);
 }
+.hero-link path { animation: heroDashMove 1.1s linear infinite; }
 
-/* ─── Dashboard float animations ─── */
-@keyframes heroFloatMain {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+.hero-badge { color: #2f57c9; }
+.hero-accent {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(100deg, #2f57c9, #5a86f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-@keyframes heroFloatFast {
-  0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
-  50%       { transform: translateY(-7px) rotate(-1.5deg); }
-}
-@keyframes heroFloatSlow {
-  0%, 100% { transform: translateY(0px) rotate(1deg); }
-  50%       { transform: translateY(-12px) rotate(1deg); }
-}
+.hero-accent svg { position: absolute; left: 0; bottom: -8px; width: 100%; height: 10px; }
+.hero-accent path { stroke-dasharray: 130; stroke-dashoffset: 130; animation: heroStrokeDraw .8s .9s ease both; }
 
-.hero-float-main {
-  animation: heroFloatMain 7s ease-in-out infinite;
-  will-change: transform;
-}
-.hero-float-fast {
-  animation: heroFloatFast 5s ease-in-out infinite;
-  will-change: transform;
-}
-.hero-float-slow {
-  animation: heroFloatSlow 8s ease-in-out infinite;
-  animation-delay: -3s;
-  will-change: transform;
-}
+.hero-scene { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.hero-blob { position: absolute; border-radius: 50%; pointer-events: none; }
+.hero-blob-l { width: 380px; height: 380px; background: radial-gradient(circle, rgba(58,99,224,.14), rgba(58,99,224,0) 70%); top: 60px; left: -70px; animation: heroBlob 9s ease-in-out infinite; }
+.hero-blob-r { width: 420px; height: 420px; background: radial-gradient(circle, rgba(58,99,224,.12), rgba(58,99,224,0) 70%); top: 130px; right: -80px; animation: heroBlob 11s ease-in-out infinite 1.2s; }
 
-/* ─── Scan bar at top of dashboard card ─── */
-@keyframes heroScanBar {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(300%); }
-}
-.hero-scan-bar {
-  background: linear-gradient(90deg, transparent 0%, #2f57c9 40%, #7b92e0 60%, transparent 100%);
-  animation: heroScanBar 2.8s ease-in-out infinite;
-  will-change: transform;
-}
+.hero-card { background: #fff; border: 1px solid #e9eef6; border-radius: 20px; position: absolute; }
+.hero-card-doc { right: 0; top: 380px; width: 300px; transform: rotate(3.5deg); padding: 22px; box-shadow: 0 34px 70px -32px rgba(20,35,63,.45); z-index: 1; }
+.hero-card-steps { left: 0; top: 200px; width: 262px; transform: rotate(-5deg); padding: 20px; box-shadow: 0 28px 60px -30px rgba(20,35,63,.4); z-index: 2; }
 
-/* ─── Pulsing live dot ─── */
-@keyframes heroPulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.45; transform: scale(1.4); }
-}
-.hero-pulse-dot {
-  animation: heroPulseDot 1.8s ease-in-out infinite;
+.hero-doc-head { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid #eef1f7; }
+.hero-doc-ico { width: 36px; height: 36px; border-radius: 10px; background: #e9f0ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.hero-doc-title { font-weight: 800; font-size: 14px; color: #16233f; }
+.hero-doc-sub { font-size: 11px; color: #9aa6bd; white-space: nowrap; }
+.hero-doc-chip { margin-left: auto; font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 7px; white-space: nowrap; transition: all .3s; color: #2f57c9; background: #e9f0ff; }
+.hero-doc-chip.ok { color: #1f9d6b; background: #e6f6ee; }
+.hero-doc-lines { display: flex; flex-direction: column; gap: 9px; margin-top: 16px; }
+.hero-doc-lines i { height: 9px; border-radius: 6px; background: #edf1f9; display: block; }
+.hero-doc-amount { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; background: #f7f9fd; border: 1px solid #eef1f7; border-radius: 11px; padding: 10px 14px; }
+.hero-doc-sign { position: relative; margin-top: 16px; border: 1.5px dashed #c9d8f7; border-radius: 13px; padding: 12px 14px 8px; background: #fbfcff; }
+.hero-sign-label { font-size: 10px; font-weight: 800; letter-spacing: .06em; color: #9aa6bd; text-transform: uppercase; }
+.hero-sign-area { height: 42px; display: flex; align-items: center; }
+.hero-sig-path { stroke-dasharray: 220; stroke-dashoffset: 220; }
+.hero-sig-path.draw { animation: heroStrokeDraw 1.1s ease forwards; }
+.hero-stamp { position: absolute; right: -10px; top: -16px; border: 2.5px solid #1f9d6b; color: #1f9d6b; background: rgba(230,246,238,.94); border-radius: 10px; padding: 7px 12px; font-size: 13px; font-weight: 800; letter-spacing: .14em; box-shadow: 0 10px 24px -12px rgba(31,157,107,.6); opacity: 0; }
+.hero-stamp.show { animation: heroStampIn .5s cubic-bezier(.2,.9,.3,1.3) both; }
+.hero-doc-id { display: flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 10px; color: #b6c0d4; font-weight: 600; }
+
+.hero-steps-head { display: flex; align-items: center; gap: 8px; }
+.hero-steps-title { font-weight: 800; font-size: 13px; color: #16233f; }
+.hero-live { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; background: #e6f6ee; color: #1f9d6b; font-size: 10px; font-weight: 800; padding: 3px 9px; border-radius: 999px; }
+.hero-live i { width: 6px; height: 6px; border-radius: 50%; background: #1f9d6b; }
+.hero-steps-body { position: relative; margin-top: 10px; }
+.hero-rail { position: absolute; left: 16px; top: 16px; bottom: 16px; width: 2px; border-radius: 999px; background: #e6ebf4; overflow: hidden; }
+.hero-rail-fill { width: 100%; border-radius: 999px; background: linear-gradient(180deg, #3a63e0, #2f6be8); transition: height .7s ease; height: 0%; }
+.hero-step { display: flex; align-items: center; gap: 12px; padding: 9px 0; position: relative; }
+.hero-step-dot { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; transition: all .4s; background: #f1f5fd; border: 2px solid #e3e9f2; color: #9aa6bd; font-size: 12px; font-weight: 800; }
+.hero-step-dot .chk { display: none; }
+.hero-step.active .hero-step-dot { background: #fff; border-color: #2f57c9; color: #2f57c9; box-shadow: 0 0 0 5px rgba(47,87,201,.14); }
+.hero-step.done .hero-step-dot { background: linear-gradient(135deg, #3a63e0, #2f6be8); border-color: transparent; box-shadow: 0 6px 14px -6px rgba(47,87,201,.5); }
+.hero-step.done .num { display: none; }
+.hero-step.done .chk { display: flex; animation: heroPopCheck .45s ease both; }
+.hero-step-label { font-size: 13px; font-weight: 800; transition: color .4s; color: #9aa6bd; white-space: nowrap; }
+.hero-step.done .hero-step-label, .hero-step.active .hero-step-label { color: #16233f; }
+.hero-step-sub { font-size: 11px; color: #9aa6bd; margin-top: 1px; white-space: nowrap; }
+
+.hero-toast { position: absolute; left: 20%; bottom: 30px; z-index: 3; background: #fff; border: 1px solid #e9eef6; border-radius: 14px; padding: 11px 15px; box-shadow: 0 16px 36px -12px rgba(20,35,63,.35); display: flex; align-items: center; gap: 9px; opacity: 0; }
+.hero-toast.show { animation: heroPopCheck .5s ease both; }
+.hero-toast-ico { width: 30px; height: 30px; border-radius: 50%; background: #1f9d6b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+@media (max-width: 1000px) {
+  .hero-approval { min-height: 0; }
+  .hero-scene { position: relative; margin-top: 48px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+  .hero-card { position: relative; inset: auto; transform: none; }
+  .hero-card-doc, .hero-card-steps { top: auto; left: auto; right: auto; width: min(340px, 100%); }
+  .hero-toast { position: relative; left: auto; bottom: auto; opacity: 1; }
+  .hero-link, .hero-dots { display: none; }
 }
 
 /* ─── Legacy styles (fade transition, font-outline) ─── */

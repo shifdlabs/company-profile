@@ -18,7 +18,11 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 
-  scrollBehavior(_to, _from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
+    if (to.hash) {
+      // top = offset in px so the target section clears the fixed header
+      return { el: to.hash, top: 80, behavior: 'smooth' }
+    }
     if (savedPosition) {
       return savedPosition
     }
@@ -26,9 +30,10 @@ const router = createRouter({
   }
 })
 
-// Force full browser reload on every navigation (except initial load)
+// Force full browser reload on every navigation (except initial load and
+// same-page hash links, which should just scroll via scrollBehavior above)
 router.beforeEach((to, from) => {
-  if (from.name !== undefined) {
+  if (from.name !== undefined && to.path !== from.path) {
     // Hanya izinkan path internal ("/..."), tolak "//host" (protocol-relative)
     // agar assignment ke location.href tidak bisa dipakai sebagai open redirect
     const path = to.fullPath
