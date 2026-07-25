@@ -100,3 +100,32 @@ jobs:
 
             rm -rf /home/${{ secrets.SSH_USER }}/deploy_temp
             echo "=== DEPLOY SELESAI ==="
+
+      - name: Notify via email (Resend)
+        if: always()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          STATUS: ${{ job.status }}
+          BRANCH: ${{ inputs.branch }}
+          ACTOR: ${{ github.actor }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$STATUS" = "success" ]; then
+            SUBJECT="✅ Deploy berhasil: $BRANCH → production"
+          else
+            SUBJECT="❌ Deploy $STATUS: $BRANCH → production"
+          fi
+          HTML=$(printf '<p><b>%s</b></p><p>Repo: %s<br>Branch: <b>%s</b> &rarr; production<br>Dipicu oleh: %s</p><p><a href="%s">Lihat run di GitHub Actions</a></p>' \
+            "$SUBJECT" "$REPO" "$BRANCH" "$ACTOR" "$RUN_URL")
+          jq -n \
+            --arg from "Deploy Bot <deploy@shifdlabs.com>" \
+            --arg to "$NOTIFY_EMAIL" \
+            --arg subject "$SUBJECT" \
+            --arg html "$HTML" \
+            '{from: $from, to: [$to], subject: $subject, html: $html}' \
+            | curl -s --fail-with-body -X POST https://api.resend.com/emails \
+                -H "Authorization: Bearer $RESEND_API_KEY" \
+                -H "Content-Type: application/json" \
+                -d @-
