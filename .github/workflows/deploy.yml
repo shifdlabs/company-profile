@@ -1,9 +1,13 @@
 name: Deploy Vue to EC2 (Static)
+run-name: Deploy branch '${{ inputs.branch }}' to production 🚀
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch yang mau di-naikkan ke production'
+        required: true
+        default: main
 
 # Token hanya perlu baca repo; cegah penyalahgunaan GITHUB_TOKEN jika ada step yang terkompromi
 permissions:
@@ -16,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
