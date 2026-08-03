@@ -79,6 +79,10 @@
           </div>
 
           <div class="hero-card hero-card-doc">
+            <div class="hero-ai-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16.5l-1.9-5.6L4.5 9l5.6-1.4L12 2z" /></svg>
+              {{ $t('approvalPage.hero.aiBadge') }}
+            </div>
             <div class="hero-doc-head">
               <div class="hero-doc-ico">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2f57c9" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /></svg>
@@ -124,7 +128,7 @@
 
     <!-- ── ANIMATED END-TO-END ── -->
     <section id="alur" class="bg-white border-y border-[#eef1f7] py-24 px-8">
-      <div class="max-w-[1000px] mx-auto text-center">
+      <div class="max-w-[1180px] mx-auto text-center">
         <p class="text-xs font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.flow.label') }}</p>
         <h2 class="text-[clamp(28px,3.6vw,40px)] font-black tracking-[-0.02em] mt-3.5 leading-[1.12]">
           {{ $t('approvalPage.flow.title') }}
@@ -133,7 +137,7 @@
           {{ $t('approvalPage.flow.description') }}
         </p>
 
-        <div class="mt-16 bg-[#f7f9fd] border border-[#eef1f7] rounded-[28px] px-10 py-14 overflow-x-auto">
+        <div class="mt-16 max-w-[1000px] mx-auto bg-[#f7f9fd] border border-[#eef1f7] rounded-[28px] px-10 py-14 overflow-x-auto">
           <div class="flex items-center justify-between min-w-[560px]">
             <!-- Manual -->
             <div
@@ -212,35 +216,33 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ── HOW IT WORKS ── -->
-    <section class="max-w-[1180px] mx-auto px-8 py-24">
-      <div class="text-center">
-        <p class="text-xs font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.howItWorks.label') }}</p>
-        <h2 class="text-[clamp(28px,3.6vw,40px)] font-black tracking-[-0.02em] mt-3.5">{{ $t('approvalPage.howItWorks.title') }}</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-        <div
-          v-for="step in steps"
-          :key="(step as any).n"
-          class="bg-white border border-[#e9eef6] rounded-[20px] p-7"
-          style="box-shadow: 0 18px 40px -28px rgba(20,35,63,.3)"
-        >
-          <p class="step-number text-[48px] font-black leading-none">{{ (step as any).n }}</p>
-          <h3 class="font-black text-[17px] mt-4">{{ (step as any).t }}</h3>
-          <p class="text-sm text-[#5b6b86] leading-[1.55] mt-2.5">{{ (step as any).d }}</p>
+        <div class="section-divider mt-14">{{ $t('approvalPage.howItWorks.title') }}</div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8 text-left">
+          <div
+            v-for="step in steps"
+            :key="(step as any).n"
+            class="bg-white border border-[#e9eef6] rounded-[20px] px-6 py-7"
+            style="box-shadow: 0 18px 40px -28px rgba(20,35,63,.3)"
+          >
+            <p class="text-[40px] font-black leading-none tracking-[-0.02em] text-[#2f57c9]">{{ (step as any).n }}</p>
+            <h3 class="font-black text-[17px] mt-4">{{ (step as any).t }}</h3>
+            <p class="text-sm text-[#5b6b86] leading-[1.55] mt-2.5">{{ (step as any).d }}</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ── FEATURES ── -->
-    <section class="bg-white border-t border-[#eef1f7] py-24 px-8">
+    <section id="fitur-inti" class="bg-white border-t border-[#eef1f7] py-24 px-8">
       <div class="max-w-[1180px] mx-auto">
         <div class="text-center">
-          <p class="text-xs font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.features.label') }}</p>
-          <h2 class="text-[clamp(28px,3.6vw,40px)] font-black tracking-[-0.02em] mt-3.5">{{ $t('approvalPage.features.title') }}</h2>
+          <div class="inline-flex items-center gap-3">
+            <span class="w-7 h-7 rounded-[9px] bg-[#2f57c9] text-white text-xs font-black flex items-center justify-center">{{ $t('approvalPage.features.chapter') }}</span>
+            <span class="text-[13px] font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.features.label') }}</span>
+          </div>
+          <h2 class="text-[clamp(28px,3.6vw,40px)] font-black tracking-[-0.02em] mt-4">{{ $t('approvalPage.features.title') }}</h2>
+          <p class="text-[17px] text-[#5b6b86] mt-3.5 max-w-[540px] mx-auto">{{ $t('approvalPage.features.description') }}</p>
         </div>
 
         <!-- Row 1: Dashboard -->
@@ -369,7 +371,8 @@
         </div>
 
         <!-- 3 Small feature cards -->
-        <div class="grid sm:grid-cols-3 gap-6 mt-20">
+        <div class="section-divider mt-20">{{ $t('approvalPage.features.cardsDivider') }}</div>
+        <div class="grid sm:grid-cols-3 gap-6 mt-8">
           <div class="bg-[#f7f9fd] border border-[#eef1f7] rounded-[20px] p-7">
             <div class="w-12 h-12 rounded-[13px] bg-[#e9f0ff] flex items-center justify-center">
               <svg class="w-5 h-5" fill="none" stroke="#2f57c9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -394,11 +397,177 @@
           <div class="bg-[#f7f9fd] border border-[#eef1f7] rounded-[20px] p-7">
             <div class="w-12 h-12 rounded-[13px] bg-[#e9f0ff] flex items-center justify-center">
               <svg class="w-5 h-5" fill="none" stroke="#2f57c9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
               </svg>
             </div>
             <h4 class="text-[18px] font-black mt-4">{{ $t('approvalPage.features.card3Title') }}</h4>
             <p class="text-sm text-[#5b6b86] leading-[1.55] mt-2.5">{{ $t('approvalPage.features.card3Desc') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AI DRAFTING ── -->
+    <section id="ai-drafting" class="py-24 px-8 relative overflow-hidden">
+      <div class="ai-dots absolute inset-0 pointer-events-none" />
+
+      <div class="relative max-w-[1180px] mx-auto">
+        <div class="text-center max-w-[680px] mx-auto">
+          <div class="inline-flex items-center gap-3">
+            <span
+              class="w-7 h-7 rounded-[9px] text-white text-xs font-black flex items-center justify-center"
+              style="background: linear-gradient(135deg,#3a63e0,#2f6be8); box-shadow: 0 8px 18px -8px rgba(47,87,201,.8)"
+            >{{ $t('approvalPage.aiDrafting.chapter') }}</span>
+            <span class="inline-flex items-center gap-2 text-[13px] font-black uppercase tracking-[.08em] text-[#2f57c9]">
+              <svg class="ai-sparkle w-3.5 h-3.5" viewBox="0 0 24 24" fill="#2f57c9"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16.5l-1.9-5.6L4.5 9l5.6-1.4L12 2z" /></svg>
+              {{ $t('approvalPage.aiDrafting.label') }}
+            </span>
+          </div>
+          <h2 class="text-[clamp(28px,3.6vw,42px)] font-black tracking-[-0.02em] mt-[18px] leading-[1.12]">
+            {{ $t('approvalPage.aiDrafting.title1') }}
+            <span class="hero-accent">{{ $t('approvalPage.aiDrafting.titleHighlight') }}</span>
+          </h2>
+          <p class="text-[17px] leading-relaxed text-[#5b6b86] mt-4">{{ $t('approvalPage.aiDrafting.description') }}</p>
+        </div>
+
+        <div
+          class="mt-14 border border-[#e0e9fb] rounded-[32px] p-8"
+          style="background: linear-gradient(165deg,#f0f5ff,#ffffff 60%); box-shadow: 0 40px 90px -50px rgba(20,35,63,.5)"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-7 items-stretch">
+            <!-- Input -->
+            <div class="bg-white border border-[#e9eef6] rounded-[22px] p-6 flex flex-col">
+              <p class="text-[11px] font-black tracking-[.07em] text-[#9aa6bd] uppercase">{{ $t('approvalPage.aiDrafting.inputTitle') }}</p>
+
+              <div class="mt-5">
+                <div class="flex items-center gap-2 mb-2.5">
+                  <span class="ai-step-num">1</span>
+                  <span class="text-[13px] font-bold text-[#16233f]">{{ $t('approvalPage.aiDrafting.field1Label') }}</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#f7f9fd] border border-[#e6ebf4] rounded-[11px] px-3.5 py-3">
+                  <span class="text-sm font-bold text-[#16233f]">{{ $t('approvalPage.aiDrafting.field1Value') }}</span>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#9aa6bd" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                </div>
+              </div>
+
+              <div class="mt-[18px]">
+                <div class="flex items-center gap-2 mb-2.5">
+                  <span class="ai-step-num">2</span>
+                  <span class="text-[13px] font-bold text-[#16233f]">{{ $t('approvalPage.aiDrafting.field2Label') }}</span>
+                </div>
+                <div class="bg-[#f7f9fd] border border-[#e6ebf4] rounded-[11px] px-3.5 py-3 text-sm font-semibold text-[#16233f]">
+                  {{ $t('approvalPage.aiDrafting.field2Value') }}
+                </div>
+              </div>
+
+              <div class="mt-[18px]">
+                <div class="flex items-center gap-2 mb-2.5">
+                  <span class="ai-step-num">3</span>
+                  <span class="text-[13px] font-bold text-[#16233f]">{{ $t('approvalPage.aiDrafting.field3Label') }}</span>
+                </div>
+                <div class="bg-[#f7f9fd] border border-[#e6ebf4] rounded-[11px] px-3.5 py-3.5 flex flex-col gap-2.5">
+                  <div v-for="(pt, pi) in aiPoints" :key="pi" class="flex gap-2.5 items-start">
+                    <span class="w-[5px] h-[5px] rounded-full bg-[#86a6f5] mt-[7px] shrink-0"></span>
+                    <span class="text-[13.5px] leading-[1.45] text-[#3d4d68]">{{ pt }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-[22px]">
+                <p class="text-[11px] font-black tracking-[.07em] text-[#9aa6bd] uppercase mb-3">{{ $t('approvalPage.aiDrafting.toneLabel') }}</p>
+                <div class="flex flex-col gap-2">
+                  <button
+                    v-for="(tone, ti) in aiTones"
+                    :key="ti"
+                    type="button"
+                    @click="pickTone(ti)"
+                    class="flex items-center gap-3 w-full text-left px-3.5 py-3 rounded-[11px] border transition-all duration-200"
+                    :class="aiTone === ti
+                      ? 'bg-[#e9f0ff] border-[#b9cdfb] shadow-[0_6px_16px_-10px_rgba(47,87,201,.8)]'
+                      : 'bg-[#f7f9fd] border-[#e6ebf4]'"
+                  >
+                    <span
+                      class="w-[15px] h-[15px] rounded-full bg-white shrink-0 transition-all duration-200"
+                      :class="aiTone === ti ? 'border-[4.5px] border-[#2f57c9]' : 'border-2 border-[#c8d2e4]'"
+                    ></span>
+                    <span>
+                      <span class="block text-[13.5px] font-bold" :class="aiTone === ti ? 'text-[#2f57c9]' : 'text-[#16233f]'">{{ (tone as any).label }}</span>
+                      <span class="block text-[11.5px] text-[#9aa6bd] font-medium mt-px">{{ (tone as any).sub }}</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                @click="rerunAi"
+                class="mt-6 w-full inline-flex items-center justify-center gap-2.5 text-white px-5 py-3.5 rounded-[13px] text-[14.5px] font-bold transition-opacity duration-200"
+                :style="{
+                  background: 'linear-gradient(135deg,#3a63e0,#2f6be8)',
+                  boxShadow: '0 14px 30px -10px rgba(47,87,201,.55)',
+                  opacity: aiRunning ? 0.75 : 1,
+                }"
+              >
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16.5l-1.9-5.6L4.5 9l5.6-1.4L12 2z" /></svg>
+                {{ aiRunning ? $t('approvalPage.aiDrafting.btnRunning') : $t('approvalPage.aiDrafting.btnIdle') }}
+              </button>
+            </div>
+
+            <!-- Output -->
+            <div
+              class="bg-white border border-[#e9eef6] rounded-[22px] px-7 py-7 flex flex-col"
+              style="box-shadow: 0 24px 50px -38px rgba(20,35,63,.45)"
+            >
+              <div class="flex items-center gap-2.5 pb-4 border-b border-[#eef1f7]">
+                <div
+                  class="w-8 h-8 rounded-[9px] flex items-center justify-center shrink-0"
+                  style="background: linear-gradient(135deg,#3a63e0,#2f6be8)"
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16.5l-1.9-5.6L4.5 9l5.6-1.4L12 2z" /></svg>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-[13.5px] font-black">{{ $t('approvalPage.aiDrafting.outputTitle') }}</div>
+                  <div class="text-[11px] text-[#9aa6bd]">{{ aiCaption }}</div>
+                </div>
+                <span
+                  v-if="aiRunning"
+                  class="ml-auto inline-flex items-center gap-2 bg-[#e9f0ff] text-[#2f57c9] text-[11px] font-black px-3 py-1.5 rounded-full whitespace-nowrap"
+                >
+                  <span class="flex gap-[3px]">
+                    <span class="ai-dot"></span>
+                    <span class="ai-dot" style="animation-delay:.15s"></span>
+                    <span class="ai-dot" style="animation-delay:.3s"></span>
+                  </span>
+                  {{ $t('approvalPage.aiDrafting.statusRunning') }}
+                </span>
+                <span
+                  v-else
+                  class="ml-auto inline-flex items-center gap-1.5 bg-[#e6f6ee] text-[#1f9d6b] text-[11px] font-black px-3 py-1.5 rounded-full whitespace-nowrap"
+                >
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="#1f9d6b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                  {{ $t('approvalPage.aiDrafting.statusDone') }}
+                </span>
+              </div>
+
+              <div class="flex-1 min-h-[290px] pt-5 text-[14.5px] leading-[1.75] text-[#3d4d68] whitespace-pre-wrap">{{ aiText }}<span v-if="aiRunning" class="ai-caret"></span></div>
+
+              <div class="flex items-center gap-2.5 pt-4 border-t border-[#eef1f7]">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#c8821f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8v5M12 16.5v.01" /></svg>
+                <span class="text-[12.5px] text-[#8b97ad] leading-[1.45]">{{ $t('approvalPage.aiDrafting.disclaimer') }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust cards -->
+        <div class="grid sm:grid-cols-3 gap-6 mt-8">
+          <div v-for="(item, ii) in aiTrust" :key="ii" class="bg-white border border-[#e9eef6] rounded-[20px] p-6">
+            <div class="w-11 h-11 rounded-[12px] bg-[#e9f0ff] flex items-center justify-center" v-html="aiTrustIcons[ii]"></div>
+            <h4 class="text-[17px] font-black mt-4">{{ (item as any).t }}</h4>
+            <p class="text-sm text-[#5b6b86] leading-[1.55] mt-2.5">{{ (item as any).d }}</p>
           </div>
         </div>
       </div>
@@ -409,14 +578,17 @@
       <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(820px 480px at 78% 18%, rgba(58,99,224,.22), transparent 70%)"></div>
       <div class="relative max-w-[1180px] mx-auto">
         <div class="text-center">
-          <div class="inline-flex items-center gap-2 bg-[rgba(93,127,196,.16)] border border-[rgba(125,151,207,.32)] text-[#aebfe4] text-xs font-bold tracking-[.07em] uppercase px-4 py-1.5 rounded-full">
-            {{ $t('approvalPage.showcase.badge') }}
+          <div class="inline-flex items-center gap-3">
+            <span class="w-7 h-7 rounded-[9px] bg-[#5d7fc4] text-white text-xs font-black flex items-center justify-center">{{ $t('approvalPage.showcase.chapter') }}</span>
+            <span class="text-[13px] font-black uppercase tracking-[.08em] text-[#aebfe4]">{{ $t('approvalPage.showcase.badge') }}</span>
           </div>
           <h2 class="text-[clamp(30px,4vw,46px)] font-black tracking-[-0.025em] mt-5 leading-[1.1] text-white whitespace-pre-line">
             {{ $t('approvalPage.showcase.title') }}
           </h2>
           <p class="text-[17px] text-[#aab6cf] mt-4 max-w-[600px] mx-auto">
-            {{ $t('approvalPage.showcase.desc') }}
+            {{ $t('approvalPage.showcase.descBefore') }}
+            <em class="not-italic text-[#dbe4f7] font-bold">{{ $t('approvalPage.showcase.descEm') }}</em>
+            {{ $t('approvalPage.showcase.descAfter') }}
           </p>
         </div>
 
@@ -982,6 +1154,34 @@ const stampShow = computed(() => cycle.value >= 4)
 const toastShow = computed(() => cycle.value >= 5)
 let cycleTimer: ReturnType<typeof setInterval>
 
+// AI drafting: typewriter that reveals the selected tone's letter 5 chars at a time
+const aiTone = ref(0)
+const aiChars = ref(0)
+const aiRunning = ref(true)
+let aiTimer: ReturnType<typeof setInterval>
+
+const aiTones = computed(() => tm('approvalPage.aiDrafting.tones') as Array<{ label: string; sub: string; caption: string; letter: string }>)
+const aiPoints = computed(() => tm('approvalPage.aiDrafting.field3Points') as string[])
+const aiTrust = computed(() => tm('approvalPage.aiDrafting.trust') as Array<{ t: string; d: string }>)
+const aiLetter = computed(() => aiTones.value[aiTone.value]?.letter ?? '')
+const aiCaption = computed(() => aiTones.value[aiTone.value]?.caption ?? '')
+const aiText = computed(() => aiLetter.value.slice(0, aiChars.value))
+
+const pickTone = (i: number) => {
+  aiTone.value = i
+  rerunAi()
+}
+const rerunAi = () => {
+  aiChars.value = 0
+  aiRunning.value = true
+}
+
+const aiTrustIcons: string[] = [
+  `<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2f57c9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M9 20h6M12 5v15"/></svg>`,
+  `<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2f57c9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3.5v5c0 4.6-3.2 8.4-7.5 9.5-4.3-1.1-7.5-4.9-7.5-9.5v-5L12 3z"/><path d="m9.2 12 2 2 3.6-3.8"/></svg>`,
+  `<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2f57c9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+]
+
 const toggleFaq = (i: number) => {
   openFaq.value = openFaq.value === i ? -1 : i
 }
@@ -1037,6 +1237,16 @@ onMounted(() => {
   cycleTimer = setInterval(() => {
     cycle.value = (cycle.value + 1) % 6
   }, 1400)
+  aiTimer = setInterval(() => {
+    if (!aiRunning.value) return
+    const next = aiChars.value + 5
+    if (next >= aiLetter.value.length) {
+      aiChars.value = aiLetter.value.length
+      aiRunning.value = false
+    } else {
+      aiChars.value = next
+    }
+  }, 20)
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -1054,6 +1264,7 @@ onUnmounted(() => {
   clearInterval(stageTimer)
   clearInterval(featTimer)
   clearInterval(cycleTimer)
+  clearInterval(aiTimer)
 })
 </script>
 
@@ -1075,6 +1286,16 @@ onUnmounted(() => {
   50%       { transform: translate(16px,-14px) scale(1.05); }
 }
 @keyframes heroDashMove { to { stroke-dashoffset: -64; } }
+@keyframes heroFloaty {
+  0%, 100% { transform: rotate(6deg) translateY(0); }
+  50%       { transform: rotate(6deg) translateY(-10px); }
+}
+@keyframes aiSparkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes aiBounceDot {
+  0%, 80%, 100% { transform: translateY(0); opacity: .45; }
+  40%            { transform: translateY(-4px); opacity: 1; }
+}
+@keyframes aiBlink { 50% { opacity: 0; } }
 
 .hero-approval-page { min-height: 780px; }
 .hero-dots {
@@ -1105,6 +1326,17 @@ onUnmounted(() => {
 .hero-card { background: #fff; border: 1px solid #e9eef6; border-radius: 20px; position: absolute; }
 .hero-card-doc { right: 0; top: 380px; width: 300px; transform: rotate(3.5deg); padding: 22px; box-shadow: 0 34px 70px -32px rgba(20,35,63,.45); z-index: 1; }
 .hero-card-steps { left: 0; top: 200px; width: 262px; transform: rotate(-5deg); padding: 20px; box-shadow: 0 28px 60px -30px rgba(20,35,63,.4); z-index: 2; }
+
+.hero-ai-badge {
+  position: absolute; top: -16px; right: 12px;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: linear-gradient(135deg, #3a63e0, #2f6be8);
+  color: #fff; font-size: 11.5px; font-weight: 800;
+  padding: 7px 13px; border-radius: 999px; letter-spacing: .01em; white-space: nowrap;
+  box-shadow: 0 14px 28px -12px rgba(47,87,201,.9);
+  animation: heroFloaty 5.5s ease-in-out infinite;
+}
+.hero-ai-badge svg { animation: aiSparkle 2.4s ease-in-out infinite; }
 
 .hero-doc-head { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid #eef1f7; }
 .hero-doc-ico { width: 36px; height: 36px; border-radius: 10px; background: #e9f0ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -1155,6 +1387,35 @@ onUnmounted(() => {
   .hero-link, .hero-dots { display: none; }
 }
 
+/* Eyebrow divider: "— label —" rule used between sub-groups of a section */
+.section-divider {
+  display: flex; align-items: center; gap: 16px;
+  font-size: 12px; font-weight: 800; letter-spacing: .07em;
+  text-transform: uppercase; color: #9aa6bd; white-space: nowrap;
+}
+.section-divider::before,
+.section-divider::after { content: ''; height: 1px; flex: 1; background: #e6ebf4; }
+
+/* ─── AI drafting ─── */
+.ai-dots {
+  background-image: radial-gradient(#d9e3f8 1.3px, transparent 1.3px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(closest-side at 50% 30%, #000 10%, transparent 80%);
+  mask-image: radial-gradient(closest-side at 50% 30%, #000 10%, transparent 80%);
+  opacity: .7;
+}
+.ai-sparkle { animation: aiSparkle 2.4s ease-in-out infinite; }
+.ai-step-num {
+  width: 19px; height: 19px; border-radius: 6px; flex-shrink: 0;
+  background: #e9f0ff; color: #2f57c9; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.ai-dot { width: 4px; height: 4px; border-radius: 50%; background: #2f57c9; animation: aiBounceDot 1s infinite; }
+.ai-caret {
+  display: inline-block; width: 2px; height: 16px; background: #2f57c9;
+  vertical-align: -3px; margin-left: 1px; animation: aiBlink .9s step-end infinite;
+}
+
 /* Animated dashed connector */
 .approval-connector {
   width: 90px;
@@ -1176,14 +1437,6 @@ onUnmounted(() => {
   0%   { transform: scale(0.85); opacity: 0.7; }
   70%  { transform: scale(1.7);  opacity: 0; }
   100% { opacity: 0; }
-}
-
-/* Step numbers — vibrant glow */
-.step-number {
-  color: #2f57c9;
-  text-shadow:
-    0 0 18px rgba(47, 87, 201, 0.55),
-    0 0 36px rgba(47, 87, 201, 0.25);
 }
 
 /* FAQ expand transition */
