@@ -36,8 +36,27 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 88px;
     font-family: var(--font-sans);
     font-feature-settings: var(--font-sans--font-feature-settings);
+  }
+
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  main section.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .78s cubic-bezier(.22, 1, .36, 1), transform .78s cubic-bezier(.22, 1, .36, 1);
+    will-change: opacity, transform;
+  }
+
+  main section.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -168,5 +187,11 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  main section.reveal-on-scroll,
+  main section.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
   }
 }

@@ -1,15 +1,15 @@
 export default {
   hero: {
     title: {
-      part1: "Shifd",
+      part1: "Shifd Labs",
       part2: "membawa dampak positif",
       part3: "bagi",
       part4: "ekosistem bisnis",
       part5: "Anda."
     },
     caption: "Kami menghadirkan solusi inovatif untuk memberdayakan bisnis Anda dengan strategi dan alat yang mendukung pertumbuhan berkelanjutan serta menjaga Anda tetap unggul di dunia teknologi yang terus berkembang.",
-    whyButton: "Mengapa Shifd?",
-    learnServicesButton: "Pelajari Solusi Shifd →"
+    whyButton: "Mengapa Shifd Labs?",
+    learnServicesButton: "Pelajari Solusi Shifd Labs →"
   },
   productIntroduction: {
     title: "Temukan Solusi yang Mendorong Pertumbuhan Bisnis Lebih Cerdas dan Lebih Cepat",
@@ -25,7 +25,7 @@ export default {
     products: {
       title: "Produk yang kami bangun & kelola",
       description: "Platform SaaS yang dirancang, dioperasikan, dan didukung secara end-to-end oleh tim kami, dimulai dari alur kerja dokumen.",
-      tag: "Shifd Approval",
+      tag: "Shifd Labs Approval",
       point1: "Berjalan di infrastruktur cloud yang aman",
       point2: "Diperbarui berkelanjutan, tanpa perlu pemeliharaan",
       point3: "Didukung oleh tim support khusus",
@@ -77,7 +77,7 @@ export default {
     smallTitle: "Layanan Profesional",
     cta1: "Punya Ide?",
     cta2: "Mari Wujudkan dan Luncurkan Lebih Cepat 🚀",
-    bridgingText: "Dengan Layanan Shifd",
+    bridgingText: "Dengan Layanan Shifd Labs",
     caption: "Dari percikan ide pertama hingga menjadi aplikasi web atau mobile yang sepenuhnya fungsional, kami membantu Anda merancang, membangun, dan meluncurkan produk digital yang selaras dengan visi dan tujuan bisnis Anda.",
     mobileDevDesc: "Aplikasi dikembangkan menggunakan teknologi native atau hybrid, yang dipilih berdasarkan performa, skala, dan kebutuhan bisnis.",
     webDevDesc: "Aplikasi web dibangun menggunakan teknologi open source yang dirancang agar fleksibel, mudah dikembangkan (scalable), dan hemat biaya.",
@@ -121,12 +121,14 @@ export default {
   callToAction: {
     title1: "Siap untuk",
     title2: "memulai?",
-    caption: "Ciptakan perubahan revolusioner untuk masa depan dunia kerja bersama Shifd.",
+    caption: "Ciptakan perubahan revolusioner untuk masa depan dunia kerja bersama Shifd Labs.",
     whatsAppUs: "WhatsApp Kami",
     contactUs: "Hubungi Kami"
   },
   header: {
     productNServices: "Produk & Layanan",
+    product: "Produk",
+    approvalDescription: "Persetujuan dokumen end-to-end",
     contactUs: "Hubungi Kami",
     aboutUs: "Tentang Kami",
     whatsAppUs: "WhatsApp Kami"
@@ -140,8 +142,12 @@ export default {
   },
   contactUs: {
     badge: "Keunggulan Terverifikasi",
-    heading: "Jadwalkan konsultasi gratis Anda",
-    subtitle: "Kembangkan infrastruktur perusahaan Anda dengan presisi arsitektural. Konsultasikan bersama kami untuk menyusun roadmap yang disesuaikan dengan evolusi digital perusahaan Anda.",
+    heroKicker: "Mari cari jalan keluarnya bersama",
+    heroNote: "Bawa pertanyaan, alur kerja, atau ide kasarnya. Kita mulai dari sana.",
+    heading: "Ceritakan apa yang terasa lebih rumit dari seharusnya",
+    subtitle: "Punya masalah produk, alur kerja, atau bisnis yang ingin diurai? Ceritakan bagian yang terasa paling sulit.",
+    formEyebrow: "Mulai percakapan",
+    formTitle: "Apa yang sedang Anda hadapi?",
     features: {
       scalableTitle: "Infrastruktur yang Skalabel",
       scalableDesc: "Solusi berbasis cloud yang dirancang untuk berkembang bersama kebutuhan bisnis Anda.",
@@ -158,7 +164,7 @@ export default {
       briefDescription: "Deskripsi Singkat",
       briefDescriptionPlaceholder: "Ceritakan kebutuhan proyek Anda...",
       submitButton: "Kirim Permintaan",
-      planMessage: "Halo, saya tertarik dengan paket {plan} Shifd Approval. Mohon informasi lebih lanjut."
+      planMessage: "Halo, saya tertarik dengan paket {plan} Shifd Labs Approval. Mohon informasi lebih lanjut."
     },
     preferDirect: "Lebih suka kontak langsung?",
     whatsapp: "WhatsApp",
@@ -507,10 +513,12 @@ export default {
     },
   },
   aboutUs: {
-    badge: "Keunggulan Enterprise",
-    heroHeadline: "Solusi IT Presisi untuk",
-    heroHeadlineHighlight: "Bisnis Modern",
-    mainDescription: "Shifd adalah perusahaan konsultan dan layanan IT yang berfokus pada pengembangan solusi perangkat lunak untuk administrasi, pergudangan, usaha kecil dan menengah (UKM), serta platform company profile.",
+    badge: "Dibangun dari pekerjaan nyata",
+    heroKicker: "Tentang Shifd Labs / Software yang berpusat pada manusia",
+    heroHeadline: "Software yang baik membuat pekerjaan terasa",
+    heroHeadlineHighlight: "lebih manusiawi.",
+    mainDescription: "Shifd Labs mengubah alur kerja bisnis sehari-hari menjadi software yang jelas, berguna, dan mudah berkembang, untuk tim yang menggunakannya setiap hari.",
+    heroNote: "Tim praktis untuk bisnis yang ingin terus berkembang.",
     featureScalable: "Arsitektur Skalabel",
     featureSecure: "Infrastruktur Aman",
     missionSectionTitle: "Mendorong Evolusi Digital Anda",
@@ -521,8 +529,9 @@ export default {
     technicalMasteryDesc: "Keahlian mendalam dalam teknologi modern dan aplikasi berkinerja tinggi yang disesuaikan untuk pertumbuhan Anda.",
     cloudReadyTitle: "Siap Cloud",
     cloudReadyDesc: "Migrasi dan pengelolaan ekosistem berbasis cloud yang mulus.",
-    callToActionQuestion: "Siap mengembangkan potensi Anda?",
-    callToActionCaption: "Dapatkan konsultasi gratis bersama tim kami. Shifd siap membantu meningkatkan efisiensi bisnis dan produktivitas tim Anda!",
+    callToActionQuestion: "Mari membuat pekerjaan berjalan lebih baik.",
+    callToActionCaption: "Ceritakan apa yang terasa rumit hari ini. Kami bantu mencari langkah yang lebih sederhana dan berguna.",
+    ctaButton: "Hubungi Kami",
     whatsAppUs: "WhatsApp Kami",
     preferDirect: "Punya pertanyaan?",
     preferDirectDesc: "Kami siap membantu di WhatsApp.",
@@ -536,6 +545,16 @@ export default {
     missionLabel: "Siapa Kami",
     ctaLabel: "Mari Bicara",
     valuesLabel: "Cara Kami Bekerja",
+    introTitle: "Kami peduli pada bagian yang paling rumit.",
+    introDescription: "Ruang di antara ide bisnis dan orang-orang yang harus menggunakannya. Kami mendengarkan dengan saksama, memetakan alur kerja nyata, lalu membangun produk digital yang mengurangi hambatan tanpa menghilangkan sisi manusia dalam pekerjaan.",
+    valuesTitle: "Apa yang membedakan kami",
+    valuesDescription: "Hasil terbaik kami lahir dari rasa ingin tahu pada manusia, sikap praktis terhadap teknologi, dan perhatian pada detail yang membuat sebuah sistem benar-benar berguna.",
+    valuePeopleTitle: "Mulai dari manusia",
+    valuePeopleDesc: "Kami merancang berdasarkan orang yang menjalankan pekerjaan, bukan hanya proses di atas kertas.",
+    valueWorkTitle: "Bangun dari pekerjaan nyata",
+    valueWorkDesc: "Kami mengubah alur kerja yang kompleks menjadi tools yang tenang, mudah dipahami, dan benar-benar bisa diadopsi tim.",
+    valueSupportTitle: "Tetap dekat setelah rilis",
+    valueSupportDesc: "Produk yang baik terus berkembang. Kami tetap hadir, responsif, dan ikut peduli pada langkah berikutnya.",
     valueCustomerCentricDesc: "Setiap solusi berawal dari alur kerja Anda dan orang-orang yang menggunakannya.",
     valueSecurityTitle: "Keamanan & Keandalan",
     valueSecurityDesc: "Komitmen kuat terhadap keamanan data dan sistem yang andal di setiap rilis.",

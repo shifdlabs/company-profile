@@ -13,9 +13,9 @@ const currentYear = new Date().getFullYear()
         <!-- Logo Column -->
         <div class="lg:col-span-1" data-purpose="footer-logo">
           <div class="flex items-center gap-4 mb-[24px]">
-            <!-- Shifd Logo -->
-            <img src="/src/assets/app-logo.svg" alt="Shifd Logo" class="h-16 w-auto">
-            <span class="text-[42px] font-['DM_Serif_Text'] leading-none text-[#2f57c9]">Shifd</span>
+            <!-- Shifd Labs Logo -->
+            <img src="/src/assets/app-logo.svg" alt="Shifd Labs Logo" class="h-16 w-auto">
+            <span class="text-[42px] font-['DM_Serif_Text'] leading-none text-[#2f57c9]">Shifd Labs</span>
           </div>
           <p class="text-base text-[#565e74] leading-relaxed">
             Empowering your digital transformation with innovative solutions.
@@ -29,7 +29,7 @@ const currentYear = new Date().getFullYear()
             <h4 class="text-[#191c1e] font-semibold mb-[16px] tracking-wide uppercase text-[16px]" style="font-family: 'Inter', sans-serif; line-height: 1; letter-spacing: 0.05em;">{{ $t('footer.product') }}</h4>
             <ul class="space-y-[8px] text-[16px]" style="font-family: 'Inter', sans-serif; line-height: 2;">
               <li class="">
-                <button @click="scrollToSection('products-services')" class="footer-link text-[#434655]">Shifd Approval</button>
+                <button @click="scrollToSection('products-services')" class="footer-link text-[#434655]">Shifd Labs Approval</button>
               </li>
             </ul>
           </div>

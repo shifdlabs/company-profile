@@ -1,15 +1,15 @@
 export default {
   hero: {
     title: {
-      part1: "Shifd",
+      part1: "Shifd Labs",
       part2: "makes a positive",
       part3: "impact",
       part4: "on your",
       part5: "business ecosystem."
     },
     caption: "We deliver advanced and innovative solutions designed to empower your business with the tools and strategies needed for sustainable growth, ensuring you stay ahead in an ever evolving technological landscape.",
-    whyButton: "Why Shifd?",
-    learnServicesButton: "Learn Shifd Solution →"
+    whyButton: "Why Shifd Labs?",
+    learnServicesButton: "Learn Shifd Labs Solution →"
   },
   productIntroduction: {
     title: "Discover the Tools Powering Smarter, Faster Business Growth",
@@ -25,7 +25,7 @@ export default {
     products: {
       title: "Products we build & run",
       description: "SaaS platforms designed, operated, and supported end-to-end by our team, starting with document workflows.",
-      tag: "Shifd Approval",
+      tag: "Shifd Labs Approval",
       point1: "Run on secure cloud infrastructure",
       point2: "Continuously updated, nothing to maintain",
       point3: "Backed by dedicated support",
@@ -77,7 +77,7 @@ export default {
     smallTitle: "Professional Services",
     cta1: "Have an Idea?",
     cta2: "Let's Craft It and Launch Faster 🚀",
-    bridgingText: "With Shifd Services",
+    bridgingText: "With Shifd Labs Services",
     caption: "From the first spark of an idea to a fully functional mobile or web application, we help you design, build, and launch digital products that match your vision and business goals.",
     mobileDevDesc: "Apps are built using native or hybrid technologies, chosen based on performance, scale, and business needs.",
     webDevDesc: "Web applications built with open source technologies designed to be flexible, scalable, and cost efficient.",
@@ -121,12 +121,14 @@ export default {
   callToAction: {
     title1: "Ready to get",
     title2: "started?",
-    caption: "Create revolutionary change for the future of work with Shifd",
+    caption: "Create revolutionary change for the future of work with Shifd Labs",
     whatsAppUs: "WhatsApp Us",
     contactUs: "Contact Us"
   },
   header: {
     productNServices: "Products & Services",
+    product: "Product",
+    approvalDescription: "End-to-end document approvals",
     contactUs: "Contact Us",
     aboutUs: "About Us",
     whatsAppUs: "WhatsApp Us"
@@ -140,8 +142,12 @@ export default {
   },
   contactUs: {
     badge: "Verified Excellence",
-    heading: "Book your free consultation",
-    subtitle: "Scale your enterprise infrastructure with architectural precision. Consult with us to develop a tailored roadmap for your enterprise digital evolution.",
+    heroKicker: "Let's work it out together",
+    heroNote: "Bring the question, the workflow, or the rough idea. We will start there.",
+    heading: "Tell us what feels harder than it should",
+    subtitle: "Have a product, workflow, or business problem to untangle? Tell us where things feel harder than they should.",
+    formEyebrow: "Start a conversation",
+    formTitle: "What are you working through?",
     features: {
       scalableTitle: "Scalable Infrastructure",
       scalableDesc: "Cloud-native solutions designed to grow with your business requirements.",
@@ -158,7 +164,7 @@ export default {
       briefDescription: "Brief Description",
       briefDescriptionPlaceholder: "Tell us about your project requirements...",
       submitButton: "Submit Request",
-      planMessage: "Hi, I'm interested in the {plan} plan for Shifd Approval. Please send me more details."
+      planMessage: "Hi, I'm interested in the {plan} plan for Shifd Labs Approval. Please send me more details."
     },
     preferDirect: "Prefer direct contact?",
     whatsapp: "WhatsApp",
@@ -507,10 +513,12 @@ export default {
     },
   },
   aboutUs: {
-    badge: "Enterprise Excellence",
-    heroHeadline: "Precision IT Solutions for",
-    heroHeadlineHighlight: "Modern Business",
-    mainDescription: "Shifd is an IT consulting and services company specializing in the development of software solutions for administration, warehousing, small and medium-sized enterprises (SMEs), and company profile platforms.",
+    badge: "Built around real work",
+    heroKicker: "About Shifd Labs / People-first software",
+    heroHeadline: "Good software should make work feel",
+    heroHeadlineHighlight: "more human.",
+    mainDescription: "Shifd Labs turns everyday business workflows into software that feels clear, useful, and easy to grow with, for the teams who rely on it every day.",
+    heroNote: "A practical team for ambitious businesses.",
     featureScalable: "Scalable Architecture",
     featureSecure: "Secure Infrastructure",
     missionSectionTitle: "Empowering Your Digital Evolution",
@@ -521,8 +529,9 @@ export default {
     technicalMasteryDesc: "Deep expertise in modern tech stacks and high-performance applications tailored for your growth.",
     cloudReadyTitle: "Cloud Ready",
     cloudReadyDesc: "Seamless migration and management of cloud-based ecosystems.",
-    callToActionQuestion: "Are you ready to grow your potential?",
-    callToActionCaption: "Get a free consultation with our team, Shifd is here to help you boost business efficiency and team productivity!",
+    callToActionQuestion: "Let's make work better.",
+    callToActionCaption: "Tell us what feels complicated today. We’ll help you find a simpler, more useful way forward.",
+    ctaButton: "Contact Us",
     whatsAppUs: "WhatsApp Us",
     preferDirect: "Got questions?",
     preferDirectDesc: "We're on WhatsApp and ready to help.",
@@ -536,6 +545,16 @@ export default {
     missionLabel: "Who We Are",
     ctaLabel: "Let's Talk",
     valuesLabel: "How We Work",
+    introTitle: "We care about the messy middle.",
+    introDescription: "The space between a business idea and the people who have to use it. We listen closely, map the real workflow, and build digital products that remove friction without removing the human side of work.",
+    valuesTitle: "What sets us apart",
+    valuesDescription: "Our best work comes from staying curious about people, practical about technology, and close to the details that make a system truly useful.",
+    valuePeopleTitle: "Start with people",
+    valuePeopleDesc: "We design around the people doing the work, not just the process on paper.",
+    valueWorkTitle: "Build from real work",
+    valueWorkDesc: "We turn complex workflows into calm, understandable tools that teams can actually adopt.",
+    valueSupportTitle: "Stay close after launch",
+    valueSupportDesc: "A good product keeps getting better. We stay available, responsive, and invested in what happens next.",
     valueCustomerCentricDesc: "Every solution starts from your workflow and the people who use it.",
     valueSecurityTitle: "Security & Reliability",
     valueSecurityDesc: "A strong commitment to data security and dependable systems in every release.",

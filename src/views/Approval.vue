@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f6f8fc] text-[#16233f] overflow-x-hidden">
+  <div class="approval-page bg-[#f6f8fc] text-[#16233f] overflow-x-hidden">
     <AppHeader />
 
     <!-- ── HERO ── -->
@@ -574,7 +574,7 @@
     </section>
 
     <!-- ── SHOWCASE (FITUR UNGGULAN) ── -->
-    <section class="bg-[#0c1730] text-white py-24 px-8 relative overflow-hidden">
+    <section class="approval-showcase bg-[#0c1730] text-white py-24 px-8 relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(820px 480px at 78% 18%, rgba(58,99,224,.22), transparent 70%)"></div>
       <div class="relative max-w-[1180px] mx-auto">
         <div class="text-center">
@@ -941,7 +941,7 @@
     </section>
 
     <!-- ── WHY CHOOSE ── -->
-    <section class="max-w-[1180px] mx-auto px-8 py-24">
+    <section class="approval-why max-w-[1180px] mx-auto px-8 py-24">
       <div class="text-center">
         <p class="text-xs font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.why.label') }}</p>
         <h2 class="text-[clamp(28px,3.6vw,40px)] font-black tracking-[-0.02em] mt-3.5">{{ $t('approvalPage.why.title') }}</h2>
@@ -1031,7 +1031,7 @@
     </section>
 
     <!-- ── FAQ ── -->
-    <section class="bg-white border-t border-[#eef1f7] py-24 px-8">
+    <section class="approval-faq bg-white border-t border-[#eef1f7] py-24 px-8">
       <div class="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start">
         <div>
           <p class="text-xs font-black uppercase tracking-[.08em] text-[#2f57c9]">{{ $t('approvalPage.faq.label') }}</p>
@@ -1075,7 +1075,7 @@
     </section>
 
     <!-- ── CTA ── -->
-    <section class="py-24 px-8">
+    <section class="approval-cta py-24 px-8">
       <div
         class="max-w-[1080px] mx-auto rounded-[32px] px-8 sm:px-14 py-20 text-center relative overflow-hidden"
         style="background: linear-gradient(150deg,#3258cc,#22377e); box-shadow: 0 40px 90px -40px rgba(47,87,201,.7)"
@@ -1089,20 +1089,9 @@
           {{ $t('approvalPage.cta.desc') }}
         </p>
         <div class="relative flex flex-wrap gap-3.5 justify-center mt-8">
-          <a
-            href="https://wa.me/6281234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-white text-[#2f57c9] px-7 py-3.5 rounded-2xl text-[15px] font-black"
-          >
-            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.6A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/>
-            </svg>
-            {{ $t('approvalPage.cta.btn1') }}
-          </a>
           <router-link
             to="/contact-us"
-            class="inline-flex items-center gap-2 text-white px-6 py-3.5 rounded-2xl text-[15px] font-bold border"
+            class="inline-flex w-full max-w-[520px] items-center justify-center gap-2 text-white px-8 py-4 rounded-2xl text-[15px] font-bold border"
             style="background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.25)"
           >
             {{ $t('approvalPage.cta.btn2') }}
@@ -1486,5 +1475,373 @@ onUnmounted(() => {
 }
 .showcase-slide-back {
   animation: slideBack 2.4s ease-in-out infinite;
+}
+
+/* ─── Shifd editorial skin ─── */
+.approval-page {
+  --approval-ink: #17191c;
+  --approval-blue: #3279e7;
+  --approval-yellow: #ffbf1f;
+  --approval-cream: #fbfaf6;
+  --approval-soft-blue: #edf3ff;
+  background: var(--approval-cream) !important;
+  color: var(--approval-ink);
+}
+
+.approval-page > section {
+  border-color: rgba(23, 25, 28, .12) !important;
+}
+
+.approval-page .hero-approval-page {
+  min-height: 760px;
+  background: var(--approval-cream) !important;
+}
+
+.approval-page .hero-dots {
+  background-image: radial-gradient(rgba(50, 121, 231, .25) 1.4px, transparent 1.4px);
+}
+
+.approval-page .hero-badge {
+  border-color: rgba(23, 25, 28, .18);
+  background: var(--approval-yellow);
+  color: var(--approval-ink);
+  border-radius: 7px;
+}
+
+.approval-page .hero-badge > span:first-child {
+  background: var(--approval-ink);
+}
+
+.approval-page .hero-accent {
+  background: none;
+  color: var(--approval-blue);
+  -webkit-text-fill-color: currentColor;
+}
+
+.approval-page .hero-accent path {
+  stroke: var(--approval-yellow);
+}
+
+.approval-page .hero-scene {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  max-width: 1120px;
+  height: 520px;
+  margin: 92px auto 0;
+  transform: none;
+}
+
+.approval-page .hero-blob-l {
+  background: radial-gradient(circle, rgba(255, 191, 31, .18), rgba(255, 191, 31, 0) 70%);
+}
+
+.approval-page .hero-blob-r {
+  background: radial-gradient(circle, rgba(50, 121, 231, .14), rgba(50, 121, 231, 0) 70%);
+}
+
+.approval-page .hero-card {
+  border: 2px solid var(--approval-ink);
+  border-radius: 15px;
+  box-shadow: 7px 7px 0 var(--approval-ink);
+}
+
+.approval-page .hero-card-doc,
+.approval-page .hero-card-steps {
+  background: #fffdf8;
+}
+
+.approval-page .hero-ai-badge {
+  border: 2px solid var(--approval-ink);
+  border-radius: 7px;
+  color: var(--approval-ink);
+  background: var(--approval-yellow);
+  box-shadow: 4px 4px 0 var(--approval-ink);
+}
+
+.approval-page .hero-doc-ico,
+.approval-page .hero-step.active .hero-step-dot {
+  background: var(--approval-soft-blue);
+}
+
+.approval-page .hero-step.done .hero-step-dot,
+.approval-page .hero-toast-ico {
+  background: var(--approval-blue);
+}
+
+.approval-page .hero-step.active .hero-step-dot,
+.approval-page .hero-step.done .hero-step-dot {
+  border-color: var(--approval-ink);
+}
+
+.approval-page .hero-step.done .hero-step-label,
+.approval-page .hero-step.active .hero-step-label,
+.approval-page .hero-doc-title,
+.approval-page .hero-steps-title {
+  color: var(--approval-ink);
+}
+
+.approval-page .hero-doc-chip,
+.approval-page .hero-live {
+  background: var(--approval-yellow);
+  color: var(--approval-ink);
+}
+
+.approval-page #alur,
+.approval-page #fitur-inti,
+.approval-page #pricing,
+.approval-page .approval-faq {
+  background: #fffdf8 !important;
+}
+
+.approval-page #ai-drafting {
+  background: var(--approval-soft-blue) !important;
+}
+
+.approval-page .ai-dots {
+  background-image: radial-gradient(rgba(50, 121, 231, .23) 1.3px, transparent 1.3px);
+}
+
+.approval-page .section-divider {
+  color: #566274;
+}
+
+.approval-page .section-divider::before,
+.approval-page .section-divider::after {
+  background: rgba(23, 25, 28, .18);
+}
+
+.approval-page .approval-showcase {
+  background: var(--approval-ink) !important;
+}
+
+.approval-page .approval-showcase .rounded-\[20px\],
+.approval-page .approval-showcase .rounded-\[18px\] {
+  border-radius: 14px;
+}
+
+.approval-page .approval-why {
+  background: var(--approval-cream);
+}
+
+.approval-page .approval-why > div > .text-center,
+.approval-page #alur > div > .text-center,
+.approval-page #fitur-inti > div > .text-center,
+.approval-page #pricing > div > .text-center,
+.approval-page .approval-faq .text-xs {
+  color: var(--approval-blue);
+}
+
+.approval-page .approval-why .bg-white,
+.approval-page #alur .bg-white,
+.approval-page #fitur-inti .bg-white,
+.approval-page #ai-drafting .bg-white,
+.approval-page #pricing .bg-white,
+.approval-page .approval-faq .bg-white {
+  background: #fffdf8 !important;
+}
+
+.approval-page .approval-why .border-\[\#e9eef6\],
+.approval-page #fitur-inti .border-\[\#eef1f7\],
+.approval-page #pricing .border-\[\#d3e1ff\],
+.approval-page .approval-faq .border-\[\#eef1f7\] {
+  border-color: rgba(23, 25, 28, .14) !important;
+}
+
+.approval-page .approval-why .rounded-\[20px\],
+.approval-page #fitur-inti .rounded-3xl,
+.approval-page #ai-drafting .rounded-\[22px\],
+.approval-page #pricing .pricing-card,
+.approval-page .approval-faq .rounded-2xl {
+  border-radius: 15px;
+}
+
+.approval-page .pricing-card {
+  border-color: rgba(23, 25, 28, .18) !important;
+  box-shadow: 6px 6px 0 rgba(23, 25, 28, .14) !important;
+}
+
+.approval-page .pricing-card[class*="border-2"] {
+  border-color: var(--approval-blue) !important;
+}
+
+.approval-page .pricing-card[class*="bg-\[\#1a1c1e\]"] {
+  background: var(--approval-ink) !important;
+}
+
+.approval-page .pricing-card .bg-\[\#2f57c9\] {
+  background: var(--approval-blue) !important;
+}
+
+.approval-page .approval-cta {
+  background: var(--approval-cream);
+}
+
+.approval-page .approval-cta > div {
+  border: 2px solid var(--approval-ink);
+  border-radius: 16px;
+  background: var(--approval-yellow) !important;
+  box-shadow: 8px 8px 0 var(--approval-ink) !important;
+}
+
+.approval-page .approval-cta h2 {
+  color: var(--approval-ink);
+}
+
+.approval-page .approval-cta p {
+  color: #51451e;
+}
+
+.approval-page .approval-cta a:first-of-type {
+  color: #fff;
+  background: var(--approval-blue);
+}
+
+.approval-page .approval-cta a:last-of-type {
+  border-color: transparent !important;
+  color: #fff;
+  background: var(--approval-blue) !important;
+  box-shadow: 0 8px 0 rgba(23, 25, 28, .18);
+}
+
+/* Yellow rhythm across every section */
+.approval-page > section {
+  border-top: 4px solid var(--approval-yellow) !important;
+}
+
+.approval-page #alur > div > .text-center > p:first-child,
+.approval-page #fitur-inti .inline-flex.items-center.gap-3 > span:last-child,
+.approval-page #pricing > div > .text-center > p:first-child,
+.approval-page .approval-why > div > .text-center > p:first-child,
+.approval-page .approval-faq p.text-xs {
+  color: #b27600 !important;
+}
+
+.approval-page #fitur-inti .inline-flex.items-center.gap-3 > span:first-child,
+.approval-page #ai-drafting .inline-flex.items-center.gap-3 > span:first-child,
+.approval-page .approval-showcase .inline-flex.items-center.gap-3 > span:first-child {
+  color: var(--approval-ink) !important;
+  background: var(--approval-yellow) !important;
+  box-shadow: 4px 4px 0 var(--approval-ink) !important;
+}
+
+.approval-page #alur .approval-connector > div {
+  background: var(--approval-yellow) !important;
+}
+
+.approval-page #alur .approval-ring {
+  border-color: var(--approval-yellow) !important;
+}
+
+.approval-page #fitur-inti .inline-flex.items-center.text-xs {
+  color: #8a5d00 !important;
+  background: #fff2bf !important;
+  border: 1px solid rgba(178, 118, 0, .25);
+}
+
+.approval-page #fitur-inti .w-5.h-5.rounded-full {
+  background: #fff2bf !important;
+}
+
+.approval-page #fitur-inti .w-5.h-5.rounded-full svg {
+  stroke: #b27600 !important;
+}
+
+.approval-page #ai-drafting .ai-step-num {
+  color: var(--approval-ink);
+  background: var(--approval-yellow);
+}
+
+.approval-page #ai-drafting .ai-dot {
+  background: var(--approval-yellow);
+}
+
+.approval-page .approval-showcase .text-\[\#aebfe4\] {
+  color: #ffd45c !important;
+}
+
+.approval-page .approval-showcase button[class*="border-\[\#2f57c9\]"] {
+  border-color: var(--approval-yellow) !important;
+}
+
+.approval-page .approval-showcase button[class*="border-\[\#2f57c9\]"] > span:first-child {
+  color: var(--approval-ink) !important;
+  background: var(--approval-yellow) !important;
+}
+
+.approval-page .approval-why .w-11.h-11.rounded-\[12px\] {
+  background: #fff2bf !important;
+}
+
+.approval-page .approval-why .w-11.h-11.rounded-\[12px\] svg {
+  stroke: #b27600 !important;
+}
+
+.approval-page .pricing-card[class*="border-2"] {
+  border-color: var(--approval-yellow) !important;
+}
+
+.approval-page #pricing .bg-\[\#2f57c9\] {
+  background: var(--approval-yellow) !important;
+  color: var(--approval-ink) !important;
+}
+
+.approval-page .approval-faq button > span:last-child {
+  color: #b27600 !important;
+}
+
+.approval-page .approval-faq a {
+  border: 2px solid var(--approval-ink);
+  background: var(--approval-yellow) !important;
+  color: var(--approval-ink);
+  box-shadow: 4px 4px 0 var(--approval-ink);
+}
+
+@media (max-width: 1000px) {
+  .approval-page .hero-scene {
+    width: auto;
+    height: auto;
+    margin-top: 48px;
+    transform: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  .approval-page .hero-approval-page > div.relative.max-w-7xl > .relative.z-10 {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .approval-page .hero-scene {
+    position: absolute;
+    inset: 0 24px;
+    width: auto;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    transform: none;
+  }
+
+  .approval-page .hero-card-steps {
+    top: 218px;
+    left: 0;
+    width: 240px;
+    transform: rotate(-5deg) scale(.92);
+    transform-origin: top left;
+  }
+
+  .approval-page .hero-card-doc {
+    top: 388px;
+    right: 0;
+    width: 276px;
+    transform: rotate(3.5deg) scale(.92);
+    transform-origin: top right;
+  }
+
+  .approval-page .hero-toast {
+    bottom: 30px;
+  }
 }
 </style>

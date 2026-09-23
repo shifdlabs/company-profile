@@ -91,7 +91,7 @@ onMounted(() => {
         <router-link to="/" class="flex items-center gap-2.5 flex-shrink-0">
           <img class="h-9 w-auto" src="/src/assets/app-logo.svg" alt="Logo" />
           <p class="text-[26px] font-['DM_Serif_Text'] leading-none text-[#2f57c9]">
-            Shifd
+            Shifd Labs
           </p>
         </router-link>
 
@@ -133,7 +133,7 @@ onMounted(() => {
                 class="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100/80 py-3 px-2 z-50"
                 style="box-shadow: 0 8px 30px -8px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04)"
               >
-                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-3 mb-1.5">Produk</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-3 mb-1.5">{{ $t('header.product') }}</p>
 
                 <router-link
                   to="/approval"
@@ -149,7 +149,7 @@ onMounted(() => {
                   </div>
                   <div class="flex-1 min-w-0">
                     <p class="font-semibold text-sm text-[#1a1c1e] group-hover:text-[#2f57c9] transition-colors leading-tight">Approval</p>
-                    <p class="text-xs text-[#8c8e92] leading-snug mt-0.5">Persetujuan dokumen end-to-end</p>
+                    <p class="text-xs text-[#8c8e92] leading-snug mt-0.5">{{ $t('header.approvalDescription') }}</p>
                   </div>
                   <svg class="w-3.5 h-3.5 text-gray-300 group-hover:text-[#2f57c9] transition-colors shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
@@ -289,7 +289,7 @@ onMounted(() => {
             <div class="flex items-center justify-between px-6 pt-6 pb-4">
               <div class="flex items-center gap-2.5">
                 <img class="h-9 w-auto" src="/src/assets/app-logo.svg" alt="Logo" />
-                <p class="text-[24px] font-['DM_Serif_Text'] text-[#2f57c9] leading-none">Shifd</p>
+                <p class="text-[24px] font-['DM_Serif_Text'] text-[#2f57c9] leading-none">Shifd Labs</p>
               </div>
               <button
                 @click="mobileMenuOpen = false"
@@ -320,7 +320,7 @@ onMounted(() => {
                   </div>
                   <div>
                     <p class="text-base font-semibold text-[#44474a]">Approval</p>
-                    <p class="text-xs text-gray-400 leading-tight">Persetujuan dokumen end-to-end</p>
+                    <p class="text-xs text-gray-400 leading-tight">{{ $t('header.approvalDescription') }}</p>
                   </div>
                 </router-link>
               </div>

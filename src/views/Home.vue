@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-[#f8f9fb] scheme-light">
+  <div class="home-page bg-[#f8f9fb] scheme-light">
     <AppHeader />
 
     <!-- ============================
          HERO SECTION — REDESIGNED
     ============================= -->
-    <div class="relative min-h-screen bg-[#f8f9fb] overflow-hidden">
+    <div class="home-hero relative min-h-screen bg-[#f8f9fb] overflow-hidden">
       <!-- Subtle grid background -->
       <div class="absolute inset-0 hero-grid pointer-events-none" />
 
@@ -158,7 +158,7 @@
 
     <!-- SECTION 2 APPROVAL STARTS -->
     <div
-      class="relative isolate overflow-hidden bg-gray-50 reveal opacity-0 min-h-screen flex items-center"
+      class="home-products relative isolate overflow-hidden bg-gray-50 reveal opacity-0 min-h-screen flex items-center"
       id="products-services"
     >
       <!-- Smooth gradient top — transisi dari Hero (#f8f9fb) ke bg-gray-50 -->
@@ -250,7 +250,7 @@
      SECTION 3 SERVICE START
     ============================= -->
     <div
-      class="relative isolate overflow-hidden z-10 rounded-t-[40px] pb-24 -mt-20"
+      class="home-services relative isolate overflow-hidden z-10 rounded-t-[40px] pb-24 -mt-20"
       id="shifd-services-section"
       style="
         background-color: #F8FAFC;
@@ -324,7 +324,7 @@
     </div>
     <!-- SECTION 3 SERVICE END -->
 
-    <div class="relative isolate min-h-screen overflow-hidden bg-[#2E5B9F] reveal opacity-0" id="why-shifd-section">
+    <div class="home-why relative isolate min-h-screen overflow-hidden bg-[#2E5B9F] reveal opacity-0" id="why-shifd-section">
       <div class="relative px-6 pt-20">
         <div class="mx-auto text-start"> 
           <p class="text-[30px] text-center tracking-tight font-light text-white reveal opacity-0">
@@ -332,7 +332,7 @@
           </p>
 
           <p class="text-[120px] text-center font-['DM_Serif_Text'] text-white leading-none mb-10">
-            Shifd?
+            Shifd Labs?
           </p>
 
           <p class="text-[30px] px-4 md:px-40 text-center font-normal text-white max-w-6xl mx-auto">
@@ -476,7 +476,7 @@
     </div>
 
     <!-- SECTION 5 CTA START -->
-    <div class="relative z-10 bg-white rounded-t-[40px] -mt-20 reveal opacity-0" id="contact-section">
+    <div class="home-contact relative z-10 bg-white rounded-t-[40px] -mt-20 reveal opacity-0" id="contact-section">
  
       <!-- Full-width CTA section -->
       <section class="relative w-full overflow-hidden cta-mesh-bg">
@@ -691,6 +691,202 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #3b82f6, #06b6d4);
+}
+
+/* ─── Blue-led Shifd Labs home skin ─── */
+.home-page {
+  --home-blue: #2f6fe4;
+  --home-blue-dark: #123a80;
+  --home-blue-soft: #edf4ff;
+  --home-yellow: #ffbf1f;
+  --home-ink: #13233d;
+  background: #f7faff;
+  color: var(--home-ink);
+}
+
+.home-hero {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(92, 151, 255, .28), transparent 28%),
+    radial-gradient(circle at 10% 80%, rgba(255, 191, 31, .13), transparent 23%),
+    #edf4ff !important;
+  border-top: 4px solid var(--home-blue);
+}
+
+.home-hero .hero-grid {
+  background-image:
+    linear-gradient(rgba(47, 111, 228, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 111, 228, .07) 1px, transparent 1px);
+}
+
+.home-hero h1 {
+  color: var(--home-ink) !important;
+}
+
+.home-hero .hero-italic {
+  position: relative;
+  z-index: 0;
+  color: var(--home-blue) !important;
+}
+
+.home-hero .hero-italic::after {
+  position: absolute;
+  z-index: -1;
+  right: -4%;
+  bottom: 2px;
+  left: -3%;
+  height: 12px;
+  background: var(--home-yellow);
+  content: '';
+  transform: rotate(-2deg);
+}
+
+.home-hero .inline-flex.border-gray-300 {
+  border-color: rgba(47, 111, 228, .25);
+  background: rgba(255, 255, 255, .72);
+}
+
+.home-hero .inline-flex.border-gray-300 > span:first-child {
+  background: var(--home-yellow);
+}
+
+.home-hero a[href="#why-shifd-section"] {
+  background: var(--home-blue) !important;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(47, 111, 228, .24);
+}
+
+.home-hero a[href="#why-shifd-section"]:hover {
+  background: var(--home-blue-dark) !important;
+}
+
+.home-hero a[href="#shifd-services-section"] {
+  color: var(--home-blue);
+}
+
+.home-hero .hero-float-main {
+  border: 2px solid rgba(47, 111, 228, .2);
+  box-shadow: 0 28px 60px -24px rgba(18, 58, 128, .35);
+}
+
+.home-hero .hero-float-fast > div {
+  background: var(--home-blue-dark);
+}
+
+.home-hero .hero-float-fast .text-\[\#2f57c9\] {
+  color: var(--home-yellow) !important;
+}
+
+.home-products {
+  background:
+    linear-gradient(180deg, rgba(237, 244, 255, .95), rgba(255, 255, 255, .98)) !important;
+  border-top: 4px solid var(--home-yellow);
+}
+
+.home-products .feature-card {
+  border-color: rgba(47, 111, 228, .16);
+  box-shadow: 0 16px 36px -25px rgba(18, 58, 128, .28);
+}
+
+.home-products .feature-card:hover {
+  border-color: rgba(47, 111, 228, .48);
+  box-shadow: 0 22px 42px -25px rgba(47, 111, 228, .32);
+}
+
+.home-products .feature-card:nth-child(2) > div:first-child > div:first-child {
+  background: var(--home-blue) !important;
+}
+
+.home-services {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(47, 111, 228, .14), transparent 32%),
+    radial-gradient(circle at 88% 80%, rgba(255, 191, 31, .12), transparent 28%),
+    #f5f8ff !important;
+  border-top: 4px solid var(--home-blue);
+}
+
+.home-services > section h2 span {
+  background: var(--home-blue) !important;
+  box-shadow: 0 9px 20px rgba(47, 111, 228, .22);
+}
+
+.home-services :deep(.glass-card) {
+  border-color: rgba(47, 111, 228, .16);
+  box-shadow: 0 18px 38px -24px rgba(18, 58, 128, .3);
+}
+
+.home-services :deep(.bg-emerald-50),
+.home-services :deep(.bg-violet-50) {
+  background: #e7f0ff !important;
+}
+
+.home-services :deep(.text-emerald-700),
+.home-services :deep(.text-violet-600),
+.home-services :deep(.text-violet-800),
+.home-services :deep(.text-emerald-900) {
+  color: var(--home-blue) !important;
+}
+
+.home-services :deep(.border-emerald-200),
+.home-services :deep(.border-violet-200) {
+  border-color: rgba(47, 111, 228, .25) !important;
+}
+
+.home-services :deep(.bg-emerald-600),
+.home-services :deep(.bg-violet-600) {
+  background: var(--home-blue) !important;
+}
+
+.home-why {
+  background:
+    radial-gradient(circle at 80% 8%, rgba(84, 145, 255, .38), transparent 27%),
+    linear-gradient(135deg, var(--home-blue-dark), #286dd7) !important;
+  border-top: 4px solid var(--home-yellow);
+}
+
+.home-why::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(480px, 70vw);
+  height: 8px;
+  background: var(--home-yellow);
+  content: '';
+  transform: translateX(-50%);
+}
+
+.home-why > div:first-child p:first-child {
+  color: #ffd45c !important;
+}
+
+.home-why .animate-marquee span[style*="stroke"] {
+  -webkit-text-stroke-color: rgba(255, 212, 92, .8) !important;
+}
+
+.home-contact {
+  border-top: 4px solid var(--home-yellow);
+  background: #f7faff !important;
+}
+
+.home-contact .cta-mesh-bg {
+  border: 2px solid rgba(47, 111, 228, .14);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(47, 111, 228, .18), transparent 30%),
+    radial-gradient(circle at 90% 100%, rgba(255, 191, 31, .16), transparent 28%),
+    #fff !important;
+}
+
+.home-contact .cta-text-gradient {
+  background-image: linear-gradient(100deg, var(--home-blue-dark), var(--home-blue));
+}
+
+@media (max-width: 640px) {
+  .home-hero .hero-italic::after {
+    height: 8px;
+  }
+
+  .home-why > div:first-child p:nth-child(2) {
+    font-size: 72px;
+  }
 }
 
 
