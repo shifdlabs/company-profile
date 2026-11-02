@@ -131,7 +131,28 @@ export default {
     approvalDescription: "End-to-end document approvals",
     contactUs: "Contact Us",
     aboutUs: "About Us",
+    blog: "Blog",
     whatsAppUs: "WhatsApp Us"
+  },
+  blog: {
+    eyebrow: "Shifd Labs Blog",
+    title: "Notes on software & business workflows",
+    subtitle: "Digitalization tips, product stories, and lessons from building software for businesses in Indonesia.",
+    categoryEyebrow: "Category",
+    allArticles: "All articles",
+    empty: "No articles here yet. Check back soon.",
+    readArticle: "Read article",
+    readingTime: "{minutes} min read",
+    by: "By {name}",
+    backToBlog: "Back to Blog",
+    related: "More articles",
+    notFoundTitle: "Article not found",
+    notFoundBody: "The article you are looking for may have moved or is no longer available.",
+    ctaEyebrow: "Shifd Approval",
+    ctaTitle: "Paperless document approvals, without the wait.",
+    ctaBody: "Bring multi-level approval workflows and e-signatures together in one platform.",
+    ctaButton: "See Shifd Approval",
+    ctaSecondary: "Free consultation"
   },
   footer: {
     product: "Product",
@@ -562,5 +583,31 @@ export default {
     metaLocationLabel: "Based in",
     metaProductLabel: "Product",
     metaServicesLabel: "Services",
+  },
+  seo: {
+    Home: {
+      title: "Shifd Labs — Software House & SaaS Products for Business",
+      description: "Shifd Labs builds custom software and SaaS products like Shifd Approval to help businesses work faster and more efficiently."
+    },
+    AboutUs: {
+      title: "About Us — Shifd Labs",
+      description: "Meet Shifd Labs, a Jakarta-based software team turning everyday business workflows into software that is clear, useful, and easy to grow with."
+    },
+    Approval: {
+      title: "Shifd Approval — Digital Document Approval Software",
+      description: "Unify multi-level approval workflows, e-signatures, and PDF documents in one platform. Faster, paperless approvals for your business."
+    },
+    ContactUs: {
+      title: "Contact Us — Shifd Labs",
+      description: "Tell the Shifd Labs team about your software needs or business workflow. Reach us via the contact form, WhatsApp, or sales{'@'}shifdlabs.com."
+    },
+    Blog: {
+      title: "Blog — Shifd Labs",
+      description: "Articles from Shifd Labs on business digitalization, document approvals, and building software for companies in Indonesia."
+    },
+    BlogCategory: {
+      title: "{name} — Shifd Labs Blog",
+      description: "{name} articles from Shifd Labs on business digitalization and software development."
+    }
   }
 }

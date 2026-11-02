@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import {
   Dialog,
   DialogPanel,
@@ -10,22 +10,28 @@ import { XMarkIcon } from '@heroicons/vue/24/outline'
 import { onClickOutside } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
-import { getDefaultLang } from '@/i18n'
+import { saveLocale } from '@/i18n'
+import type { Locale } from '@/i18n'
+import { localizedPath, stripLocale } from '@/router'
+import { blogAlternatePath } from '@/blog/data'
+import { useLocalePath } from '@/composables/useLocalePath'
+import appLogo from '@/assets/app-logo.svg'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
+const { localePath } = useLocalePath()
 
 const handleNavClick = (e: Event, item: any) => {
   if (item.href && item.href.startsWith('#')) {
-    if (route.path === '/') {
+    if (route.meta.page === 'Home') {
       e.preventDefault()
       const el = document.querySelector(item.href)
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' })
       }
     } else {
-      router.push('/')
+      router.push(localePath('/'))
     }
   }
 }
@@ -45,36 +51,38 @@ interface NavItem {
 
 // Reordered to match reference: Products & Services, About Us, Contact Us
 const navigation = computed<NavItem[]>(() => [
-  { name: t('header.aboutUs'), to: '/about-us' },
-  { name: t('header.contactUs'), to: '/contact-us' },
+  { name: t('header.blog'), to: localePath('/blog') },
+  { name: t('header.aboutUs'), to: localePath('/about-us') },
+  { name: t('header.contactUs'), to: localePath('/contact-us') },
 ])
 
-const { locale } = useI18n()
 const langOpen = ref(false)
 const langMenu = ref<HTMLElement | null>(null)
 const mobileMenuOpen = ref(false)
-const currentLang = ref<Lang>(getDefaultLang())
 const productsOpen = ref(false)
 const productsMenu = ref<HTMLElement | null>(null)
 
 type Lang = 'ID' | 'ENG'
 
+// Bahasa ditentukan oleh URL: '/...' = Indonesia, '/en/...' = English
+const currentLang = computed<Lang>(() => (route.meta.locale === 'en' ? 'ENG' : 'ID'))
+
 const selectLang = (lang: Lang) => {
-  currentLang.value = lang
-  const i18nLang = lang === 'ID' ? 'id' : 'en'
-  locale.value = i18nLang
-  localStorage.setItem('lang', lang)
   langOpen.value = false
+  const target: Locale = lang === 'ID' ? 'id' : 'en'
+  saveLocale(target)
+  if (target === route.meta.locale) return
+  const page = route.meta.page
+  if (page === 'BlogPost' || page === 'BlogCategory') {
+    // Slug artikel/kategori beda per bahasa, jadi pakai terjemahannya (atau /blog)
+    router.push(blogAlternatePath(page, String(route.params.slug), route.meta.locale, target))
+    return
+  }
+  router.push({ path: localizedPath(stripLocale(route.path), target), query: route.query, hash: route.hash })
 }
 
 onClickOutside(langMenu, () => { langOpen.value = false })
 onClickOutside(productsMenu, () => { productsOpen.value = false })
-
-onMounted(() => {
-  const lang = getDefaultLang()
-  currentLang.value = lang
-  locale.value = lang === 'ID' ? 'id' : 'en'
-})
 </script>
 
 <template>
@@ -88,8 +96,8 @@ onMounted(() => {
       <div class="mx-auto max-w-7xl flex items-center px-6 xl:px-0">
 
         <!-- Logo -->
-        <router-link to="/" class="flex items-center gap-2.5 flex-shrink-0">
-          <img class="h-9 w-auto" src="/src/assets/app-logo.svg" alt="Logo" />
+        <router-link :to="localePath('/')" class="flex items-center gap-2.5 flex-shrink-0">
+          <img class="h-9 w-auto" :src="appLogo" alt="Shifd Labs" />
           <p class="text-[26px] font-['DM_Serif_Text'] leading-none text-[#2f57c9]">
             Shifd Labs
           </p>
@@ -136,7 +144,7 @@ onMounted(() => {
                 <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-3 mb-1.5">{{ $t('header.product') }}</p>
 
                 <router-link
-                  to="/approval"
+                  :to="localePath('/approval')"
                   @click="productsOpen = false"
                   class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#e9f0ff] transition-colors group"
                 >
@@ -288,7 +296,7 @@ onMounted(() => {
             <!-- Drawer header -->
             <div class="flex items-center justify-between px-6 pt-6 pb-4">
               <div class="flex items-center gap-2.5">
-                <img class="h-9 w-auto" src="/src/assets/app-logo.svg" alt="Logo" />
+                <img class="h-9 w-auto" :src="appLogo" alt="Shifd Labs" />
                 <p class="text-[24px] font-['DM_Serif_Text'] text-[#2f57c9] leading-none">Shifd Labs</p>
               </div>
               <button
@@ -307,7 +315,7 @@ onMounted(() => {
               <div class="border-b border-gray-100">
                 <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 pt-4 pb-2">{{ $t('header.productNServices') }}</p>
                 <router-link
-                  to="/approval"
+                  :to="localePath('/approval')"
                   @click="mobileMenuOpen = false"
                   class="flex items-center gap-3 py-3 mb-2"
                 >

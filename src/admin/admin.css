@@ -1,0 +1,50 @@
+/* Komponen dasar dashboard CMS (/admin) */
+.cms-input {
+  width: 100%;
+  border: 1.5px solid #d4d7de;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #fff;
+  font-size: 15px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cms-input:focus {
+  border-color: #3279e7;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(50, 121, 231, .18);
+}
+.cms-input[readonly] { background: #f1f2f4; color: #566274; }
+textarea.cms-input { resize: vertical; line-height: 1.5; }
+
+.cms-label { display: block; font-size: 13px; font-weight: 700; }
+.cms-hint { margin-top: 4px; color: #6b7487; font-size: 12px; }
+.cms-hint--warn { color: #b45309; }
+
+.cms-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid #17191c;
+  border-radius: 8px;
+  padding: 8px 14px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.cms-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 2px 2px 0 #17191c; }
+.cms-btn:disabled { cursor: not-allowed; opacity: .5; }
+.cms-btn--primary { color: #fff; background: #3279e7; border-color: #3279e7; }
+.cms-btn--primary:hover:not(:disabled) { box-shadow: 2px 2px 0 #17191c; }
+.cms-btn--yellow { background: #ffbf1f; }
+.cms-btn--danger { color: #b91c1c; border-color: #fca5a5; }
+.cms-btn--ghost { border-color: transparent; background: transparent; }
+.cms-btn--ghost:hover:not(:disabled) { box-shadow: none; background: #eceae4; }
+
+.cms-card { border: 1.5px solid #e2e0da; border-radius: 14px; background: #fff; }
+
+.cms-badge { display: inline-flex; border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 700; }
+.cms-badge--draft { color: #566274; background: #eceef2; }
+.cms-badge--published { color: #166534; background: #dcfce7; }
+.cms-badge--locale { color: #1e3a8a; background: #dce7fb; text-transform: uppercase; }

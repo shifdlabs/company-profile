@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .env
 .env.production
+# Data blog hasil scripts/fetch-blog.mjs
+src/generated/

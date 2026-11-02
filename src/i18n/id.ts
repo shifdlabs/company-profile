@@ -131,7 +131,28 @@ export default {
     approvalDescription: "Persetujuan dokumen end-to-end",
     contactUs: "Hubungi Kami",
     aboutUs: "Tentang Kami",
+    blog: "Blog",
     whatsAppUs: "WhatsApp Kami"
+  },
+  blog: {
+    eyebrow: "Blog Shifd Labs",
+    title: "Catatan seputar software & alur kerja bisnis",
+    subtitle: "Tips digitalisasi, cerita produk, dan pelajaran dari membangun software untuk bisnis di Indonesia.",
+    categoryEyebrow: "Kategori",
+    allArticles: "Semua artikel",
+    empty: "Belum ada artikel di sini. Kunjungi lagi sebentar lagi.",
+    readArticle: "Baca artikel",
+    readingTime: "{minutes} menit baca",
+    by: "Oleh {name}",
+    backToBlog: "Kembali ke Blog",
+    related: "Artikel lainnya",
+    notFoundTitle: "Artikel tidak ditemukan",
+    notFoundBody: "Artikel yang Anda cari mungkin sudah dipindahkan atau tidak tersedia.",
+    ctaEyebrow: "Shifd Approval",
+    ctaTitle: "Approval dokumen tanpa kertas, tanpa menunggu.",
+    ctaBody: "Satukan alur approval bertingkat dan tanda tangan elektronik dalam satu platform.",
+    ctaButton: "Lihat Shifd Approval",
+    ctaSecondary: "Konsultasi gratis"
   },
   footer: {
     product: "Produk",
@@ -562,5 +583,31 @@ export default {
     metaLocationLabel: "Berbasis di",
     metaProductLabel: "Produk",
     metaServicesLabel: "Layanan",
+  },
+  seo: {
+    Home: {
+      title: "Shifd Labs — Software House & Produk SaaS untuk Bisnis",
+      description: "Shifd Labs membangun software kustom dan produk SaaS seperti Shifd Approval untuk membantu bisnis di Indonesia bekerja lebih cepat dan efisien."
+    },
+    AboutUs: {
+      title: "Tentang Kami — Shifd Labs",
+      description: "Kenali Shifd Labs, tim software asal Jakarta yang mengubah alur kerja bisnis sehari-hari menjadi software yang jelas, berguna, dan mudah berkembang."
+    },
+    Approval: {
+      title: "Shifd Approval — Aplikasi Approval Dokumen Digital",
+      description: "Satukan alur approval bertingkat, tanda tangan elektronik, dan dokumen PDF dalam satu platform. Approval jadi lebih cepat dan tanpa kertas."
+    },
+    ContactUs: {
+      title: "Hubungi Kami — Shifd Labs",
+      description: "Ceritakan kebutuhan software atau alur kerja bisnis Anda ke tim Shifd Labs. Hubungi kami lewat formulir, WhatsApp, atau sales{'@'}shifdlabs.com."
+    },
+    Blog: {
+      title: "Blog — Shifd Labs",
+      description: "Artikel Shifd Labs seputar digitalisasi bisnis, approval dokumen, dan pengembangan software untuk perusahaan di Indonesia."
+    },
+    BlogCategory: {
+      title: "{name} — Blog Shifd Labs",
+      description: "Kumpulan artikel {name} dari Shifd Labs seputar digitalisasi bisnis dan pengembangan software."
+    }
   }
 }

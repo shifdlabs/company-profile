@@ -3,6 +3,8 @@ import type { FirebaseApp } from 'firebase/app'
 import { getAnalytics, logEvent } from 'firebase/analytics'
 import type { Analytics } from 'firebase/analytics'
 
+// Hanya di-import di browser (lihat main.ts), karena analytics butuh window
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,

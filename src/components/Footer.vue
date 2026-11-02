@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import useScrollToSection from './useScrollToSection'
+import appLogo from '@/assets/app-logo.svg'
 
 const { scrollToSection } = useScrollToSection()
 const currentYear = new Date().getFullYear()
@@ -14,7 +15,7 @@ const currentYear = new Date().getFullYear()
         <div class="lg:col-span-1" data-purpose="footer-logo">
           <div class="flex items-center gap-4 mb-[24px]">
             <!-- Shifd Labs Logo -->
-            <img src="/src/assets/app-logo.svg" alt="Shifd Labs Logo" class="h-16 w-auto">
+            <img :src="appLogo" alt="Shifd Labs" class="h-16 w-auto">
             <span class="text-[42px] font-['DM_Serif_Text'] leading-none text-[#2f57c9]">Shifd Labs</span>
           </div>
           <p class="text-base text-[#565e74] leading-relaxed">
@@ -55,7 +56,10 @@ const currentYear = new Date().getFullYear()
             <h4 class="text-[#191c1e] font-semibold mb-[16px] tracking-wide uppercase text-[16px]" style="font-family: 'Inter', sans-serif; line-height: 1; letter-spacing: 0.05em;">{{ $t('footer.company') }}</h4>
             <ul class="space-y-[8px] text-[16px]" style="font-family: 'Inter', sans-serif; line-height: 2;">
               <li class="">
-                <a class="footer-link text-[#434655]" href="/about-us">About us</a>
+                <router-link class="footer-link text-[#434655]" :to="$localePath('/about-us')">About us</router-link>
+              </li>
+              <li class="">
+                <router-link class="footer-link text-[#434655]" :to="$localePath('/blog')">Blog</router-link>
               </li>
             </ul>
           </div>

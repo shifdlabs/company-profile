@@ -304,7 +304,7 @@
     ===================== -->
     <div class="mt-16 text-center">
       <router-link
-        to="/approval"
+        :to="$localePath('/approval')"
         class="cta-link group inline-flex items-center font-semibold px-6 py-2.5 rounded-xl transition-all duration-300 border border-[#2f57c9]/50 text-[#2f57c9] hover:border-[#2f57c9] hover:bg-[#2f57c9]/5 bg-transparent text-sm"
       >
         {{ $t('approval.ctaButton') }}

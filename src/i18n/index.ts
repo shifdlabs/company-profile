@@ -2,19 +2,40 @@ import { createI18n } from 'vue-i18n'
 import en from './en'
 import id from './id'
 
-const INDONESIA_TIMEZONES = ['Asia/Jakarta', 'Asia/Makassar', 'Asia/Jayapura', 'Asia/Pontianak']
+export type Locale = 'id' | 'en'
 
-export const isFromIndonesia = INDONESIA_TIMEZONES.includes(Intl.DateTimeFormat().resolvedOptions().timeZone)
+export const DEFAULT_LOCALE: Locale = 'id'
 
-export function getDefaultLang(): 'ID' | 'ENG' {
-  const saved = localStorage.getItem('lang') as 'ID' | 'ENG' | null
-  if (saved) return saved
-  return isFromIndonesia ? 'ID' : 'ENG'
+// Pilihan bahasa yang disimpan saat user ganti bahasa lewat header
+export const LANG_STORAGE_KEY = 'lang'
+
+// Dibuat per app (bukan singleton) supaya tiap halaman yang di-prerender
+// punya locale sendiri dan tidak saling menimpa
+export function createAppI18n(locale: Locale = DEFAULT_LOCALE) {
+  return createI18n({
+    legacy: false,
+    locale,
+    fallbackLocale: 'en',
+    messages: { en, id }
+  })
 }
 
-export const i18n = createI18n({
-  legacy: false,
-  locale: getDefaultLang() === 'ID' ? 'id' : 'en',
-  fallbackLocale: 'en',
-  messages: { en, id }
-})
+// Nilai lama di localStorage berupa 'ID' / 'ENG'
+export function getSavedLocale(): Locale | null {
+  try {
+    const saved = localStorage.getItem(LANG_STORAGE_KEY)
+    if (saved === 'ID') return 'id'
+    if (saved === 'ENG') return 'en'
+  } catch {
+    // localStorage bisa tidak tersedia (private mode, dll)
+  }
+  return null
+}
+
+export function saveLocale(locale: Locale) {
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, locale === 'id' ? 'ID' : 'ENG')
+  } catch {
+    // abaikan
+  }
+}

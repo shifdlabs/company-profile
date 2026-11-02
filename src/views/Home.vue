@@ -526,7 +526,7 @@
  
             <!-- Contact Us Button -->
             <router-link
-              to="/contact-us"
+              :to="$localePath('/contact-us')"
               aria-label="Contact Us"
               class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold bg-white border-2 border-[#2f57c9] text-[#2f57c9] hover:bg-[#2f57c9]/5 hover:border-[#2448a8] rounded-2xl transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
             >

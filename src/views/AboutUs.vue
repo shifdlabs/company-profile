@@ -76,7 +76,7 @@
       <section class="about-cta">
         <div class="about-container about-cta__grid">
           <div class="cta-art" aria-hidden="true"><div class="cta-art__sun"></div><div class="cta-art__window"><span></span><span></span><span></span><span></span></div><div class="cta-art__person"><i></i><b></b><em></em></div><div class="cta-art__line cta-art__line--one"></div><div class="cta-art__line cta-art__line--two"></div><div class="cta-art__star">✦</div></div>
-          <div class="about-cta__copy"><p class="about-section-label about-section-label--dark">{{ $t('aboutUs.ctaLabel') }}</p><h2 class="about-section-title mt-5">{{ $t('aboutUs.callToActionQuestion') }}</h2><p class="mt-6">{{ $t('aboutUs.callToActionCaption') }}</p><router-link to="/contact-us" class="about-button about-button--blue mt-8">{{ $t('aboutUs.ctaButton') }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10.5 4.5 16 10l-5.5 5.5" /></svg></router-link></div>
+          <div class="about-cta__copy"><p class="about-section-label about-section-label--dark">{{ $t('aboutUs.ctaLabel') }}</p><h2 class="about-section-title mt-5">{{ $t('aboutUs.callToActionQuestion') }}</h2><p class="mt-6">{{ $t('aboutUs.callToActionCaption') }}</p><router-link :to="$localePath('/contact-us')" class="about-button about-button--blue mt-8">{{ $t('aboutUs.ctaButton') }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10.5 4.5 16 10l-5.5 5.5" /></svg></router-link></div>
         </div>
       </section>
     </main>

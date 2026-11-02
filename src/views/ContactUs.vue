@@ -116,6 +116,7 @@ import AppHeader from '../components/AppHeader.vue';
 import { onMounted, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useLocalePath } from '@/composables/useLocalePath'
 import Footer from '../components/Footer.vue';
 
 const form = reactive({ name: '', email: '', countryCode: '+62', phone: '', description: '' })
@@ -152,6 +153,7 @@ onMounted(() => {
 const router = useRouter()
 const route = useRoute()
 const { t, locale } = useI18n()
+const { localePath } = useLocalePath()
 
 const plan = String(route.query.plan ?? '')
 if (['trial', 'monthly', 'yearly', 'custom'].includes(plan)) {
@@ -211,7 +213,7 @@ async function handleSubmit() {
 
 function goToNextPage() {
   showSuccessDialog.value = false
-  router.push('/')
+  router.push(localePath('/'))
 }
 </script>
 

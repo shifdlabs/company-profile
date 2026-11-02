@@ -1011,7 +1011,7 @@
             </ul>
 
             <router-link
-              :to="{ path: '/contact-us', query: { plan: plan.key } }"
+              :to="{ path: $localePath('/contact-us'), query: { plan: plan.key } }"
               class="mt-auto inline-flex items-center justify-center w-full py-3 rounded-xl font-bold text-sm transition-colors"
               :class="plan.dark
                 ? 'bg-white text-[#1a1c1e] hover:bg-slate-200'
@@ -1025,7 +1025,7 @@
         <p class="text-center text-[13px] text-slate-500 mt-10">
           {{ $t('approvalPage.pricing.note', { currency }) }}
           {{ $t('approvalPage.pricing.helpText') }}
-          <router-link to="/contact-us" class="font-bold text-[#2f57c9] hover:underline">{{ $t('approvalPage.pricing.helpLink') }}</router-link>.
+          <router-link :to="$localePath('/contact-us')" class="font-bold text-[#2f57c9] hover:underline">{{ $t('approvalPage.pricing.helpLink') }}</router-link>.
         </p>
       </div>
     </section>
@@ -1090,7 +1090,7 @@
         </p>
         <div class="relative flex flex-wrap gap-3.5 justify-center mt-8">
           <router-link
-            to="/contact-us"
+            :to="$localePath('/contact-us')"
             class="inline-flex w-full max-w-[520px] items-center justify-center gap-2 text-white px-8 py-4 rounded-2xl text-[15px] font-bold border"
             style="background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.25)"
           >
@@ -1109,9 +1109,12 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppHeader from '@/components/AppHeader.vue'
 import Footer from '@/components/Footer.vue'
-import { isFromIndonesia } from '@/i18n'
 
-const { t, tm } = useI18n()
+
+const { t, tm, locale } = useI18n()
+
+// Harga ikut bahasa halaman (bukan timezone) supaya HTML hasil prerender konsisten
+const isIdr = computed(() => locale.value === 'id')
 
 const stage = ref(0)
 const openFaq = ref(-1)
@@ -1188,12 +1191,12 @@ const showcaseTabs = computed(() => tm('approvalPage.showcase.tabs') as Array<{ 
 const showcaseChips = computed(() => tm('approvalPage.showcase.f5.chips') as string[])
 
 // ponytail: fixed-rate USD prices (1 USD ≈ Rp 16.000), update manually when pricing changes
-const currency = isFromIndonesia ? 'IDR' : 'USD'
+const currency = computed(() => (isIdr.value ? 'IDR' : 'USD'))
 const pricingPlans = computed(() => {
   const base: Array<{ key: string; price: string; discount?: string; highlight?: boolean; dark?: boolean }> = [
-    { key: 'trial', price: isFromIndonesia ? 'Rp 0' : '$0' },
-    { key: 'monthly', price: isFromIndonesia ? 'Rp 120.000' : '$7.50' },
-    { key: 'yearly', price: isFromIndonesia ? 'Rp 100.000' : '$6.25', discount: '-17%', highlight: true },
+    { key: 'trial', price: isIdr.value ? 'Rp 0' : '$0' },
+    { key: 'monthly', price: isIdr.value ? 'Rp 120.000' : '$7.50' },
+    { key: 'yearly', price: isIdr.value ? 'Rp 100.000' : '$6.25', discount: '-17%', highlight: true },
     { key: 'custom', price: t('approvalPage.pricing.custom.price'), dark: true },
   ]
   return base.map((p) => ({

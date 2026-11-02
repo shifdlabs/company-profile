@@ -6,8 +6,10 @@
 import { nextTick, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Lenis from 'lenis'
+import { useSeoHead } from '@/composables/useSeoHead'
 
 const route = useRoute()
+useSeoHead()
 let sectionObserver: IntersectionObserver | null = null
 let lenis: Lenis | null = null
 let lenisFrame = 0
@@ -55,7 +57,8 @@ onMounted(() => {
   )
 
   observeSections()
-  startLenis()
+  // Smooth scroll hanya untuk halaman publik; di CMS mengganggu scroll editor
+  if (!route.meta.admin) startLenis()
 })
 
 watch(() => route.fullPath, observeSections)
